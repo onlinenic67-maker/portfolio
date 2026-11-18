@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Risultati di Nicolò Cammarata</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: portfolio a fasce, scuro di base. Apertura 3D (anello di punti che mette a fuoco), poi video, design, sistema, dati, casi, percorso, contatti. Colonna 1040px, una colonna sul telefono. */
+:root{
+  --bg:#1b1819; --bg2:#221F20; --surface:#2a2627; --line:#3b3637; --fg:#f4f1f1; --mut:#b2abac;
+  --accent:#8fb0e6; --warm:#f0a160;
+  --grad:linear-gradient(90deg,#527ab8,#7562a4 34%,#df72a5 67%,#e78e41);
+  --display:"Poppins",ui-sans-serif,system-ui,sans-serif; --body:"Poppins",ui-sans-serif,system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f7f5f5;--bg2:#efecec;--surface:#ffffff;--line:#e2dddd;--fg:#221F20;--mut:#5f595a;--accent:#3e64a3;--warm:#b8601d;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f7f5f5;--bg2:#efecec;--surface:#ffffff;--line:#e2dddd;--fg:#221F20;--mut:#5f595a;--accent:#3e64a3;--warm:#b8601d;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font:300 15.5px/1.62 var(--body);margin:0}
+.in{max-width:1040px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+section.band{padding-block:56px}
+section.band.alt{background:var(--bg2)}
+h2{font:600 clamp(26px,4.4vw,40px)/1.12 var(--display);letter-spacing:-.02em;margin:0 0 10px;text-wrap:balance}
+h3{text-wrap:balance}
+.kick{font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:block}
+.lead{color:var(--mut);max-width:62ch;margin:0 0 28px;font-size:16px}
+b,strong{font-weight:600}
+p{margin:0 0 10px}
+a{color:var(--accent)}
+button{font-family:var(--body)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* APERTURA */
+.hero{position:relative;overflow:hidden;background:#141213;color:#f4f1f1}
+#lens{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .in{position:relative;padding-block:64px 40px;min-height:min(78vh,620px);display:flex;flex-direction:column;justify-content:flex-end;pointer-events:none}
+.ghost{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);font:700 clamp(60px,15vw,190px)/1 var(--display);letter-spacing:-.04em;color:rgba(255,255,255,.08);filter:blur(7px);white-space:nowrap;user-select:none;transition:filter 2.2s ease,color 2.2s ease}
+.hero.focused .ghost{filter:blur(14px);color:rgba(255,255,255,.04)}
+.hero h1{font:600 clamp(36px,7.5vw,72px)/1.02 var(--display);letter-spacing:-.03em;margin:0;text-wrap:balance}
+.hero .tag{font-size:clamp(16px,2.4vw,20px);color:#d9d3d4;max-width:40ch;margin:14px 0 0}
+.hero .tag b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .hint{font:400 12px var(--mono);color:#9c9596;margin-top:22px}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
+@media(min-width:760px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.kpi{background:var(--bg);padding:22px 18px}
+.kpi b{display:block;font:600 clamp(28px,4vw,40px)/1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi span{display:block;color:var(--mut);font-size:13px;line-height:1.4;margin-top:8px}
+
+/* VIDEO */
+.feat{display:grid;gap:24px;align-items:center}
+@media(min-width:820px){.feat{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.feat>div{min-width:0}
+.phone{position:relative;width:min(300px,78vw);max-width:100%;margin:0 auto;aspect-ratio:9/19.2;border-radius:42px;background:#0d0c0c;padding:12px;box-shadow:0 0 0 1px #3b3637,0 30px 60px -25px rgba(0,0,0,.6)}
+.phone::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:84px;height:22px;border-radius:12px;background:#0d0c0c;z-index:2}
+.phone video,.phone .screen{width:100%;height:100%;object-fit:cover;border-radius:31px;display:block;background:#000}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin:14px 0}
+.seg button{border:0;background:transparent;color:var(--fg);font:500 14px var(--body);padding:8px 16px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.feat h3{font:600 24px/1.25 var(--display);margin:0 0 8px}
+.feat p{color:var(--mut)}
+.reel{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;margin-top:44px}
+.reel figure{margin:0;min-width:0}
+.reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000;display:block}
+.reel figcaption{margin-top:10px;font-size:13px;color:var(--mut);line-height:1.45}
+.reel figcaption b{display:block;color:var(--fg);font-size:14px}
+.chip{display:inline-block;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--warm);margin-bottom:2px}
+
+/* DESIGN */
+.dgrid{display:grid;gap:36px}
+@media(min-width:860px){.dgrid{grid-template-columns:320px minmax(0,1fr);align-items:start}}
+.dgrid>div{min-width:0}
+.ig{background:#fff;color:#111;overflow:hidden;display:flex;flex-direction:column}
+.ig .top{padding:40px 14px 10px;font:600 13px var(--body);display:flex;justify-content:space-between;align-items:center}
+.ig .stats{display:flex;justify-content:space-around;font-size:11px;padding:0 10px 10px;color:#333;text-align:center}
+.ig .stats b{display:block;font-size:13px;color:#111}
+.ig .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#fff}
+.ig .tiles button{border:0;padding:0;margin:0;aspect-ratio:3/4;cursor:zoom-in;background:#222;overflow:hidden}
+.ig .tiles img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.ig .tiles button:hover img{transform:scale(1.04)}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin}
+.track img{flex:0 0 min(78%,380px);width:min(78%,380px);aspect-ratio:4/5;object-fit:cover;border-radius:12px;scroll-snap-align:start;display:block}
+.dots{display:flex;gap:6px;margin-top:6px}
+.dots button{width:8px;height:8px;border-radius:50%;border:0;background:var(--line);padding:0;cursor:pointer}
+.dots button[aria-current="true"]{background:var(--fg)}
+.focus-demo{margin-top:40px;background:#221F20;color:#f4f1f1;border-radius:16px;padding:28px 22px;position:relative;overflow:hidden}
+.focus-demo .big{font:700 clamp(50px,11vw,120px)/1 var(--display);letter-spacing:-.03em;color:rgba(255,255,255,.18);white-space:nowrap;margin-left:-6px;transition:filter .15s}
+.focus-demo .msg{font:500 clamp(18px,2.6vw,24px)/1.35 var(--display);margin-top:-18px;position:relative}
+.focus-demo .msg span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.focus-demo label{display:block;font:400 12px var(--mono);color:#a59fa0;margin-top:18px}
+.focus-demo input{width:100%;max-width:360px;accent-color:#df72a5}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,520px)}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+dialog img{width:100%;border-radius:12px;display:block}
+
+/* SISTEMA */
+.fx{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
+.fxbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.btn{font:500 14px var(--body);background:var(--fg);color:var(--bg);border:0;border-radius:999px;padding:9px 18px;cursor:pointer}
+.btn.ghostb{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.fxscroll{overflow-x:auto}
+.fx svg{display:block;width:100%;min-width:640px;height:auto;color:var(--mut)}
+.fx .node rect{fill:var(--bg);stroke:var(--line);stroke-width:1.4;transition:stroke .25s,fill .25s}
+.fx .node text{fill:var(--fg);font-family:var(--display);font-weight:600}
+.fx .ns,.fx .node text.ns{fill:var(--mut);font-weight:400;font-size:10.5px;font-family:var(--body)}
+.fx .node{cursor:pointer;outline:none}
+.fx .node:hover rect,.fx .node:focus-visible rect{stroke:var(--accent)}
+.fx .node.on rect{stroke:var(--accent);stroke-width:2.4;fill:var(--surface)}
+.fx .back{stroke:var(--warm);stroke-dasharray:5 4}
+.fx .acc-fill,.fx .acc-text{fill:var(--warm)}
+.fxpanel{border-top:1px solid var(--line);margin-top:10px;padding-top:14px;min-height:110px}
+.fxpanel b{font:600 18px var(--display);display:block;margin-bottom:4px}
+.fxpanel p{margin:0 0 6px;max-width:70ch}
+.note{color:var(--mut);font-size:13px}
+
+/* DATI */
+.sim{display:grid;gap:24px}
+@media(min-width:820px){.sim{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+.simbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;min-width:0}
+.budget{font:600 52px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.simbox input[type=range]{width:100%;accent-color:#7562a4;margin:16px 0 6px}
+.scale{display:flex;justify-content:space-between;font:400 12px var(--mono);color:var(--mut)}
+.out{display:grid;gap:16px}
+.orow .lbl{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:6px}
+.orow .lbl b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.range{position:relative;height:14px;background:var(--line);border-radius:7px}
+.range i{position:absolute;top:0;bottom:0;border-radius:7px;background:var(--grad);opacity:.85;transition:left .3s,width .3s}
+.range em{position:absolute;top:-4px;width:3px;height:22px;background:var(--fg);border-radius:2px;transition:left .3s}
+
+/* CASI */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tabs button{font:500 14px var(--body);color:var(--fg);background:transparent;border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.case h3{font:600 21px/1.3 var(--display);margin:0 0 4px}
+.case .meta{color:var(--mut);font-size:13px;margin-bottom:14px}
+.compare{display:grid;gap:12px;margin:16px 0}
+.row{display:grid;grid-template-columns:100px minmax(0,1fr) 72px;gap:12px;align-items:center;font-size:14px}
+.row .lbl{color:var(--mut)}
+.row .val{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.bar{height:12px;border-radius:6px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:6px;transition:width .9s ease}
+.stats4{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:14px}
+.stat{border-top:2px solid var(--line);padding-top:8px}
+.stat b{display:block;font:600 20px var(--display);font-variant-numeric:tabular-nums}
+.stat span{color:var(--mut);font-size:13px}
+
+/* PERCORSO */
+.time{list-style:none;margin:0;padding:0}
+.time li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:18px;padding:16px 0;border-top:1px solid var(--line)}
+.time .y{font:500 13px var(--mono);color:var(--accent);padding-top:3px}
+.time b{display:block;font:600 17px var(--display)}
+.time span{color:var(--mut);font-size:14px}
+@media(max-width:520px){.time li{grid-template-columns:1fr;gap:4px}}
+
+/* CONTATTI */
+.contact{display:grid;gap:14px;max-width:620px}
+.cline{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.cline .v{font:500 18px var(--display);user-select:all;word-break:break-all}
+footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){.bar i,.range i,.range em,.ghost{transition:none}}
+</style>
+</head><body>
+
+<header class="hero" id="top">
+  <canvas id="lens" aria-hidden="true"></canvas>
+  <div class="ghost" aria-hidden="true">INVISIBILE</div>
+  <div class="in">
+    <span class="kick" style="color:#9fbbe9">Portfolio · Marketing digitale e contenuti con l'IA</span>
+    <h1>Nicolò Cammarata</h1>
+    <p class="tag">Porto le attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
+    <p class="hint">Muovi il dito o il mouse sull'anello.</p>
+  </div>
+</header>
+<div class="kpis">
+  <div class="kpi"><b data-count="1320" data-pre="+" data-suf="%">+1.320%</b><span>interazioni in 30 giorni sul profilo di un centro estetico</span></div>
+  <div class="kpi"><b data-count="144" data-pre="+" data-suf="%">+144%</b><span>visualizzazioni nello stesso periodo</span></div>
+  <div class="kpi"><b>0,15 €</b><span>costo per clic nella prima campagna Meta di un doposcuola</span></div>
+  <div class="kpi"><b data-count="6">6</b><span>agenti IA che lavorano ogni giorno nel progetto ON-LINE</span></div>
+</div>
+
+<section class="band" id="lavori"><div class="in">
+  <span class="kick">01 · Video</span>
+  <h2>Scritti, girati e montati da noi</h2>
+  <p class="lead">Reel, video ads e casi studio per clienti veri. Ogni video ha un'idea diversa e una sola cosa da far ricordare. Tocca un video per farlo partire con l'audio.</p>
+
+  <div class="feat">
+    <div>
+      <span class="chip">Due mercati</span>
+      <h3>Stesso video, un'altra lingua</h3>
+      <p>Il reel «Il sistema» per il lancio di GordiaCut, una software house. Le immagini restano, i testi vengono riscritti per l'Italia e per la Repubblica Ceca. Cambia lingua mentre guardi.</p>
+      <div class="seg" role="group" aria-label="Lingua del video">
+        <button type="button" aria-pressed="true" data-lang="it">Italiano</button>
+        <button type="button" aria-pressed="false" data-lang="cz">Čeština</button>
+      </div>
+      <p class="note">Il video riparte dallo stesso secondo nell'altra lingua.</p>
+    </div>
+    <div class="phone"><video id="langvid" controls playsinline preload="none" poster="media/gc-sistema-it.jpg" src="media/gc-sistema-it.mp4"></video></div>
+  </div>
+
+  <div class="reel">
+    <figure><video controls playsinline preload="none" poster="media/gc-attacco.jpg" src="media/gc-attacco.mp4"></video>
+      <figcaption><span class="chip">Video ad</span><b>GordiaCut · Attacco</b>Glitch a tutto schermo e testo scritto come codice: ferma chi scorre nel primo secondo.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/ana-case.jpg" src="media/ana-case.mp4"></video>
+      <figcaption><span class="chip">Caso studio</span><b>I Love Nail Art · Da invisibile a scelta</b>Il caso del centro estetico raccontato in 23 secondi.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/filodentale.jpg" src="media/filodentale.mp4"></video>
+      <figcaption><span class="chip">Caso studio</span><b>Studio dentistico Filodentale</b>Girato nello studio durante il content day.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/bts-filodentale.jpg" src="media/bts-filodentale.mp4"></video>
+      <figcaption><span class="chip">Dietro le quinte</span><b>Un content day dall'inizio alla fine</b>Strategia, shot list sul telefono, riprese: da una giornata escono i contenuti di settimane.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/studiorum-case.jpg" src="media/studiorum-case.mp4"></video>
+      <figcaption><span class="chip">Caso studio</span><b>Doposcuola · Come si racconta</b>Identità, luoghi e dettagli che rassicurano i genitori, senza mostrare i ragazzi.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/stesso-girato.jpg" src="media/stesso-girato.mp4"></video>
+      <figcaption><span class="chip">Reel ON-LINE</span><b>Stesso girato, due reel</b>Le stesse riprese montate in due modi: è il montaggio che tiene chi guarda.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/tre-errori.jpg" src="media/tre-errori.mp4"></video>
+      <figcaption><span class="chip">Reel ON-LINE</span><b>3 errori che fanno scorrere via</b>Grafica animata e una domanda finale per far commentare.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band alt" id="design"><div class="in">
+  <span class="kick">02 · Design</span>
+  <h2>Un profilo si progetta come una pagina</h2>
+  <p class="lead">Per il lancio di GordiaCut abbiamo disegnato i primi 9 post come un unico mosaico: ogni post funziona da solo, insieme formano la G tagliata del marchio. Tocca un post per vederlo grande.</p>
+  <div class="dgrid">
+    <div class="phone"><div class="screen ig">
+      <div class="top"><span>gordiacut · anteprima</span><span aria-hidden="true">···</span></div>
+      <div class="stats"><div><b>9</b>post</div><div><b>IT</b>e CZ</div><div><b>1</b>lancio</div></div>
+      <div class="tiles" id="tiles"></div>
+    </div></div>
+    <div>
+      <span class="chip">Carosello</span>
+      <h3 style="font:600 22px/1.3 var(--display);margin:0 0 8px">Cosa succede mentre dormi?</h3>
+      <p class="note" style="margin-bottom:14px">Cinque slide, tre orari della notte, tre problemi risolti dal software. Scorri.</p>
+      <div class="track" id="track" tabindex="0" aria-label="Carosello di 5 slide">
+        <img src="media/car-1.jpg" alt="Slide 1: Cosa succede mentre dormi?">
+        <img src="media/car-2.jpg" alt="Slide 2: alle 23:52 un preventivo inviato">
+        <img src="media/car-3.jpg" alt="Slide 3: alle 2:14 un posto riassegnato">
+        <img src="media/car-4.jpg" alt="Slide 4: alle 7:30 un richiamo in agenda">
+        <img src="media/car-5.jpg" alt="Slide 5: Apri il telefono. È già fatto.">
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+
+  <div class="focus-demo">
+    <span class="kick" style="color:#9fbbe9">Sistema visivo di ON-LINE · Il fuoco</span>
+    <div class="big" id="fword" style="filter:blur(10px)">INVISIBILE</div>
+    <p class="msg">Dietro, sfocato, c'è il problema. Davanti, nitido, <span>quello che diciamo noi</span>.</p>
+    <label for="fslider">Metti a fuoco il problema</label>
+    <input id="fslider" type="range" min="0" max="10" step="0.5" value="10">
+    <p class="note" style="color:#a59fa0;margin-top:10px">È la regola grafica dei post di ON-LINE: la parola sfocata è il luogo comune da smontare, il messaggio sta davanti con una sola riga a gradiente.</p>
+  </div>
+</div></section>
+
+<section class="band" id="sistema"><div class="in">
+  <span class="kick">03 · Sistema</span>
+  <h2>Come lavora la content factory</h2>
+  <p class="lead">Ogni contenuto passa da agenti IA specializzati e da due controlli prima di uscire. Poi i risultati tornano indietro e cambiano il modo di lavorare. Tocca un passaggio, o segui un contenuto dall'inizio.</p>
+  <div class="fx">
+    <div class="fxbar"><button type="button" id="fxplay" class="btn">Segui un contenuto</button><span id="fxstep" class="note" aria-live="polite"></span></div>
+    <div class="fxscroll">
+    <svg viewBox="0 0 780 330" role="img" aria-label="Il percorso di un contenuto: brief, produzione, revisore, approvazione, pubblicazione, metriche, registro degli esiti e coordinatore, che riporta le lezioni alla produzione. Il revisore e l'approvazione possono rimandare indietro il lavoro.">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
+        <marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="acc-fill"/></marker>
+      </defs>
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <line x1="130" y1="120" x2="168" y2="120" marker-end="url(#ah)"/>
+        <line x1="290" y1="120" x2="328" y2="120" marker-end="url(#ah)"/>
+        <line x1="450" y1="120" x2="488" y2="120" marker-end="url(#ah)"/>
+        <line x1="610" y1="120" x2="648" y2="120" marker-end="url(#ah)"/>
+        <line x1="710" y1="143" x2="710" y2="225" marker-end="url(#ah)"/>
+        <line x1="650" y1="250" x2="532" y2="250" marker-end="url(#ah)"/>
+        <line x1="410" y1="250" x2="292" y2="250" marker-end="url(#ah)"/>
+        <line x1="230" y1="227" x2="230" y2="145" marker-end="url(#ah)"/>
+        <line x1="70" y1="227" x2="185" y2="145" marker-end="url(#ah)"/>
+        <path class="back" d="M390 97 C390 60 250 60 240 95" marker-end="url(#ahc)"/>
+        <path class="back" d="M550 97 C550 22 230 22 222 95" marker-end="url(#ahc)"/>
+      </g>
+      <g font-size="11" fill="currentColor" text-anchor="middle">
+        <text x="149" y="111">brief</text><text x="309" y="111">bozza</text><text x="469" y="111">passa</text><text x="629" y="111">OK</text>
+        <text x="720" y="188" text-anchor="start">dati</text><text x="591" y="242">esito</text><text x="351" y="242">ogni domenica</text>
+        <text x="238" y="190" text-anchor="start">regole migliori</text><text x="112" y="182" text-anchor="end">fonti</text>
+        <text x="315" y="58" class="acc-text">rifare</text><text x="386" y="20" class="acc-text">modifiche</text>
+      </g>
+      <g font-size="12.5" text-anchor="middle">
+        <g class="node" data-k="brief" tabindex="0" role="button" aria-label="Brief"><rect x="10" y="97" width="120" height="46" rx="8"/><text x="70" y="117">Brief</text><text x="70" y="133" class="ns">cliente e obiettivo</text></g>
+        <g class="node" data-k="prod" tabindex="0" role="button" aria-label="Produzione"><rect x="170" y="97" width="120" height="46" rx="8"/><text x="230" y="117">Produzione</text><text x="230" y="133" class="ns">Penna · Regista</text></g>
+        <g class="node" data-k="rev" tabindex="0" role="button" aria-label="Revisore"><rect x="330" y="97" width="120" height="46" rx="8"/><text x="390" y="117">Revisore</text><text x="390" y="133" class="ns">passa o rifare</text></g>
+        <g class="node" data-k="ok" tabindex="0" role="button" aria-label="Approvazione"><rect x="490" y="97" width="120" height="46" rx="8"/><text x="550" y="117">Approvazione</text><text x="550" y="133" class="ns">una persona dice sì</text></g>
+        <g class="node" data-k="pub" tabindex="0" role="button" aria-label="Pubblicazione"><rect x="650" y="97" width="120" height="46" rx="8"/><text x="710" y="117">Pubblicazione</text><text x="710" y="133" class="ns">due chiavi</text></g>
+        <g class="node" data-k="met" tabindex="0" role="button" aria-label="Metriche"><rect x="650" y="227" width="120" height="46" rx="8"/><text x="710" y="247">Metriche</text><text x="710" y="263" class="ns">Analista</text></g>
+        <g class="node" data-k="reg" tabindex="0" role="button" aria-label="Registro degli esiti"><rect x="410" y="227" width="120" height="46" rx="8"/><text x="470" y="247">Registro</text><text x="470" y="263" class="ns">un esito per lavoro</text></g>
+        <g class="node" data-k="coord" tabindex="0" role="button" aria-label="Coordinatore"><rect x="170" y="227" width="120" height="46" rx="8"/><text x="230" y="247">Coordinatore</text><text x="230" y="263" class="ns">cosa migliorare</text></g>
+        <g class="node" data-k="ric" tabindex="0" role="button" aria-label="Ricerca"><rect x="10" y="227" width="120" height="46" rx="8"/><text x="70" y="247">Ricerca</text><text x="70" y="263" class="ns">Vedetta</text></g>
+      </g>
+      <text x="390" y="318" font-size="11" text-anchor="middle" class="ns">in alto il contenuto va avanti · in basso i risultati tornano a migliorare la produzione</text>
+    </svg>
+    </div>
+    <div class="fxpanel" aria-live="polite"><b id="fxt"></b><p id="fxd"></p><span id="fxx" class="note"></span></div>
+  </div>
+</div></section>
+
+<section class="band alt" id="dati"><div class="in">
+  <span class="kick">04 · Dati</span>
+  <h2>Quanto può rendere un budget di ads</h2>
+  <p class="lead">Un calcolatore costruito sui numeri veri della nostra prima campagna Meta (CPM 3,28 €), affiancati da due scenari più prudenti. Sposta il budget.</p>
+  <div class="sim">
+    <div class="simbox">
+      <label for="bud" class="note">Budget per un canale, in un mese</label>
+      <div class="budget" id="budv">200 €</div>
+      <input id="bud" type="range" min="50" max="1000" step="50" value="200">
+      <div class="scale"><span>50 €</span><span>1.000 €</span></div>
+      <p class="note" style="margin-top:14px">Scenari: CPM prudente 9 €, base 5,5 €, buono 3,3 € (vicino a quello reale). Frequenza 1,9 e ThruPlay all'8,3% delle impressioni, come nella campagna reale.</p>
+    </div>
+    <div class="simbox out" id="simout"></div>
+  </div>
+</div></section>
+
+<section class="band" id="casi"><div class="in">
+  <span class="kick">05 · Casi</span>
+  <h2>I numeri dietro i lavori</h2>
+  <div class="tabs" role="tablist" aria-label="Casi">
+    <button role="tab" id="t-estetica" aria-controls="p-estetica" aria-selected="true">Centro estetico</button>
+    <button role="tab" id="t-ads" aria-controls="p-ads" aria-selected="false">Campagna Meta Ads</button>
+    <button role="tab" id="t-eventi" aria-controls="p-eventi" aria-selected="false">Eventi</button>
+  </div>
+  <div class="case" role="tabpanel" id="p-estetica" aria-labelledby="t-estetica">
+    <h3>I Love Nail Art Beauty, Montesilvano</h3>
+    <div class="meta">Gestione social · nome e numeri pubblicati con il consenso della titolare</div>
+    <p>Un centro con 231 recensioni a 4,5 stelle, eccellente dal vivo, che sui social raccoglieva circa 15 interazioni al mese. Il lavoro: un piano editoriale costante e contenuti girati nel centro.</p>
+    <div class="compare">
+      <div class="row"><span class="lbl">Visualizzazioni</span><div class="bar"><i data-w="9.8"></i></div><span class="val">+144%</span></div>
+      <div class="row"><span class="lbl">Interazioni</span><div class="bar"><i data-w="100"></i></div><span class="val">+1.320%</span></div>
+    </div>
+    <p class="note">Crescita in 30 giorni rispetto al mese prima. Barre in scala sulla crescita percentuale.</p>
+  </div>
+  <div class="case" role="tabpanel" id="p-ads" aria-labelledby="t-ads" hidden>
+    <h3>Prima campagna Meta di un doposcuola, Pescara</h3>
+    <div class="meta">42 € spesi · dati letti da Meta Ads</div>
+    <p>Obiettivo: far scrivere i genitori in cerca di un doposcuola. Video brevi senza volti di minori, pubblico locale, budget piccolo.</p>
+    <div class="compare">
+      <div class="row"><span class="lbl">Impressioni</span><div class="bar"><i data-w="100"></i></div><span class="val">12.950</span></div>
+      <div class="row"><span class="lbl">Persone</span><div class="bar"><i data-w="51.6"></i></div><span class="val">6.686</span></div>
+      <div class="row"><span class="lbl">ThruPlay</span><div class="bar"><i data-w="8.3"></i></div><span class="val">1.078</span></div>
+      <div class="row"><span class="lbl">Clic</span><div class="bar"><i data-w="2.2"></i></div><span class="val">283</span></div>
+    </div>
+    <div class="stats4">
+      <div class="stat"><b>3,28 €</b><span>CPM, costo per mille impressioni</span></div>
+      <div class="stat"><b>0,04 €</b><span>costo per ThruPlay</span></div>
+      <div class="stat"><b>0,15 €</b><span>costo per clic</span></div>
+    </div>
+  </div>
+  <div class="case" role="tabpanel" id="p-eventi" aria-labelledby="t-eventi" hidden>
+    <h3>Cooperativa sociale Angeli Sorridenti</h3>
+    <div class="meta">Montesilvano · eventi, animazione e servizi socio-educativi · oggi la seguo con ON-LINE</div>
+    <p>Anni di lavoro con le famiglie: da animatore a coordinatore delle attività commerciali. Qui ho imparato a vendere, a organizzare un team e a far stare bene le persone.</p>
+    <div class="stats4">
+      <div class="stat"><b>2018-22</b><span>animatore</span></div>
+      <div class="stat"><b>2023</b><span>responsabile dell'animazione</span></div>
+      <div class="stat"><b>2025</b><span>coordinatore eventi e attività commerciali</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="band alt" id="percorso"><div class="in">
+  <span class="kick">06 · Percorso</span>
+  <h2>Da animatore a chi progetta i contenuti</h2>
+  <ol class="time">
+    <li><span class="y">2026 – oggi</span><div><b>ON-LINE · progetto di marketing</b><span>Social, contenuti e Meta Ads per attività locali, con una content factory di sei agenti IA. In parallelo, il lancio di GordiaCut su due mercati.</span></div></li>
+    <li><span class="y">2026 – oggi</span><div><b>Magistrale LM-59 · Università di Teramo</b><span>Comunicazione, Marketing e Innovazione Digitale.</span></div></li>
+    <li><span class="y">2022 – 2025</span><div><b>Triennale in Scienze della Comunicazione · Università di Bologna</b><span>E un brand streetwear creato e gestito con un team.</span></div></li>
+    <li><span class="y">2023 – 2024</span><div><b>Galata Produzioni, Bologna</b><span>Tirocinio da social media manager: contenuti, campagne e metriche.</span></div></li>
+    <li><span class="y">2018 – 2025</span><div><b>Angeli Sorridenti</b><span>Animatore, responsabile dell'animazione, poi coordinatore eventi e attività commerciali.</span></div></li>
+  </ol>
+</div></section>
+
+<section class="band" id="contatti"><div class="in">
+  <span class="kick">07 · Contatti</span>
+  <h2>Parliamone</h2>
+  <p class="lead">Se questi lavori ti interessano, ti mostro come li abbiamo fatti: i file, le campagne, il sistema.</p>
+  <div class="contact">
+    <div class="cline"><span class="v" id="tel">+39 393 227 3666</span><button class="btn ghostb copy" data-copy="tel" type="button">Copia numero</button></div>
+    <div class="cline"><span class="v" id="mail">nic@on-line-agency.com</span><button class="btn ghostb copy" data-copy="mail" type="button">Copia email</button></div>
+    <p class="note">Il progetto: <a href="https://on-line-agency.com" target="_blank" rel="noopener">on-line-agency.com</a></p>
+  </div>
+</div></section>
+<footer><div class="in">Numeri reali, aggiornati al 18 novembre 2026.</div></footer>
+
+<dialog id="zoom"><img id="zoomimg" alt=""><p style="margin:10px 0 0"><button type="button" class="btn" id="zoomclose">Chiudi</button></p></dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(id){return document.getElementById(id);}
+
+  /* APERTURA 3D: 2.400 punti sparsi che si raccolgono in un anello con il gradiente di ON-LINE */
+  try{
+    if(!window.THREE) throw 0;
+    var cv=$('lens'),hero=$('top');
+    var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+    R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+    var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.z=7.2;
+    var N=2400,pos=new Float32Array(N*3),col=new Float32Array(N*3),from=new Float32Array(N*3),to=new Float32Array(N*3);
+    var stops=[[.32,.48,.72],[.46,.38,.64],[.87,.45,.65],[.91,.56,.25]];
+    for(var i=0;i<N;i++){
+      var a=Math.random()*Math.PI*2,b=Math.random()*Math.PI*2,rr=1.75+.38*Math.cos(b);
+      to[i*3]=rr*Math.cos(a);to[i*3+1]=rr*Math.sin(a);to[i*3+2]=.38*Math.sin(b);
+      from[i*3]=(Math.random()-.5)*14;from[i*3+1]=(Math.random()-.5)*9;from[i*3+2]=(Math.random()-.5)*8;
+      var t=a/(Math.PI*2)*3,k=Math.min(2,Math.floor(t)),f=t-k,c0=stops[k],c1=stops[k+1];
+      col[i*3]=c0[0]+(c1[0]-c0[0])*f;col[i*3+1]=c0[1]+(c1[1]-c0[1])*f;col[i*3+2]=c0[2]+(c1[2]-c0[2])*f;
+    }
+    var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
+    var m=new THREE.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending});
+    var pts=new THREE.Points(g,m);scene.add(pts);
+    function size(){var w=hero.clientWidth,h=hero.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
+      pts.position.set(w>760?1.9:0,w>760?.35:1.1,0);}
+    size();window.addEventListener('resize',size);
+    var tx=0,ty=0,rx=0,ry=0,t0=performance.now(),dur=RM?0:2600;
+    function onMove(x,y){var r=hero.getBoundingClientRect();tx=((x-r.left)/r.width-.5)*.9;ty=((y-r.top)/r.height-.5)*.6;}
+    hero.addEventListener('pointermove',function(e){onMove(e.clientX,e.clientY);});
+    hero.addEventListener('touchmove',function(e){if(e.touches[0])onMove(e.touches[0].clientX,e.touches[0].clientY);},{passive:true});
+    var visible=true;new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe(hero);
+    function ease(p){return 1-Math.pow(1-p,3);}
+    function frame(now){
+      requestAnimationFrame(frame); if(!visible)return;
+      var p=dur?Math.min(1,(now-t0)/dur):1,e=ease(p),wob=RM?0:Math.sin(now/900)*.02;
+      if(p<1||!pts.userData.done){for(var i=0;i<N*3;i++){pos[i]=from[i]+(to[i]-from[i])*e;}g.attributes.position.needsUpdate=true;if(p>=1)pts.userData.done=true;}
+      if(p>=1&&!hero.classList.contains('focused'))hero.classList.add('focused');
+      rx+=(ty-rx)*.05;ry+=(tx-ry)*.05;
+      pts.rotation.x=.55+rx+wob;pts.rotation.y=ry+(RM?0:now/9000);pts.rotation.z=RM?0:now/14000;
+      R.render(scene,cam);
+    }
+    requestAnimationFrame(frame);
+  }catch(e){ $('lens').style.background='radial-gradient(circle at 70% 40%,rgba(117,98,164,.35),transparent 55%)'; }
+
+  /* numeri che contano */
+  if(!RM&&window.IntersectionObserver){[].forEach.call(document.querySelectorAll('[data-count]'),function(el){
+    var end=+el.dataset.count,pre=el.dataset.pre||'',suf=el.dataset.suf||'',t0=null;
+    function fmt(n){return pre+Math.round(n).toLocaleString('it-IT')+suf;}
+    function st(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/1400);el.textContent=fmt(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(st);else el.textContent=fmt(end);}
+    new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();requestAnimationFrame(st);}}).observe(el);
+  });}
+
+  /* cambio lingua sullo stesso secondo */
+  var lv=$('langvid');
+  [].forEach.call(document.querySelectorAll('[data-lang]'),function(b){b.addEventListener('click',function(){
+    var l=b.dataset.lang,t=lv.currentTime||0,playing=!lv.paused;
+    [].forEach.call(document.querySelectorAll('[data-lang]'),function(x){x.setAttribute('aria-pressed',x===b);});
+    lv.poster='media/gc-sistema-'+l+'.jpg';lv.src='media/gc-sistema-'+l+'.mp4';
+    lv.addEventListener('loadedmetadata',function h(){lv.removeEventListener('loadedmetadata',h);try{lv.currentTime=t;}catch(e){} if(playing)lv.play().catch(function(){});});
+    lv.load();
+  });});
+
+  /* griglia + zoom */
+  var tiles=$('tiles'),dlg=$('zoom');
+  for(var i=1;i<=9;i++){var bt=document.createElement('button');bt.type='button';bt.setAttribute('aria-label','Apri il post '+i);
+    bt.innerHTML='<img src="media/grid-'+i+'.jpg" alt="Post '+i+' del mosaico GordiaCut" loading="lazy">';
+    (function(n){bt.addEventListener('click',function(){$('zoomimg').src='media/grid-'+n+'.jpg';$('zoomimg').alt='Post '+n+' del mosaico GordiaCut';if(dlg.showModal)dlg.showModal();});})(i);
+    tiles.appendChild(bt);}
+  $('zoomclose').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+
+  /* carosello */
+  var tr=$('track'),dots=$('dots'),imgs=tr.querySelectorAll('img');
+  [].forEach.call(imgs,function(im,i){var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Slide '+(i+1));
+    d.addEventListener('click',function(){tr.scrollTo({left:im.offsetLeft-tr.offsetLeft,behavior:RM?'auto':'smooth'});});dots.appendChild(d);});
+  function cur(){var best=0,bd=1e9;[].forEach.call(imgs,function(im,i){var d=Math.abs(im.offsetLeft-tr.offsetLeft-tr.scrollLeft);if(d<bd){bd=d;best=i;}});
+    [].forEach.call(dots.children,function(d,i){d.setAttribute('aria-current',i===best);});}
+  tr.addEventListener('scroll',cur,{passive:true});cur();
+
+  /* il fuoco */
+  var fs=$('fslider'),fw=$('fword');fs.addEventListener('input',function(){fw.style.filter='blur('+fs.value+'px)';fw.style.color='rgba(255,255,255,'+(0.18+(10-fs.value)*0.06)+')';});
+
+  /* content factory */
+  var FX={
+    brief:["Brief","Il titolare o io diamo l'obiettivo: cosa pubblicare, per chi e quando. Prima di produrre si sceglie l'attrezzo migliore per quel lavoro, da una tabella che si aggiorna con i risultati.","Esempio: tre reel per il lancio di un servizio, pubblico di genitori, uscita il venerdì."],
+    prod:["Produzione · Penna e Regista","La Penna scrive didascalie, script, ganci, testi delle ads e messaggi. La Regista monta i video dal girato vero dei content day, con montaggio programmatico, e usa video generati con l'IA quando serve.","Regola: chi produce non giudica il proprio lavoro."],
+    rev:["Revisore","Guarda ogni contenuto come un reel da studiare: il gancio dei primi secondi, i testi, l'audio, la privacy (mai volti di minori senza consenso) e le regole delle piattaforme. Risponde passa o rifare, sempre con i motivi.","Se è da rifare, il lavoro torna alla produzione."],
+    ok:["Approvazione","Nessun contenuto esce senza il sì di una persona. Il cliente o io guardiamo l'anteprima e approviamo, oppure chiediamo modifiche.","Le modifiche tornano alla produzione e ripassano dal revisore."],
+    pub:["Pubblicazione","Si programma con due chiavi: il sì al contenuto e il sì al calendario. Il giorno prima dell'uscita si ricontrolla tutto: file, testo, orario.","Si guarda anche come apparirà la griglia del profilo."],
+    met:["Metriche · Analista","L'Analista legge i dati veri di Metricool e di Meta Ads e li confronta con la mediana del cliente: cosa ha funzionato più del solito e cosa meno.","Un mese con tante visualizzazioni e zero contatti è un mese fallito."],
+    reg:["Registro degli esiti","Ogni lavoro lascia una riga: che compito era, quale attrezzo, com'è andata, quanti minuti. Così le scelte si basano su quello che è successo davvero.","Esempi di esito: passa, rifare, approvato, metriche sopra la media."],
+    coord:["Coordinatore","Ogni domenica somma gli esiti, trova quello che si ripete e propone cosa cambiare: un attrezzo, una regola, un formato. Il cambio entra solo con il mio sì.","Le lezioni tornano alla produzione della settimana dopo."],
+    ric:["Ricerca · Vedetta","Porta fatti verificati con la fonte: tendenze, regole delle piattaforme, concorrenti, novità degli strumenti. Una domanda precisa alla volta.","Niente dati inventati: quello che non si trova si dichiara mancante."]
+  };
+  var order=["brief","prod","rev","ok","pub","met","reg","coord"],nodes=[].slice.call(document.querySelectorAll('.fx .node'));
+  function pick(k){nodes.forEach(function(n){n.classList.toggle('on',n.dataset.k===k);});$('fxt').textContent=FX[k][0];$('fxd').textContent=FX[k][1];$('fxx').textContent=FX[k][2];}
+  var timer=null,si=0,btn=$('fxplay'),st=$('fxstep');
+  function stop(){if(timer){clearInterval(timer);timer=null;}btn.textContent='Segui un contenuto';st.textContent='';}
+  nodes.forEach(function(n){n.addEventListener('click',function(){stop();pick(n.dataset.k);});n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();stop();pick(n.dataset.k);}});});
+  function step(){pick(order[si]);st.textContent='Passaggio '+(si+1)+' di '+order.length;si++;if(si>=order.length){clearInterval(timer);timer=null;btn.textContent='Ricomincia';}}
+  btn.addEventListener('click',function(){if(timer){stop();return;}si=0;btn.textContent='Ferma';step();timer=setInterval(step,RM?4000:2600);});
+  pick('prod');
+
+  /* calcolatore */
+  var bud=$('bud'),out=$('simout');
+  var SC={p:9,b:5.5,g:3.3},FREQ=1.9,TP=.083;
+  function n(x){return Math.round(x).toLocaleString('it-IT');}
+  function round(x){var p=Math.pow(10,Math.max(0,String(Math.round(x)).length-2));return Math.round(x/p)*p;}
+  var ROWS=[["Impressioni",function(c,e){return e/c*1000;}],["Persone raggiunte",function(c,e){return e/c*1000/FREQ;}],["ThruPlay (video visti)",function(c,e){return e/c*1000*TP;}]];
+  var MAX={};ROWS.forEach(function(r){MAX[r[0]]=r[1](SC.g,1000);});
+  out.innerHTML=ROWS.map(function(r,i){return '<div class="orow"><div class="lbl"><span>'+r[0]+'</span><b id="sv'+i+'"></b></div><div class="range"><i id="sr'+i+'"></i><em id="sb'+i+'"></em></div></div>';}).join('')+'<p class="note" style="margin:0">La barra colorata va dallo scenario prudente a quello buono; il segno chiaro è lo scenario base. Sono stime, non promesse: il risultato vero dipende dal contenuto.</p>';
+  function upd(){var e=+bud.value;$('budv').textContent=n(e)+' €';
+    ROWS.forEach(function(r,i){var lo=r[1](SC.p,e),hi=r[1](SC.g,e),ba=r[1](SC.b,e),mx=MAX[r[0]];
+      $('sv'+i).textContent=n(round(lo))+' – '+n(round(hi));
+      $('sr'+i).style.left=(lo/mx*100)+'%';$('sr'+i).style.width=((hi-lo)/mx*100)+'%';$('sb'+i).style.left='calc('+(ba/mx*100)+'% - 1px)';});}
+  bud.addEventListener('input',upd);upd();
+
+  /* casi */
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  function fill(p){[].forEach.call(p.querySelectorAll('.bar i'),function(i){i.style.width=i.dataset.w+'%';});}
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);var p=$(x.getAttribute('aria-controls'));p.hidden=!on;if(on)fill(p);});});});
+  fill($('p-estetica'));
+
+  /* copia */
+  [].forEach.call(document.querySelectorAll('.copy'),function(b){b.addEventListener('click',function(){
+    var el=$(b.dataset.copy),txt=el.textContent,old=b.textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+    try{navigator.clipboard.writeText(txt).then(function(){b.textContent='Copiato';setTimeout(function(){b.textContent=old;},1500);},sel);}catch(e){sel();}
+  });});
+})();
+</script>
+
+</body></html>
