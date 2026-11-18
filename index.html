@@ -63,11 +63,14 @@ button{font-family:var(--body)}
 .feat p{color:var(--mut)}
 .reel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:44px}
 @media(min-width:600px){.reel{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(min-width:960px){.reel{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}}
+@media(min-width:960px){.reel{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}}
 .reel figure{margin:0;min-width:0}
 .reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000;display:block}
 .reel figcaption{margin-top:10px;font-size:13px;color:var(--mut);line-height:1.45}
 .reel figcaption b{display:block;color:var(--fg);font-size:14px}
+.credits{display:flex;flex-wrap:wrap;gap:6px 14px;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:-8px 0 32px;font-size:14px;color:var(--mut);max-width:820px}
+.credits>b{color:var(--fg);font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
+.credits span b{color:var(--fg)}
 .chip{display:inline-block;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--warm);margin-bottom:2px}
 
 /* DESIGN */
@@ -108,6 +111,12 @@ dialog img{width:100%;border-radius:12px;display:block}
 .gal.posts img{aspect-ratio:4/5}.gal.photos img{aspect-ratio:2/3}
 .gal button:hover img{transform:scale(1.04)}
 .gal span{position:absolute;left:8px;bottom:8px;font:500 11px var(--mono);background:rgba(0,0,0,.6);color:#fff;padding:2px 6px;border-radius:4px}
+.story{max-width:760px}
+.big-p{font:400 clamp(19px,2.6vw,26px)/1.45 var(--display);margin:0 0 18px;text-wrap:pretty}
+.big-p b{font-weight:600}
+.blurline{font:700 clamp(54px,13vw,150px)/1 var(--display);letter-spacing:-.04em;color:var(--fg);opacity:.85;margin:10px 0 26px;white-space:nowrap;overflow:hidden}
+.blurline span{display:inline-block;filter:blur(12px);transition:filter .1s linear}
+.next{margin:36px 0 0;font:500 16px var(--display);color:var(--accent)}
 /* SISTEMA */
 .fx{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
 .fxbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
@@ -169,6 +178,11 @@ dialog img{width:100%;border-radius:12px;display:block}
 @media(max-width:520px){.time li{grid-template-columns:1fr;gap:4px}}
 
 /* CONTATTI */
+.me{display:flex;gap:18px;align-items:center;margin:0 0 22px;flex-wrap:wrap}
+.me img{width:96px;height:96px;border-radius:50%;object-fit:cover;display:block}
+.me b{display:block;font:600 20px var(--display)}
+.me span{display:block;color:var(--mut);font-size:14px;margin:2px 0 10px}
+.me .btn{display:inline-block;text-decoration:none}
 .contact{display:grid;gap:14px;max-width:620px}
 .cline{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
 .cline .v{font:500 18px var(--display);user-select:all;word-break:break-all}
@@ -188,85 +202,28 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   </div>
 </header>
 <div class="kpis">
-  <div class="kpi"><b data-count="1320" data-pre="+" data-suf="%">+1.320%</b><span>interazioni in 30 giorni sul profilo di un centro estetico</span></div>
+  <div class="kpi"><b data-count="1320" data-pre="+" data-suf="%">+1.320%</b><span>interazioni in 30 giorni sul profilo di un centro estetico: da 15 a 213</span></div>
   <div class="kpi"><b data-count="144" data-pre="+" data-suf="%">+144%</b><span>visualizzazioni nello stesso periodo</span></div>
   <div class="kpi"><b>0,15 €</b><span>costo per clic nella prima campagna Meta di un doposcuola</span></div>
   <div class="kpi"><b data-count="6">6</b><span>agenti IA che lavorano ogni giorno nel progetto ON-LINE</span></div>
 </div>
 
-<section class="band" id="lavori"><div class="in">
-  <span class="kick">01 · Video</span>
-  <h2>Scritti, girati e montati da noi</h2>
-  <p class="lead">Reel, video ads e casi studio per clienti veri. Ogni video ha un'idea diversa e una sola cosa da far ricordare. Tocca un video per farlo partire con l'audio.</p>
-
-  <div class="feat">
-    <div>
-      <span class="chip">Due mercati</span>
-      <h3>Stesso video, un'altra lingua</h3>
-      <p>Il reel «Il sistema» per il lancio di GordiaCut, una software house. Le immagini restano, i testi vengono riscritti per l'Italia e per la Repubblica Ceca. Cambia lingua mentre guardi.</p>
-      <div class="seg" role="group" aria-label="Lingua del video">
-        <button type="button" aria-pressed="true" data-lang="it">Italiano</button>
-        <button type="button" aria-pressed="false" data-lang="cz">Čeština</button>
-      </div>
-      <p class="note">Il video riparte dallo stesso secondo nell'altra lingua.</p>
-    </div>
-    <div class="phone"><video id="langvid" controls playsinline preload="none" poster="media/gc-sistema-it.jpg" src="media/gc-sistema-it.mp4"></video></div>
+<section class="band" id="problema"><div class="in">
+  <span class="kick">01 · Il problema</span>
+  <h2>Bravissimi dal vivo. Invisibili online.</h2>
+  <div class="story">
+    <p class="big-p">Un centro estetico di Montesilvano: <b>231 recensioni, 4,5 stelle</b>. Chi entra, torna.</p>
+    <p class="big-p">Su Instagram, prima del nostro lavoro: <b>circa 15 interazioni al mese</b>.</p>
+    <div class="blurline" aria-hidden="true"><span id="blurword">INVISIBILE</span></div>
+    <p class="big-p">Non è un problema di qualità. È che online nessuno la vede. Succede a quasi tutte le attività locali che conosco, e da qui è nato il mio lavoro.</p>
   </div>
-
-  <div class="reel">
-    <figure><video controls playsinline preload="none" poster="media/gc-attacco.jpg" src="media/gc-attacco.mp4"></video>
-      <figcaption><span class="chip">Video ad</span><b>GordiaCut · Attacco</b>Glitch a tutto schermo e testo scritto come codice: ferma chi scorre nel primo secondo.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="media/ana-case.jpg" src="media/ana-case.mp4"></video>
-      <figcaption><span class="chip">Caso studio</span><b>I Love Nail Art · Da invisibile a scelta</b>Il caso del centro estetico raccontato in 23 secondi.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="media/filodentale.jpg" src="media/filodentale.mp4"></video>
-      <figcaption><span class="chip">Caso studio</span><b>Studio dentistico Filodentale</b>Girato nello studio durante il content day.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="media/filodentale-impianto.jpg" src="media/filodentale-impianto.mp4"></video>
-      <figcaption><span class="chip">Reel</span><b>Filodentale · Che cos'è un impianto</b>Il medico spiega in 30 secondi, con grafica 3D dell'impianto e sottotitoli parola per parola.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="media/studiorum-case.jpg" src="media/studiorum-case.mp4"></video>
-      <figcaption><span class="chip">Caso studio</span><b>Doposcuola · Come si racconta</b>Identità, luoghi e dettagli che rassicurano i genitori, senza mostrare i ragazzi.</figcaption></figure>
-      <figure><video controls playsinline preload="none" poster="media/online-tre-righe.jpg" src="media/online-tre-righe.mp4"></video>
-      <figcaption><span class="chip">Reel ON-LINE</span><b>Tre righe</b>Il nostro reel con il punteggio più alto al predittore di viralità: 61 su 100.</figcaption></figure>
-  </div>
+  <p class="next">Per risolverlo non bastava «fare post». Serviva un metodo. →</p>
 </div></section>
 
-<section class="band alt" id="design"><div class="in">
-  <span class="kick">02 · Design</span>
-  <h2>Un profilo si progetta come una pagina</h2>
-  <p class="lead">Post, caroselli e foto scelti tra i migliori. Per il lancio di GordiaCut abbiamo disegnato i primi 9 post come un unico mosaico: ogni post funziona da solo, insieme formano la G tagliata del marchio. Tocca un post per vederlo grande.</p>
-  <div class="dgrid">
-    <div class="phone"><div class="screen ig">
-      <div class="top"><span>gordiacut · anteprima</span><span aria-hidden="true">···</span></div>
-      <div class="stats"><div><b>9</b>post</div><div><b>IT</b>e CZ</div><div><b>1</b>lancio</div></div>
-      <div class="tiles" id="tiles"></div>
-    </div></div>
-    <div>
-      <span class="chip">Carosello</span>
-      <h3 style="font:600 22px/1.3 var(--display);margin:0 0 8px">Cosa succede mentre dormi?</h3>
-      <p class="note" style="margin-bottom:14px">Cinque slide, tre orari della notte, tre problemi risolti dal software. Scorri.</p>
-      <div class="track" id="track" tabindex="0" aria-label="Carosello di 5 slide">
-        <img src="media/car-1.jpg" alt="Slide 1: Cosa succede mentre dormi?">
-        <img src="media/car-2.jpg" alt="Slide 2: alle 23:52 un preventivo inviato">
-        <img src="media/car-3.jpg" alt="Slide 3: alle 2:14 un posto riassegnato">
-        <img src="media/car-4.jpg" alt="Slide 4: alle 7:30 un richiamo in agenda">
-        <img src="media/car-5.jpg" alt="Slide 5: Apri il telefono. È già fatto.">
-      </div>
-      <div class="dots" id="dots"></div>
-    </div>
-  </div>
-
-  <h3 class="sub">Post pubblicati</h3>
-  <p class="note" style="margin:0 0 14px">Una selezione di post usciti sui profili dei clienti. Ogni cliente ha la sua identità: niente modello unico. Tocca per ingrandire.</p>
-  <div class="gal posts"><button type="button" class="zoomable" data-src="media/post-1.jpg" data-cap="I Love Nail Art · Il viola non è un colore estivo"><img src="media/post-1.jpg" alt="I Love Nail Art: Il viola non è un colore estivo" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-2.jpg" data-cap="I Love Nail Art · Settembre in cinque set"><img src="media/post-2.jpg" alt="I Love Nail Art: Settembre in cinque set" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-3.jpg" data-cap="Studiorum Loci · Sottolineare tutto = non sottolineare niente"><img src="media/post-3.jpg" alt="Studiorum Loci: Sottolineare tutto = non sottolineare niente" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-4.jpg" data-cap="Studiorum Loci · Il pomeriggio che non basta mai"><img src="media/post-4.jpg" alt="Studiorum Loci: Il pomeriggio che non basta mai" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-5.jpg" data-cap="Studiorum Loci · Il primo voto non è una sentenza"><img src="media/post-5.jpg" alt="Studiorum Loci: Il primo voto non è una sentenza" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-6.jpg" data-cap="Studiorum Loci · Il PDP dice quali strumenti usare"><img src="media/post-6.jpg" alt="Studiorum Loci: Il PDP dice quali strumenti usare" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-7.jpg" data-cap="Filodentale · Chi ti segue: Angela"><img src="media/post-7.jpg" alt="Filodentale: Chi ti segue: Angela" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/post-8.jpg" data-cap="Filodentale · Tra un dente e l'altro"><img src="media/post-8.jpg" alt="Filodentale: Tra un dente e l'altro" loading="lazy"><span>Filodentale</span></button></div>
-  <h3 class="sub">Foto dal content day</h3>
-  <p class="note" style="margin:0 0 14px">Studio Filodentale, Montesilvano. Una giornata organizzata da noi con il fotografo: da qui escono post, schede Google e sito.</p>
-  <div class="gal photos"><button type="button" class="zoomable" data-src="media/foto-1.jpg" data-cap="La sala d'attesa"><img src="media/foto-1.jpg" alt="La sala d'attesa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-2.jpg" data-cap="Una sala operativa"><img src="media/foto-2.jpg" alt="Una sala operativa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-3.jpg" data-cap="La sala di sterilizzazione"><img src="media/foto-3.jpg" alt="La sala di sterilizzazione" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-4.jpg" data-cap="Strumenti pronti all'uso"><img src="media/foto-4.jpg" alt="Strumenti pronti all'uso" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-5.jpg" data-cap="L'accoglienza"><img src="media/foto-5.jpg" alt="L'accoglienza" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-6.jpg" data-cap="La sala radiologica"><img src="media/foto-6.jpg" alt="La sala radiologica" loading="lazy"></button></div>
-</div>
-</div></section>
-
-<section class="band" id="sistema"><div class="in">
-  <span class="kick">03 · Sistema</span>
-  <h2>Come lavora la content factory</h2>
-  <p class="lead">Ogni contenuto passa da agenti IA specializzati e da due controlli prima di uscire. Poi i risultati tornano indietro e cambiano il modo di lavorare. Tocca un passaggio, o segui un contenuto dall'inizio.</p>
+<section class="band alt" id="sistema"><div class="in">
+  <span class="kick">02 · Il metodo</span>
+  <h2>Una content factory, non un social media manager da solo</h2>
+  <p class="lead">Ho costruito un sistema in cui agenti IA specializzati scrivono, montano, controllano e misurano. Le decisioni restano a una persona. Tocca un passaggio, o segui un contenuto dall'inizio.</p>
   <div class="fx">
     <div class="fxbar"><button type="button" id="fxplay" class="btn">Segui un contenuto</button><span id="fxstep" class="note" aria-live="polite"></span></div>
     <div class="fxscroll">
@@ -310,26 +267,11 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     </div>
     <div class="fxpanel" aria-live="polite"><b id="fxt"></b><p id="fxd"></p><span id="fxx" class="note"></span></div>
   </div>
-</div></section>
-
-<section class="band alt" id="dati"><div class="in">
-  <span class="kick">04 · Dati</span>
-  <h2>Quanto può rendere un budget di ads</h2>
-  <p class="lead">Un calcolatore costruito sui numeri veri della nostra prima campagna Meta (CPM 3,28 €), affiancati da due scenari più prudenti. Sposta il budget.</p>
-  <div class="sim">
-    <div class="simbox">
-      <label for="bud" class="note">Budget per un canale, in un mese</label>
-      <div class="budget" id="budv">200 €</div>
-      <input id="bud" type="range" min="50" max="1000" step="50" value="200">
-      <div class="scale"><span>50 €</span><span>1.000 €</span></div>
-      <p class="note" style="margin-top:14px">Scenari: CPM prudente 9 €, base 5,5 €, buono 3,3 € (vicino a quello reale). Frequenza 1,9 e ThruPlay all'8,3% delle impressioni, come nella campagna reale.</p>
-    </div>
-    <div class="simbox out" id="simout"></div>
-  </div>
+  <p class="next">Un metodo vale quanto i risultati che porta. Eccoli. →</p>
 </div></section>
 
 <section class="band" id="casi"><div class="in">
-  <span class="kick">05 · Casi</span>
+  <span class="kick">03 · Le prove</span>
   <h2>I numeri dietro i lavori</h2>
   <div class="tabs" role="tablist" aria-label="Casi">
     <button role="tab" id="t-estetica" aria-controls="p-estetica" aria-selected="true">Centro estetico</button>
@@ -344,7 +286,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       <div class="row"><span class="lbl">Visualizzazioni</span><div class="bar"><i data-w="9.8"></i></div><span class="val">+144%</span></div>
       <div class="row"><span class="lbl">Interazioni</span><div class="bar"><i data-w="100"></i></div><span class="val">+1.320%</span></div>
     </div>
-    <p class="note">Crescita in 30 giorni rispetto al mese prima. Barre in scala sulla crescita percentuale.</p>
+    <p class="note">Interazioni da 15 a 213 in 30 giorni, rispetto al mese prima. La base di partenza era piccola: per questo conta anche il numero assoluto. Barre in scala sulla crescita percentuale.</p>
   </div>
   <div class="case" role="tabpanel" id="p-ads" aria-labelledby="t-ads" hidden>
     <h3>Prima campagna Meta di un doposcuola, Pescara</h3>
@@ -372,10 +314,103 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       <div class="stat"><b>2025</b><span>coordinatore eventi e attività commerciali</span></div>
     </div>
   </div>
+  <p class="next">I numeri vengono da contenuti fatti bene. Ecco come sono fatti. →</p>
 </div></section>
 
-<section class="band alt" id="percorso"><div class="in">
-  <span class="kick">06 · Percorso</span>
+<section class="band alt" id="lavori"><div class="in">
+  <span class="kick">04 · Il mestiere: video</span>
+  <h2>Ogni video ha un'idea sola</h2>
+  <p class="lead">Reel, video ads e casi studio per clienti veri. Ogni video ha una sola cosa da far ricordare, e un linguaggio diverso dagli altri. Tocca un video per farlo partire con l'audio.</p>
+  <div class="credits"><b>Chi ha fatto cosa</b><span><b>Io:</b> strategia, idea, testi e regia del montaggio, con la mia content factory. <b>Riprese e foto dei content day:</b> Eric, il videomaker con cui collaboro. <b>Grafiche e animazioni:</b> progettate da me con la content factory e montate in codice.</span></div>
+
+  <div class="feat">
+    <div>
+      <span class="chip">Due mercati</span>
+      <h3>Stesso video, un'altra lingua</h3>
+      <p>Il reel «Il sistema» per il lancio di GordiaCut, una software house. Le immagini restano, i testi vengono riscritti per l'Italia e per la Repubblica Ceca. Cambia lingua mentre guardi.</p>
+      <div class="seg" role="group" aria-label="Lingua del video">
+        <button type="button" aria-pressed="true" data-lang="it">Italiano</button>
+        <button type="button" aria-pressed="false" data-lang="cz">Čeština</button>
+      </div>
+      <p class="note">Il video riparte dallo stesso secondo nell'altra lingua.</p>
+    </div>
+    <div class="phone"><video id="langvid" controls playsinline preload="none" poster="media/gc-sistema-it.jpg" src="media/gc-sistema-it.mp4"></video></div>
+  </div>
+
+  <div class="reel">
+    <figure><video controls playsinline preload="none" poster="media/gc-attacco.jpg" src="media/gc-attacco.mp4"></video>
+      <figcaption><span class="chip">Video ad</span><b>GordiaCut · Attacco</b>Glitch a tutto schermo e testo scritto come codice: ferma chi scorre nel primo secondo.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/ana-case.jpg" src="media/ana-case.mp4"></video>
+      <figcaption><span class="chip">Caso studio</span><b>I Love Nail Art · Da invisibile a scelta</b>Il caso del centro estetico raccontato in 23 secondi.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/filodentale.jpg" src="media/filodentale.mp4"></video>
+      <figcaption><span class="chip">Caso studio</span><b>Studio dentistico Filodentale</b>Girato nello studio durante il content day.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/filodentale-impianto.jpg" src="media/filodentale-impianto.mp4"></video>
+      <figcaption><span class="chip">Reel</span><b>Filodentale · Che cos'è un impianto</b>Il medico spiega in 30 secondi, con grafica 3D dell'impianto e sottotitoli parola per parola.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/studiorum-case.jpg" src="media/studiorum-case.mp4"></video>
+      <figcaption><span class="chip">Caso studio</span><b>Doposcuola · Come si racconta</b>Identità, luoghi e dettagli che rassicurano i genitori, senza mostrare i ragazzi.</figcaption></figure>
+      <figure><video controls playsinline preload="none" poster="media/angeli-non-sta-fermo.jpg" src="media/angeli-non-sta-fermo.mp4"></video>
+      <figcaption><span class="chip">Reel animato</span><b>Angeli Sorridenti · Non sta fermo</b>Feste di compleanno per bambini: gancio nel primo secondo e un tema di festa diverso ogni due secondi. Nessun bambino ripreso.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/angeli-cera-una-volta.jpg" src="media/angeli-cera-una-volta.mp4"></video>
+      <figcaption><span class="chip">Reel animato</span><b>Angeli Sorridenti · C'era una volta</b>Le feste a tema raccontate come una fiaba, per i genitori che scelgono.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/online-tre-righe.jpg" src="media/online-tre-righe.mp4"></video>
+      <figcaption><span class="chip">Reel ON-LINE</span><b>Tre righe</b>Il nostro reel con il punteggio più alto al predittore di viralità: 61 su 100.</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band" id="design"><div class="in">
+  <span class="kick">05 · Il mestiere: design</span>
+  <h2>Un profilo si progetta come una pagina</h2>
+  <p class="lead">Post, caroselli e foto scelti tra i migliori. Per il lancio di GordiaCut abbiamo disegnato i primi 9 post come un unico mosaico: ogni post funziona da solo, insieme formano la G tagliata del marchio. Tocca un post per vederlo grande.</p>
+  <div class="dgrid">
+    <div class="phone"><div class="screen ig">
+      <div class="top"><span>gordiacut · anteprima</span><span aria-hidden="true">···</span></div>
+      <div class="stats"><div><b>9</b>post</div><div><b>IT</b>e CZ</div><div><b>1</b>lancio</div></div>
+      <div class="tiles" id="tiles"></div>
+    </div></div>
+    <div>
+      <span class="chip">Carosello</span>
+      <h3 style="font:600 22px/1.3 var(--display);margin:0 0 8px">Cosa succede mentre dormi?</h3>
+      <p class="note" style="margin-bottom:14px">Cinque slide, tre orari della notte, tre problemi risolti dal software. Scorri.</p>
+      <div class="track" id="track" tabindex="0" aria-label="Carosello di 5 slide">
+        <img src="media/car-1.jpg" alt="Slide 1: Cosa succede mentre dormi?">
+        <img src="media/car-2.jpg" alt="Slide 2: alle 23:52 un preventivo inviato">
+        <img src="media/car-3.jpg" alt="Slide 3: alle 2:14 un posto riassegnato">
+        <img src="media/car-4.jpg" alt="Slide 4: alle 7:30 un richiamo in agenda">
+        <img src="media/car-5.jpg" alt="Slide 5: Apri il telefono. È già fatto.">
+      </div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+
+  <h3 class="sub">Post pubblicati</h3>
+  <p class="note" style="margin:0 0 14px">Una selezione di post usciti sui profili dei clienti. Ogni cliente ha la sua identità: niente modello unico. Tocca per ingrandire.</p>
+  <div class="gal posts"><button type="button" class="zoomable" data-src="media/post-1.jpg" data-cap="I Love Nail Art · Il viola non è un colore estivo"><img src="media/post-1.jpg" alt="I Love Nail Art: Il viola non è un colore estivo" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-2.jpg" data-cap="I Love Nail Art · Settembre in cinque set"><img src="media/post-2.jpg" alt="I Love Nail Art: Settembre in cinque set" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-3.jpg" data-cap="Studiorum Loci · Sottolineare tutto = non sottolineare niente"><img src="media/post-3.jpg" alt="Studiorum Loci: Sottolineare tutto = non sottolineare niente" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-4.jpg" data-cap="Studiorum Loci · Il pomeriggio che non basta mai"><img src="media/post-4.jpg" alt="Studiorum Loci: Il pomeriggio che non basta mai" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-5.jpg" data-cap="Studiorum Loci · Il primo voto non è una sentenza"><img src="media/post-5.jpg" alt="Studiorum Loci: Il primo voto non è una sentenza" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-6.jpg" data-cap="Studiorum Loci · Il PDP dice quali strumenti usare"><img src="media/post-6.jpg" alt="Studiorum Loci: Il PDP dice quali strumenti usare" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-7.jpg" data-cap="Filodentale · Chi ti segue: Angela"><img src="media/post-7.jpg" alt="Filodentale: Chi ti segue: Angela" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/post-8.jpg" data-cap="Filodentale · Tra un dente e l'altro"><img src="media/post-8.jpg" alt="Filodentale: Tra un dente e l'altro" loading="lazy"><span>Filodentale</span></button></div>
+  <h3 class="sub">Foto dal content day</h3>
+  <p class="note" style="margin:0 0 14px">Studio Filodentale, Montesilvano. Giornata organizzata da me, con shot list e scelta degli scatti; foto di Eric. Da qui escono post, schede Google e sito.</p>
+  <div class="gal photos"><button type="button" class="zoomable" data-src="media/foto-1.jpg" data-cap="La sala d'attesa"><img src="media/foto-1.jpg" alt="La sala d'attesa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-2.jpg" data-cap="Una sala operativa"><img src="media/foto-2.jpg" alt="Una sala operativa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-3.jpg" data-cap="La sala di sterilizzazione"><img src="media/foto-3.jpg" alt="La sala di sterilizzazione" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-4.jpg" data-cap="Strumenti pronti all'uso"><img src="media/foto-4.jpg" alt="Strumenti pronti all'uso" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-5.jpg" data-cap="L'accoglienza"><img src="media/foto-5.jpg" alt="L'accoglienza" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-6.jpg" data-cap="La sala radiologica"><img src="media/foto-6.jpg" alt="La sala radiologica" loading="lazy"></button></div>
+</div>
+  <p class="next">E prima di spendere un euro in pubblicità, i conti. →</p>
+</div></section>
+
+<section class="band alt" id="dati"><div class="in">
+  <span class="kick">06 · I conti</span>
+  <h2>Quanto può rendere un budget di ads</h2>
+  <p class="lead">Un calcolatore costruito sui numeri veri della nostra prima campagna Meta (CPM 3,28 €), affiancati da due scenari più prudenti. Sposta il budget.</p>
+  <div class="sim">
+    <div class="simbox">
+      <label for="bud" class="note">Budget per un canale, in un mese</label>
+      <div class="budget" id="budv">200 €</div>
+      <input id="bud" type="range" min="50" max="1000" step="50" value="200">
+      <div class="scale"><span>50 €</span><span>1.000 €</span></div>
+      <p class="note" style="margin-top:14px">Scenari: CPM prudente 9 €, base 5,5 €, buono 3,3 € (vicino a quello reale). Frequenza 1,9 e ThruPlay all'8,3% delle impressioni, come nella campagna reale.</p>
+    </div>
+    <div class="simbox out" id="simout"></div>
+  </div>
+  <p class="next">Tutto questo l'ho imparato prima con le persone, poi con i dati. →</p>
+</div></section>
+
+<section class="band" id="percorso"><div class="in">
+  <span class="kick">07 · Da dove vengo</span>
   <h2>Da animatore a chi progetta i contenuti</h2>
   <ol class="time">
     <li><span class="y">2026 – oggi</span><div><b>ON-LINE · progetto di marketing</b><span>Social, contenuti e Meta Ads per attività locali, con una content factory di sei agenti IA. In parallelo, il lancio di GordiaCut su due mercati.</span></div></li>
@@ -386,16 +421,25 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   </ol>
 </div></section>
 
-<section class="band" id="contatti"><div class="in">
-  <span class="kick">07 · Contatti</span>
-  <h2>Parliamone</h2>
-  <p class="lead">Se questi lavori ti interessano, ti mostro come li abbiamo fatti: i file, le campagne, il sistema.</p>
+<section class="band alt" id="contatti"><div class="in">
+  <span class="kick">08 · Il prossimo capitolo</span>
+  <h2>Il prossimo capitolo lo scriviamo insieme</h2>
+  <p class="lead">Ho portato questo metodo ad attività locali con budget piccoli. Voglio portarlo in un'azienda dove possa crescere con un team. Se ti interessa, ti mostro tutto: i file, le campagne, il sistema.</p>
+  <div class="me"><img src="media/nicolo.jpg" alt="Nicolò Cammarata" width="96" height="96"><div><b>Nicolò Cammarata</b><span>24 anni · Montesilvano (PE) · magistrale LM-59 a UniTE</span><a class="btn" href="media/CV-Nicolo-Cammarata.pdf" target="_blank" rel="noopener">Apri il CV in PDF</a></div></div>
   <div class="contact">
     <div class="cline"><span class="v" id="tel">+39 393 227 3666</span><button class="btn ghostb copy" data-copy="tel" type="button">Copia numero</button></div>
     <div class="cline"><span class="v" id="mail">nic@on-line-agency.com</span><button class="btn ghostb copy" data-copy="mail" type="button">Copia email</button></div>
     <p class="note">Il progetto: <a href="https://on-line-agency.com" target="_blank" rel="noopener">on-line-agency.com</a></p>
   </div>
 </div></section>
+
+
+
+
+
+
+
+
 <footer><div class="in">Numeri reali, aggiornati al 18 novembre 2026.</div></footer>
 
 <dialog id="zoom"><img id="zoomimg" alt=""><p id="zoomcap" class="note" style="color:#ddd;margin:8px 0 0"></p><p style="margin:10px 0 0"><button type="button" class="btn" id="zoomclose">Chiudi</button></p></dialog>
@@ -462,6 +506,11 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     requestAnimationFrame(frame);
   }catch(e){ $('lens').style.background='radial-gradient(circle at 70% 40%,rgba(117,98,164,.35),transparent 55%)';var sh=document.querySelector('.shapebar');if(sh)sh.hidden=true; }
 
+
+  /* il problema: la parola si mette a fuoco mentre scorri */
+  (function(){var w=$('blurword');if(!w)return;if(RM){w.style.filter='blur(2px)';return;}
+    function f(){var r=w.getBoundingClientRect(),h=window.innerHeight,c=(r.top+r.height/2)/h;var b=Math.min(12,Math.max(0,Math.abs(c-.45)*30));w.style.filter='blur('+b.toFixed(1)+'px)';}
+    window.addEventListener('scroll',f,{passive:true});f();})();
   /* numeri che contano */
   if(!RM&&window.IntersectionObserver){[].forEach.call(document.querySelectorAll('[data-count]'),function(el){
     var end=+el.dataset.count,pre=el.dataset.pre||'',suf=el.dataset.suf||'',t0=null;
