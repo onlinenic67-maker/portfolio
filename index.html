@@ -65,6 +65,8 @@ button{font-family:var(--body)}
 @media(min-width:600px){.reel{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(min-width:960px){.reel{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}}
 .reel figure{margin:0;min-width:0}
+.reelhint{display:none;font:500 12px var(--mono);color:var(--mut);margin:26px 0 -30px}
+@media(max-width:600px){.reel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1*max(18px,env(safe-area-inset-left,0px)));padding-inline:max(18px,env(safe-area-inset-left,0px));padding-bottom:8px;scrollbar-width:none}.reel::-webkit-scrollbar{display:none}.reel figure{flex:0 0 74vw;scroll-snap-align:center}.reelhint{display:block}}
 .reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000;display:block}
 .reel figcaption{margin-top:10px;font-size:13px;color:var(--mut);line-height:1.45}
 .reel figcaption b{display:block;color:var(--fg);font-size:14px}
@@ -103,14 +105,14 @@ dialog img{width:100%;border-radius:12px;display:block}
 .sub{font:600 22px/1.3 var(--display);margin:48px 0 6px}
 .gal{display:grid;gap:10px}
 .gal.posts{grid-template-columns:repeat(2,minmax(0,1fr))}
-.gal.photos{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gal.photos{grid-template-columns:repeat(2,minmax(0,1fr))}
 @media(min-width:700px){.gal.posts{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media(min-width:860px){.gal.photos{grid-template-columns:repeat(6,minmax(0,1fr))}}
+@media(min-width:860px){.gal.photos{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .gal button{border:0;padding:0;margin:0;background:none;cursor:zoom-in;position:relative;border-radius:10px;overflow:hidden;display:block}
 .gal img{width:100%;display:block;object-fit:cover;transition:transform .35s}
-.gal.posts img{aspect-ratio:4/5}.gal.photos img{aspect-ratio:2/3}
+.gal.posts img{aspect-ratio:4/5}.gal.photos img{aspect-ratio:4/5}
 .gal button:hover img{transform:scale(1.04)}
-.gal span{position:absolute;left:8px;bottom:8px;font:500 11px var(--mono);background:rgba(0,0,0,.6);color:#fff;padding:2px 6px;border-radius:4px}
+.gal span{display:block;text-align:left;font:500 11px var(--mono);color:var(--mut);padding:7px 2px 2px;background:transparent}.gal button{overflow:visible}.gal img{border-radius:10px}
 .story{max-width:760px}
 .big-p{font:400 clamp(19px,2.6vw,26px)/1.45 var(--display);margin:0 0 18px;text-wrap:pretty}
 .big-p b{font-weight:600}
@@ -229,7 +231,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     <div class="idrow"><img src="media/nicolo.jpg" alt="Nicolò Cammarata" class="avatar" width="84" height="84"><h1>Nicolò Cammarata</h1></div>
     <p class="tag">Marketing digitale e contenuti. Ho portato attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
     <p class="role">24 anni · magistrale LM-59 a UniTE · cerco un ruolo in un team marketing</p>
-    <b id="shape" hidden>Sfera</b>
+    <b id="shape" hidden>Due sfere</b>
   </div>
 </header>
 <section class="tday" id="talentday"><div class="in">
@@ -370,7 +372,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 </div></section>
 
 <section class="band" id="lavori"><div class="in">
-  <span class="kick">05 · Il mestiere: video</span>
+  <span class="kick">05 · I miei lavori: video</span>
   <h2>Ogni video ha un'idea sola</h2>
   <p class="lead">Reel, video ads e casi studio per clienti veri. Ogni video ha una sola cosa da far ricordare, e un linguaggio diverso dagli altri. Tocca un video per farlo partire con l'audio.</p>
   <div class="credits"><b>Chi ha fatto cosa</b><span><b>Io:</b> strategia, idea, testi e regia del montaggio, con la mia content factory. <b>Riprese e foto dei content day:</b> Eric, il videomaker con cui collaboro. <b>Grafiche e animazioni:</b> progettate da me con la content factory e montate in codice.</span></div>
@@ -389,6 +391,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     <div class="phone"><video id="langvid" controls playsinline preload="metadata" poster="media/gc-sistema-it.jpg" src="media/gc-sistema-it.mp4"></video></div>
   </div>
 
+  <p class="reelhint">Scorri di lato per gli altri video →</p>
   <div class="reel">
     <figure><video controls playsinline preload="metadata" poster="media/gc-macchine.jpg" src="media/gc-macchine.mp4"></video>
       <figcaption><span class="chip">Reel girato</span><b>GordiaCut · Montiamo macchine</b>La macchina vera, dal montaggio ai test fino all'installazione: mostra il lavoro, senza effetti.</figcaption></figure>
@@ -410,7 +413,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 </div></section>
 
 <section class="band alt" id="design"><div class="in">
-  <span class="kick">06 · Il mestiere: design</span>
+  <span class="kick">06 · I miei lavori: design</span>
   <h2>Un profilo si progetta come una pagina</h2>
   <p class="lead">Post, caroselli e foto scelti tra i migliori. Per il lancio di GordiaCut abbiamo disegnato i primi 9 post come un unico mosaico: ogni post funziona da solo, insieme formano la G tagliata del marchio. Tocca un post per vederlo grande.</p>
   <div class="dgrid">
@@ -436,10 +439,10 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 
   <h3 class="sub">Post pubblicati</h3>
   <p class="note" style="margin:0 0 14px">Una selezione di post usciti sui profili dei clienti. Ogni cliente ha la sua identità: niente modello unico. Tocca per ingrandire.</p>
-  <div class="gal posts"><button type="button" class="zoomable" data-src="media/post-1.jpg" data-cap="I Love Nail Art · Il viola non è un colore estivo"><img src="media/post-1.jpg" alt="I Love Nail Art: Il viola non è un colore estivo" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-2.jpg" data-cap="I Love Nail Art · Settembre in cinque set"><img src="media/post-2.jpg" alt="I Love Nail Art: Settembre in cinque set" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-3.jpg" data-cap="Studiorum Loci · Sottolineare tutto = non sottolineare niente"><img src="media/post-3.jpg" alt="Studiorum Loci: Sottolineare tutto = non sottolineare niente" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-4.jpg" data-cap="Studiorum Loci · Il pomeriggio che non basta mai"><img src="media/post-4.jpg" alt="Studiorum Loci: Il pomeriggio che non basta mai" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-5.jpg" data-cap="Studiorum Loci · Il primo voto non è una sentenza"><img src="media/post-5.jpg" alt="Studiorum Loci: Il primo voto non è una sentenza" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-6.jpg" data-cap="Studiorum Loci · Il PDP dice quali strumenti usare"><img src="media/post-6.jpg" alt="Studiorum Loci: Il PDP dice quali strumenti usare" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-7.jpg" data-cap="Filodentale · Chi ti segue: Angela"><img src="media/post-7.jpg" alt="Filodentale: Chi ti segue: Angela" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/post-8.jpg" data-cap="Filodentale · Tra un dente e l'altro"><img src="media/post-8.jpg" alt="Filodentale: Tra un dente e l'altro" loading="lazy"><span>Filodentale</span></button></div>
-  <h3 class="sub">Foto dal content day</h3>
-  <p class="note" style="margin:0 0 14px">Studio Filodentale, Montesilvano. Giornata organizzata da me, con shot list e scelta degli scatti; foto di Eric. Da qui escono post, schede Google e sito.</p>
-  <div class="gal photos"><button type="button" class="zoomable" data-src="media/foto-1.jpg" data-cap="La sala d'attesa"><img src="media/foto-1.jpg" alt="La sala d'attesa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-2.jpg" data-cap="Una sala operativa"><img src="media/foto-2.jpg" alt="Una sala operativa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-3.jpg" data-cap="La sala di sterilizzazione"><img src="media/foto-3.jpg" alt="La sala di sterilizzazione" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-4.jpg" data-cap="Strumenti pronti all'uso"><img src="media/foto-4.jpg" alt="Strumenti pronti all'uso" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-5.jpg" data-cap="L'accoglienza"><img src="media/foto-5.jpg" alt="L'accoglienza" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-6.jpg" data-cap="La sala radiologica"><img src="media/foto-6.jpg" alt="La sala radiologica" loading="lazy"></button></div>
+  <div class="gal posts"><button type="button" class="zoomable" data-src="media/post-1.jpg" data-cap="GordiaCut · Non era un attacco. Eravamo noi."><img src="media/post-1.jpg" alt="GordiaCut · Non era un attacco. Eravamo noi." loading="lazy"><span>GordiaCut</span></button><button type="button" class="zoomable" data-src="media/post-2.jpg" data-cap="GordiaCut · 23 ore. 0 errori."><img src="media/post-2.jpg" alt="GordiaCut · 23 ore. 0 errori." loading="lazy"><span>GordiaCut</span></button><button type="button" class="zoomable" data-src="media/post-3.jpg" data-cap="Studiorum Loci · Quando i compiti diventano una guerra"><img src="media/post-3.jpg" alt="Studiorum Loci · Quando i compiti diventano una guerra" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-4.jpg" data-cap="Studiorum Loci · La frase che aiuta"><img src="media/post-4.jpg" alt="Studiorum Loci · La frase che aiuta" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-5.jpg" data-cap="Filodentale · Chi ti segue: Elisa"><img src="media/post-5.jpg" alt="Filodentale · Chi ti segue: Elisa" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/post-6.jpg" data-cap="Filodentale · Troppo grande per l&#x27;apparecchio?"><img src="media/post-6.jpg" alt="Filodentale · Troppo grande per l&#x27;apparecchio?" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/post-7.jpg" data-cap="I Love Nail Art · Entra pure"><img src="media/post-7.jpg" alt="I Love Nail Art · Entra pure" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-8.jpg" data-cap="Angeli Sorridenti · Slime fluo"><img src="media/post-8.jpg" alt="Angeli Sorridenti · Slime fluo" loading="lazy"><span>Angeli Sorridenti</span></button></div>
+  <h3 class="sub">Foto dai clienti</h3>
+  <p class="note" style="margin:0 0 14px">Due scatti per cliente. Nei content day organizzo io la giornata, con la lista delle inquadrature, e scelgo le foto; quelle dello studio dentistico e del doposcuola sono di Eric. Da qui escono post, schede Google e siti. Tocca per ingrandire.</p>
+  <div class="gal photos"><button type="button" class="zoomable" data-src="media/foto-1.jpg" data-cap="Filodentale · content day, foto di Eric"><img src="media/foto-1.jpg" alt="Filodentale · content day, foto di Eric" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/foto-2.jpg" data-cap="Filodentale · content day, foto di Eric"><img src="media/foto-2.jpg" alt="Filodentale · content day, foto di Eric" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/foto-3.jpg" data-cap="Studiorum Loci · sede di Pescara, foto di Eric"><img src="media/foto-3.jpg" alt="Studiorum Loci · sede di Pescara, foto di Eric" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/foto-4.jpg" data-cap="Studiorum Loci · sede di Pescara, foto di Eric"><img src="media/foto-4.jpg" alt="Studiorum Loci · sede di Pescara, foto di Eric" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/foto-5.jpg" data-cap="Angeli Sorridenti · content day, lo slime fluo"><img src="media/foto-5.jpg" alt="Angeli Sorridenti · content day, lo slime fluo" loading="lazy"><span>Angeli Sorridenti</span></button><button type="button" class="zoomable" data-src="media/foto-6.jpg" data-cap="Angeli Sorridenti · content day, lo slime fluo"><img src="media/foto-6.jpg" alt="Angeli Sorridenti · content day, lo slime fluo" loading="lazy"><span>Angeli Sorridenti</span></button><button type="button" class="zoomable" data-src="media/foto-7.jpg" data-cap="I Love Nail Art · i lavori dello studio"><img src="media/foto-7.jpg" alt="I Love Nail Art · i lavori dello studio" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/foto-8.jpg" data-cap="I Love Nail Art · i lavori dello studio"><img src="media/foto-8.jpg" alt="I Love Nail Art · i lavori dello studio" loading="lazy"><span>I Love Nail Art</span></button></div>
   <p class="next">Questo è quello che so fare oggi. Il prossimo passo è farlo crescere in un team. →</p>
 </div></section>
 
@@ -473,7 +476,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function $(id){return document.getElementById(id);}
 
-  /* APERTURA 3D interattiva: 2.400 punti che cambiano forma (sfera di punti), si spostano sotto il dito e ruotano trascinando */
+  /* APERTURA 3D interattiva: 2.400 punti che cambiano forma (due sfere di punti), si spostano sotto il dito e ruotano trascinando */
   try{
     if(!window.THREE) throw 0;
     if(matchMedia('(max-width:600px)').matches){throw 'mobile';}
@@ -483,7 +486,11 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.z=7.2;
     var N=2400,pos=new Float32Array(N*3),col=new Float32Array(N*3),cpos=new Float32Array(N*3),off=new Float32Array(N*3);
     var stops=[[.88,.64,.23],[.93,.79,.50],[.93,.91,.89],[.88,.64,.23]];
-    function grad(t){t=Math.max(0,Math.min(.999,t))*3;var k=Math.floor(t),f=t-k,c0=stops[k],c1=stops[k+1];return[c0[0]+(c1[0]-c0[0])*f,c0[1]+(c1[1]-c0[1])*f,c0[2]+(c1[2]-c0[2])*f];}
+    function twinMake(N){var M=Math.ceil(N/2),g=Math.PI*(3-Math.sqrt(5)),U=new Float32Array(N*3),Q=new Float32Array(N);for(var i=0;i<N;i++){var j=Math.floor(i/2),y=1-2*(j+.5)/M,r=Math.sqrt(1-y*y),t=g*j+(i%2)*1.3;U[i*3]=r*Math.cos(t);U[i*3+1]=y;U[i*3+2]=r*Math.sin(t);Q[i]=Math.random();}return{U:U,Q:Q,N:N};}
+    function twinFill(T,o,d,burst,spin,bob,rad){var U=T.U,Q=T.Q;for(var i=0;i<T.N;i++){var id=i%2,sg=id?1:-1,a=spin*(id?-1:1),ca=Math.cos(a),sa=Math.sin(a),ux=U[i*3],uy=U[i*3+1],uz=U[i*3+2],x=ux*ca-uz*sa,z=ux*sa+uz*ca,fc=-sg*x,k=1;
+     if(burst>0&&fc>.15){var w=(fc-.15)/.85;k=1+burst*w*w*(.5+Q[i]*1.6);}
+     o[i*3]=sg*d/2+x*rad*k+(burst>0&&fc>.15?-sg*burst*w*.35*Q[i]:0);o[i*3+1]=sg*bob+uy*rad*k;o[i*3+2]=z*rad*k;}}
+        function grad(t){t=Math.max(0,Math.min(.999,t))*3;var k=Math.floor(t),f=t-k,c0=stops[k],c1=stops[k+1];return[c0[0]+(c1[0]-c0[0])*f,c0[1]+(c1[1]-c0[1])*f,c0[2]+(c1[2]-c0[2])*f];}
     function ring(){var o=new Float32Array(N*3);for(var i=0;i<N;i++){var a=i/N*Math.PI*2*1+Math.random()*.002,b=Math.random()*Math.PI*2,r=1.75+.38*Math.cos(b);o[i*3]=r*Math.cos(a);o[i*3+1]=r*Math.sin(a);o[i*3+2]=.38*Math.sin(b);}return o;}
     function sphere(){var o=new Float32Array(N*3),g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=g*i;o[i*3]=2.1*r*Math.cos(t);o[i*3+1]=2.1*y;o[i*3+2]=2.1*r*Math.sin(t);}return o;}
     function wave(){var o=new Float32Array(N*3),c=60,rr=N/c;for(var i=0;i<N;i++){var x=(i%c)/(c-1)*5.6-2.8,z=Math.floor(i/c)/(rr-1)*3.2-1.6;o[i*3]=x;o[i*3+1]=.9;o[i*3+2]=z;}return o;}
@@ -493,7 +500,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       var dd=x.getImageData(0,0,W,H).data,pts=[];for(var yy=0;yy<H;yy+=2)for(var xx=0;xx<W;xx+=2)if(dd[(yy*W+xx)*4+3]>128)pts.push([xx,yy]);
       var sel=[];for(var i=0;i<N;i++)sel.push(pts[Math.floor(Math.random()*pts.length)]||[W/2,H/2]);sel.sort(function(p,q){return p[0]-q[0];});
       var o=new Float32Array(N*3);for(var i=0;i<N;i++){var q=sel[i];o[i*3]=(q[0]/W-.5)*4.2;o[i*3+1]=-(q[1]/H-.5)*4.0;o[i*3+2]=(Math.random()-.5)*.3;}return o;}
-    var SH=[["Sfera",sphere(),[0,0]]];
+    var TW=twinMake(N),TT=new Float32Array(N*3);twinFill(TW,TT,3.3,0,0,0,1.3);var SH=[["Due sfere",TT,[0,0]]];
     for(var i=0;i<N;i++){var c=grad(i/N);col[i*3]=c[0];col[i*3+1]=c[1];col[i*3+2]=c[2];cpos[i*3]=(Math.random()-.5)*14;cpos[i*3+1]=(Math.random()-.5)*9;cpos[i*3+2]=(Math.random()-.5)*8;}
     var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
     var m=new THREE.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending});
@@ -501,7 +508,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     var si=0,from=cpos.slice(),target=SH[0][1],t0=performance.now(),dur=RM?1:2400;
     function go(k){si=k%SH.length;if(!SH[si][1])SH[si][1]=word();from=cpos.slice();target=SH[si][1];t0=performance.now();dur=RM?1:1300;lab.textContent=SH[si][0];}
     function size(){var w=hero.clientWidth,h=hero.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
-      var wide=w>760;pts.position.set(wide?Math.min(2.7,w/600):0,wide?.55:1.25,0);pts.scale.setScalar(wide?.62:.5);}
+      var wide=w>760;pts.position.set(wide?Math.min(2.7,w/600):0,wide?.55:1.25,0);pts.scale.setScalar(wide?.58:.5);}
     size();window.addEventListener('resize',size);
     var mouse=new THREE.Vector2(9,9),ray=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,0,1),0),hit=new THREE.Vector3(),loc=new THREE.Vector3(),active=false;
     var rotX=0,rotY=0,vX=0,vY=0,down=null,moved=0;
@@ -515,11 +522,12 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     function ease(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;}
     function frame(now){
       requestAnimationFrame(frame); if(!visible)return;
+      if(si===0){var hp=Math.max(0,Math.min(1,window.scrollY/Math.min(hero.clientHeight*.32,230))),ap=ease(Math.min(1,hp/.8)),bu=Math.max(0,Math.min(1,(hp-.68)/.32));twinFill(TW,TT,3.3-(3.3-2.45)*ap,bu*bu*(3-2*bu)*1.2,RM?0:now/5200,RM?0:.07*Math.sin(now/1500),1.3);}
       var p=Math.min(1,(now-t0)/dur),e=ease(p);
       for(var i=0;i<N*3;i++)cpos[i]=from[i]+(target[i]-from[i])*e;
       if(p>=1&&!hero.classList.contains('focused'))hero.classList.add('focused');
-      var isLogo=si===0;if(!down){vX*=.94;vY*=.94;rotX+=vX;rotY+=vY+(RM||isLogo?0:.0015);if(isLogo){rotX*=.97;rotY*=.97;}}
-      var base=SH[si][2];pts.rotation.x=base[0]+rotX;pts.rotation.y=rotY+(isLogo&&!RM?Math.sin(performance.now()/2400)*.22:0);
+      var isLogo=true;if(!down){vX*=.94;vY*=.94;rotX+=vX;rotY+=vY+(RM||isLogo?0:.0015);if(isLogo){rotX*=.97;rotY*=.97;}}
+      var base=SH[si][2];pts.rotation.x=base[0]+rotX;pts.rotation.y=rotY+(!RM?Math.sin(performance.now()/3000)*.12:0);
       if(si===2&&!RM){for(var i=0;i<N;i++){var x=target[i*3],z=target[i*3+2];cpos[i*3+1]+=(.32*Math.sin(x*1.6+now/600)+.22*Math.cos(z*2.1+now/800))*e;}}
       pts.updateMatrixWorld();var has=false;
       if(active){ray.setFromCamera(mouse,cam);plane.constant=-pts.position.z;if(ray.ray.intersectPlane(plane,hit)){loc.copy(hit);pts.worldToLocal(loc);has=true;}}
@@ -636,24 +644,26 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 <script>
 (function(){
  var cv=document.getElementById('logov'); if(!cv||!matchMedia('(max-width:600px)').matches) return;
- var g=cv.getContext('2d'),W=cv.width,H=W/2,N=1500,P=[],ga=Math.PI*(3-Math.sqrt(5)),RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
- var C=['224,164,59','241,203,128','237,232,227'];
- for(var i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=ga*i,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1),rr=1.15+Math.random()*.45;
-  P.push({x:r*Math.cos(t),y:y,z:r*Math.sin(t),sx:rr*Math.sin(b)*Math.cos(a),sy:rr*Math.cos(b),sz:rr*Math.sin(b)*Math.sin(a),c:C[i%7<3?0:(i%7<5?1:2)],d:Math.random()*.25});}
+ function twinMake(N){var M=Math.ceil(N/2),g=Math.PI*(3-Math.sqrt(5)),U=new Float32Array(N*3),Q=new Float32Array(N);for(var i=0;i<N;i++){var j=Math.floor(i/2),y=1-2*(j+.5)/M,r=Math.sqrt(1-y*y),t=g*j+(i%2)*1.3;U[i*3]=r*Math.cos(t);U[i*3+1]=y;U[i*3+2]=r*Math.sin(t);Q[i]=Math.random();}return{U:U,Q:Q,N:N};}
+ function twinFill(T,o,d,burst,spin,bob,rad){var U=T.U,Q=T.Q;for(var i=0;i<T.N;i++){var id=i%2,sg=id?1:-1,a=spin*(id?-1:1),ca=Math.cos(a),sa=Math.sin(a),ux=U[i*3],uy=U[i*3+1],uz=U[i*3+2],x=ux*ca-uz*sa,z=ux*sa+uz*ca,fc=-sg*x,k=1;
+  if(burst>0&&fc>.15){var w=(fc-.15)/.85;k=1+burst*w*w*(.5+Q[i]*1.6);}
+  o[i*3]=sg*d/2+x*rad*k+(burst>0&&fc>.15?-sg*burst*w*.35*Q[i]:0);o[i*3+1]=sg*bob+uy*rad*k;o[i*3+2]=z*rad*k;}}
+ var g=cv.getContext('2d'),W=cv.width,H=W/2,N=1600,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var C=['224,164,59','241,203,128','237,232,227'],T=twinMake(N),O=new Float32Array(N*3),CC=[];for(var i=0;i<N;i++)CC.push(C[i%7<3?0:(i%7<5?1:2)]);
  function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
- var boom=-1e9,R0=H*.45,vis=true,rot=0,last=performance.now();
- cv.addEventListener('click',function(){if((performance.now()-boom)/1000>2.6)boom=performance.now();});
+ var boom=-1e9,S0=W*.17,vis=true,last=performance.now(),D0=3.1,D1=2.4;
+ cv.addEventListener('click',function(){if((performance.now()-boom)/1000>3.6)boom=performance.now();});
  if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(cv);
- function frame(now){requestAnimationFrame(frame);var dt=Math.min(.05,(now-last)/1000);last=now;if(!vis)return;
-  if(!RM)rot+=dt*.55;var e=(now-boom)/1000,ct=Math.cos(.35),st=Math.sin(.35),cr=Math.cos(rot),sr=Math.sin(rot);
-  g.clearRect(0,0,W,W);var L=[];
-  for(var i=0;i<N;i++){var p=P[i],k=0;
-   if(e>=0&&e<.9)k=ease(e/.9);else if(e>=.9&&e<2.5){var u=(e-.9-p.d)/(1.6-.25);k=1-ease(Math.max(0,Math.min(1,u)));}
-   var x=p.x+(p.sx-p.x)*k,y=p.y+(p.sy-p.y)*k,z=p.z+(p.sz-p.z)*k;
-   var x1=x*cr+z*sr,z1=-x*sr+z*cr,y1=y*ct-z1*st,z2=y*st+z1*ct,f=3.4/(3.4+z2);
-   L.push([z2,H+x1*R0*f,H+y1*R0*f,f,p.c]);}
+ function frame(now){requestAnimationFrame(frame);if(!vis)return;
+  var e=(now-boom)/1000,d=D0,bu=0;
+  if(e>=0&&e<1.1)d=D0-(D0-D1)*ease(e/1.1);else if(e>=1.1&&e<3.6){d=D1+(D0-D1)*ease((e-1.1)/2.5);}
+  if(e>=.95&&e<2.6)bu=Math.sin(Math.PI*(e-.95)/1.65)*1.3;
+  var fl=RM?0:Math.sin(now/1700)*.09;
+  twinFill(T,O,d+(RM?0:Math.sin(now/2300)*.08),bu,RM?0:now/4200,fl,1);
+  g.clearRect(0,0,W,W);var L=[],ct=Math.cos(.3),st=Math.sin(.3);
+  for(var i=0;i<N;i++){var x=O[i*3],y=O[i*3+1],z=O[i*3+2],y1=y*ct-z*st,z2=y*st+z*ct,f=5/(5+z2);L.push([z2,H+x*S0*f,H+y1*S0*f,f,CC[i]]);}
   L.sort(function(a,b){return b[0]-a[0];});
-  for(var j=0;j<L.length;j++){var q=L[j],dep=(1-q[0])/2;g.globalAlpha=Math.max(.15,Math.min(1,.35+.65*dep));g.fillStyle='rgb('+q[4]+')';g.beginPath();g.arc(q[1],q[2],(1.6+1.4*dep)*q[3],0,6.283);g.fill();}
+  for(var j=0;j<L.length;j++){var q=L[j],dep=Math.max(0,Math.min(1,(1-q[0])/2));g.globalAlpha=.3+.7*dep;g.fillStyle='rgb('+q[4]+')';g.beginPath();g.arc(q[1],q[2],(1.4+1.3*dep)*q[3],0,6.283);g.fill();}
   g.globalAlpha=1;}
  requestAnimationFrame(frame);
 })();
