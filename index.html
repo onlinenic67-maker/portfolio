@@ -135,7 +135,7 @@ dialog img{width:100%;border-radius:12px;display:block}
 .role{font:500 14px var(--mono);color:#c9c2c3;margin:10px 0 0;letter-spacing:.02em}
 .cta-row{margin:18px 0 0}.tdbtn{display:inline-block;font:600 14px var(--display);color:#16131a;background:#f4f1f1;border-radius:999px;padding:10px 18px;text-decoration:none}
 .cline a.v{color:inherit;text-decoration:none}
-@media(max-width:600px){.dgrid .phone{width:min(260px,66vw)}.avatar{width:64px;height:64px}.ghost{display:none}#lens{display:none}.logov{display:block;position:absolute;left:50%;top:10px;transform:translateX(-50%);width:min(330px,88vw);height:auto;pointer-events:none}.hero .kick{font-size:11px;letter-spacing:.1em}.tdbtn{font-size:13px;padding:11px 16px;white-space:nowrap;text-shadow:none}.hero .in{text-shadow:0 1px 12px rgba(20,18,19,.9);min-height:0;padding-top:340px}}
+@media(max-width:600px){.dgrid .phone{width:min(260px,66vw)}.avatar{width:64px;height:64px}.ghost{display:none}#lens{display:none}.logov{display:block;position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(330px,88vw);height:auto;aspect-ratio:1;pointer-events:auto;touch-action:pan-y;cursor:pointer;z-index:2}.hero .kick{font-size:11px;letter-spacing:.1em}.tdbtn{font-size:13px;padding:11px 16px;white-space:nowrap;text-shadow:none}.hero .in{text-shadow:0 1px 12px rgba(20,18,19,.9);min-height:0;padding-top:340px}}
 /* SISTEMA */
 @media(max-width:600px){.fxl button{font-size:11px;padding:4px 8px}.fxl button small{display:none}.fxl .el{display:none}}
 
@@ -222,7 +222,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 
 <header class="hero" id="top" tabindex="0" aria-label="Apertura interattiva: tocca per cambiare la forma dei punti">
   <canvas id="lens" aria-hidden="true"></canvas>
-  <video class="logov" id="logov" src="media/sfera-loop.mp4" poster="media/sfera-loop.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
+  <canvas class="logov" id="logov" width="660" height="660" aria-hidden="true"></canvas>
   <div class="ghost" aria-hidden="true">INVISIBILE</div>
   <div class="in">
     <span class="kick" style="color:#F1CB80">Portfolio · Marketing digitale e contenuti con l'IA</span>
@@ -476,7 +476,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   /* APERTURA 3D interattiva: 2.400 punti che cambiano forma (sfera di punti), si spostano sotto il dito e ruotano trascinando */
   try{
     if(!window.THREE) throw 0;
-    if(matchMedia('(max-width:600px)').matches){var lv=$('logov');if(lv){var pr=lv.play();if(pr&&pr.catch)pr.catch(function(){});}throw 'mobile';}
+    if(matchMedia('(max-width:600px)').matches){throw 'mobile';}
     var cv=$('lens'),hero=$('top'),lab=$('shape');
     var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
     R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
@@ -630,6 +630,32 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
     try{navigator.clipboard.writeText(txt).then(function(){b.textContent='Copiato';setTimeout(function(){b.textContent=old;},1500);},sel);}catch(e){sel();}
   });});
+})();
+</script>
+
+<script>
+(function(){
+ var cv=document.getElementById('logov'); if(!cv||!matchMedia('(max-width:600px)').matches) return;
+ var g=cv.getContext('2d'),W=cv.width,H=W/2,N=1500,P=[],ga=Math.PI*(3-Math.sqrt(5)),RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var C=['224,164,59','241,203,128','237,232,227'];
+ for(var i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=ga*i,a=Math.random()*6.283,b=Math.acos(2*Math.random()-1),rr=1.15+Math.random()*.45;
+  P.push({x:r*Math.cos(t),y:y,z:r*Math.sin(t),sx:rr*Math.sin(b)*Math.cos(a),sy:rr*Math.cos(b),sz:rr*Math.sin(b)*Math.sin(a),c:C[i%7<3?0:(i%7<5?1:2)],d:Math.random()*.25});}
+ function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+ var boom=-1e9,R0=H*.45,vis=true,rot=0,last=performance.now();
+ cv.addEventListener('click',function(){if((performance.now()-boom)/1000>2.6)boom=performance.now();});
+ if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(cv);
+ function frame(now){requestAnimationFrame(frame);var dt=Math.min(.05,(now-last)/1000);last=now;if(!vis)return;
+  if(!RM)rot+=dt*.55;var e=(now-boom)/1000,ct=Math.cos(.35),st=Math.sin(.35),cr=Math.cos(rot),sr=Math.sin(rot);
+  g.clearRect(0,0,W,W);var L=[];
+  for(var i=0;i<N;i++){var p=P[i],k=0;
+   if(e>=0&&e<.9)k=ease(e/.9);else if(e>=.9&&e<2.5){var u=(e-.9-p.d)/(1.6-.25);k=1-ease(Math.max(0,Math.min(1,u)));}
+   var x=p.x+(p.sx-p.x)*k,y=p.y+(p.sy-p.y)*k,z=p.z+(p.sz-p.z)*k;
+   var x1=x*cr+z*sr,z1=-x*sr+z*cr,y1=y*ct-z1*st,z2=y*st+z1*ct,f=3.4/(3.4+z2);
+   L.push([z2,H+x1*R0*f,H+y1*R0*f,f,p.c]);}
+  L.sort(function(a,b){return b[0]-a[0];});
+  for(var j=0;j<L.length;j++){var q=L[j],dep=(1-q[0])/2;g.globalAlpha=Math.max(.15,Math.min(1,.35+.65*dep));g.fillStyle='rgb('+q[4]+')';g.beginPath();g.arc(q[1],q[2],(1.6+1.4*dep)*q[3],0,6.283);g.fill();}
+  g.globalAlpha=1;}
+ requestAnimationFrame(frame);
 })();
 </script>
 
