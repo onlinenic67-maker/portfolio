@@ -41,6 +41,57 @@ h2{font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 14px;font-weight:
 @media(max-width:600px){body .phone{width:min(240px,60vw)}body .hero .shape{width:150px;height:150px;right:-75px;top:-75px}.hero .k{position:relative;z-index:1;max-width:calc(100% - 70px)}}
 .post.has-foto{background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.78) 100%),var(--img) center/cover!important;color:#fff!important;justify-content:flex-end;padding-bottom:20%}
 .post.has-foto::after{display:none} .post.has-foto *{color:#fff!important} .post.has-foto .pt{text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.calwrap{display:grid;gap:28px;align-items:start} @media(min-width:980px){.calwrap{grid-template-columns:360px minmax(0,1fr)}.prof{position:sticky;top:76px}}
+.prof{background:#fff;color:#111;border:1px solid var(--line);border-radius:18px;padding:16px 0 0;overflow:hidden;max-width:420px;width:100%;margin:0 auto;box-shadow:0 20px 50px -30px rgba(0,0,0,.35)}
+.ph{display:flex;gap:14px;align-items:center;padding:0 16px} .ph b{display:block;font:700 15px var(--b)} .pst{font-size:12.5px;color:#555}
+.av{width:64px;height:64px;border-radius:50%;border:1px solid #ddd;display:grid;place-items:center;overflow:hidden;background:#fff;flex:none;padding:8px} .av img{max-width:100%;max-height:100%;object-fit:contain} .av .word{font:800 11px var(--h);color:var(--c);text-align:center}
+.pbio{font-size:13px;line-height:1.45;padding:10px 16px 12px;margin:0;color:#222}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.gc{position:relative;aspect-ratio:4/5;overflow:hidden;background:#eee} .gc .g{position:absolute;inset:0}
+.gd{position:absolute;left:4px;bottom:4px;font:600 9.5px var(--b);background:rgba(0,0,0,.65);color:#fff;border-radius:4px;padding:1px 5px;z-index:3}
+.gc.old{display:grid;place-items:center;background:repeating-linear-gradient(45deg,#f1f1f1 0 8px,#e9e9e9 8px 16px)} .gc.old span{font:500 9px var(--mono);color:#999;text-align:center;padding:4px}
+.g{container-type:inline-size;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--c);color:var(--on);font-family:var(--h)}
+.g .gph{position:absolute;left:0;right:0;top:0;height:72%} .g .gph.full{height:100%} .g .gph img{width:100%;height:100%;object-fit:cover;display:block}
+.g .gband{position:absolute;left:0;right:0;bottom:0;height:28%;background:var(--c);color:var(--on);padding:4cqw 6cqw;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+.g .gk{font:700 2.9cqw var(--b);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.g .gt{font-weight:800;font-size:7cqw;line-height:1.08;letter-spacing:-.01em;display:block}
+.g .gs{font:500 3.3cqw/1.35 var(--b);opacity:.9}
+.g .gbox{position:absolute;left:5cqw;top:5cqw;max-width:78%;background:rgba(10,10,12,.78);color:#fff;padding:3.6cqw 4.4cqw;border-radius:2cqw;display:flex;flex-direction:column;gap:1.6cqw}
+.g .gbox .gt{font-size:6.6cqw} .g .gbar{display:block;width:12cqw;height:1cqw;background:var(--c2);border-radius:1cqw}
+.g .greel{position:absolute;inset:auto 0 0 0;padding:28cqw 6cqw 9cqw;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));color:#fff} .g .greel .gt{font-size:8.4cqw}
+.g .gplay{position:absolute;right:5cqw;top:5cqw;width:10cqw;height:10cqw;border-radius:50%;background:rgba(255,255,255,.9);color:#111;display:grid;place-items:center;font-size:4cqw}
+.g .gm{position:absolute;right:5cqw;bottom:4cqw;font:800 2.8cqw var(--h);letter-spacing:.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.g-band .gm{display:none}
+.g .gtyp{position:absolute;inset:0;padding:9cqw 8cqw;display:flex;flex-direction:column;justify-content:center;gap:2.6cqw}
+.g .gtyp .gt{font-size:9cqw} .g .gn{font-weight:800;font-size:30cqw;line-height:.9;color:var(--c2)}
+.g-frase.v1,.g-domanda.v1,.g-numero.v1{background:#fff;color:#111} .g-frase.v2,.g-domanda.v2,.g-numero.v2{background:var(--c2);color:var(--on2)}
+.g-numero.v1 .gn{color:var(--num)} .g-numero.v2 .gn{color:var(--on2);opacity:.4}
+.g-frase .gm,.g-domanda .gm,.g-numero .gm{color:inherit;text-shadow:none;opacity:.7}
+.cal{display:grid;gap:22px;min-width:0}
+.cp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.cp header{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:14px} .cp header b{font:700 16px var(--h)}
+.cd{font:600 13px var(--b);background:var(--c);color:var(--on);border-radius:6px;padding:3px 9px} .cf{font:500 11.5px var(--mono);border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--mut)}
+.cpb{display:grid;gap:16px} @media(min-width:620px){.cpb{grid-template-columns:minmax(0,300px) minmax(0,1fr)}}
+.cpi .g{border-radius:10px;max-width:340px}
+.cpt small{display:block;font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:6px} .cpt p{margin:0 0 14px;font-size:14.5px;line-height:1.55} .cpt .why{color:var(--mut)}
+.sstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0} @media(min-width:760px){.sstats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.sst{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px} .sst b{display:block;font:800 26px var(--h);color:var(--c)} .sst span{font-size:13px;color:var(--mut)}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 12px}
+.chead{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--mut);margin-bottom:14px} .chead b{color:var(--fg);font:700 15px var(--h)}
+.lg{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--num);margin-right:6px;vertical-align:-1px}
+.bars{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;height:200px;align-items:end;padding-bottom:22px}
+.bar{position:relative;height:100%;display:flex;align-items:flex-end;text-decoration:none} .bar i{display:block;width:100%;height:var(--h);background:var(--c);opacity:.35;border-radius:5px 5px 2px 2px;transition:opacity .2s}
+.bar.hi i{background:var(--num);opacity:1} .bar:hover i{opacity:.8}
+.bv{position:absolute;left:50%;bottom:calc(var(--h) + 4px);transform:translateX(-50%);font:600 10px var(--mono);color:var(--fg);white-space:nowrap;display:none} .bar.hi .bv{display:block}
+.bd{position:absolute;left:50%;bottom:-20px;transform:translateX(-50%);font:500 9.5px var(--mono);color:var(--mut);white-space:nowrap}
+.medl{position:absolute;left:0;right:0;bottom:calc(22px + (100% - 22px) * var(--med) / 100);border-top:1.5px dashed var(--fg);opacity:.55;font:600 10px var(--mono);font-style:normal;color:var(--fg);padding-top:2px;pointer-events:none}
+@media(max-width:600px){.bars{gap:3px;height:170px}.bd{display:none}.bars{padding-bottom:6px}.medl{bottom:calc(6px + (100% - 6px) * var(--med) / 100)}.bv{font-size:8.5px}}
+.cnote{font-size:12px;color:var(--mut);margin:12px 0 0}
+.s3{display:grid;gap:24px;margin-top:26px} @media(min-width:860px){.s3{grid-template-columns:1fr 1fr}}
+.s3 h3{font:700 17px var(--h);margin:0 0 10px}
+.top{list-style:none;margin:0;padding:0;display:grid;gap:10px} .top li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.top b{font:800 18px var(--h);color:var(--num);min-width:64px} .top span{font-size:14px;line-height:1.45} .top a{font:500 12px var(--mono);color:var(--c)}
+.ok,.no{margin:0 0 18px;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line-height:1.5} .ok li::marker{content:"+  ";color:var(--c);font-weight:800} .no li::marker{content:"–  ";color:var(--num);font-weight:800}
 .feed-hint{display:none;font:500 12px var(--mono);color:var(--mut);margin:0 0 10px}
 @media(max-width:700px){.feed{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));padding-bottom:10px;scrollbar-width:none}.feed::-webkit-scrollbar{display:none}.feed .ig{flex:0 0 78%;scroll-snap-align:center}.feed-hint{display:block}}
 .ig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
@@ -64,12 +115,43 @@ h2{font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 14px;font-weight:
 .vid>div{min-width:0}
 .phone{width:min(300px,80vw);margin:0 auto;aspect-ratio:9/19;border-radius:40px;background:#111;padding:11px;box-shadow:0 30px 60px -28px rgba(0,0,0,.45)}
 .screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--c)}
-.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18%;opacity:0;transition:opacity .45s ease}
-.scene:nth-child(odd){background:var(--c);color:var(--on)} .scene:nth-child(even){background:var(--c2);color:var(--on2)}
-.scene .stx{font:800 26px/1.15 var(--h);text-align:center;transform:translateY(16px) scale(.96);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.scene.on{opacity:1} .scene.on .stx{transform:none}
-.prog{position:absolute;left:12px;right:12px;top:12px;display:flex;gap:4px;z-index:3}
-.prog i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden} .prog i b{display:block;height:100%;width:0;background:#fff}
+.phone:has(.reel){aspect-ratio:auto} .screen.reel{height:auto;aspect-ratio:9/16} .rvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover} .screen.reel{background:#000;cursor:pointer;container-type:inline-size}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14cqw 12cqw;opacity:0;transition:opacity .25s ease;overflow:hidden;background:var(--c);color:var(--on)}
+.scene:nth-child(3n+2){background:var(--c2);color:var(--on2)} .scene:nth-child(3n){background:#fff;color:#111}
+.scene.ph{color:#fff;background:#000}
+.scene.on{opacity:1;z-index:1}
+.sbg{position:absolute;inset:-4%;background-size:cover;background-position:center} .scene.on .sbg{animation:kb 4.5s ease-out both}
+.scene:nth-child(even).on .sbg{animation-name:kb2}
+@keyframes kb{from{transform:scale(1.18) translate(2%,1%)}to{transform:scale(1.02) translate(0,0)}}
+@keyframes kb2{from{transform:scale(1.02) translate(-2%,0)}to{transform:scale(1.16) translate(2%,-1%)}}
+.sdim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.55) 60%,rgba(0,0,0,.7))}
+.sfill i{position:absolute;border-radius:50%;background:currentColor;opacity:.08} .sfill i:first-child{width:90cqw;height:90cqw;right:-40cqw;top:-25cqw} .sfill i:last-child{width:60cqw;height:60cqw;left:-25cqw;bottom:-10cqw}
+.scene.on .sfill i{animation:blob 3s ease-out both} @keyframes blob{from{transform:scale(.4)}to{transform:scale(1)}}
+.stx{position:relative;font:800 11cqw/1.06 var(--h);text-align:center;letter-spacing:-.01em;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.scene:not(.ph) .stx{text-shadow:none}
+.stx span{display:inline-block;opacity:0}
+.scene.on.a-words .stx span{animation:wpop .5s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i)*.12s + .1s)}
+@keyframes wpop{from{opacity:0;transform:translateY(40%) scale(.6)}to{opacity:1;transform:none}}
+.scene.on.a-slide .stx span{animation:wsl .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*.07s + .1s)}
+@keyframes wsl{from{opacity:0;transform:translateX(-60%)}to{opacity:1;transform:none}}
+.scene.on.a-zoom .stx span{animation:wz .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:.1s}
+@keyframes wz{from{opacity:0;transform:scale(2.4);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.scene.on.a-stamp .stx span{animation:wst .35s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(var(--i)*.18s + .1s)}
+@keyframes wst{from{opacity:0;transform:scale(1.8) rotate(-6deg)}to{opacity:1;transform:none}}
+.scene.on.a-type .stx span{animation:wty .01s steps(1) both;animation-delay:calc(var(--i)*.16s + .1s)}
+@keyframes wty{to{opacity:1}}
+.a-stamp .stx{background:var(--c2);color:var(--on2);padding:2cqw 4cqw;transform:rotate(-2deg)} .scene:nth-child(3n+2).a-stamp .stx{background:var(--c);color:var(--on)}
+.screen.paused .scene *{animation-play-state:paused!important}
+.rui{position:absolute;inset:0;z-index:4;pointer-events:none;color:#fff;font-family:var(--b)}
+.rtop{position:absolute;left:5cqw;top:6cqw;font:700 5.4cqw var(--b);text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.rside{position:absolute;right:3cqw;bottom:30cqw;display:flex;flex-direction:column;gap:5cqw;align-items:center;font-size:7cqw;text-shadow:0 1px 6px rgba(0,0,0,.5)} .rside span{display:flex;flex-direction:column;align-items:center;line-height:1} .rside small{font-size:2.6cqw;margin-top:1cqw}
+.rbot{position:absolute;left:4cqw;right:16cqw;bottom:6cqw;text-shadow:0 1px 6px rgba(0,0,0,.6)} .rbot p{margin:1.6cqw 0;font-size:3.6cqw;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden} .rbot small{font-size:3.2cqw;opacity:.9}
+.ruser{display:flex;align-items:center;gap:2.4cqw;font-size:3.8cqw} .rav{width:8cqw;height:8cqw;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;padding:1cqw} .rav img{max-width:100%;max-height:100%;object-fit:contain} .rav .word{font-size:1.8cqw;color:var(--c)}
+.rprog{position:absolute;left:0;right:0;bottom:0;height:.9cqw;background:rgba(255,255,255,.3)} .rprog b{display:block;height:100%;width:0;background:#fff}
+.rpause{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);width:16cqw;height:16cqw;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:5cqw;opacity:0;transition:opacity .2s;pointer-events:none} .screen.paused .rpause{opacity:1}
+.screen.paused .rpause::after{content:""}
+.rcap{text-align:center;font-size:12.5px;color:var(--mut);margin:12px auto 0;max-width:300px}
+.why+.why{margin-top:12px}
 .play{margin:16px auto 0;display:block;font:600 14px var(--b);background:var(--fg);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer}
 .shots{list-style:none;margin:0;padding:0}
 .shots li{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:12px 10px;border-top:1px solid var(--line);border-radius:8px;transition:background .3s}
@@ -102,11 +184,19 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
   <span class="kick">01 · Cosa ho visto</span>
   <h2>I dati da cui parto</h2>
   <p class="lead">Solo dati pubblici, letti il 18 novembre 2026, ognuno con la sua fonte. Da qui parte la proposta.</p>
-  <div class="cards"><article class="card"><b>Un tono già giocoso</b><p>Le promo del Bank Friday parlano con leggerezza: «Un cashback da prendere al VOLOOOH». È una voce che sui social giovani funziona.</p><a href="https://www.bper.it/" target="_blank" rel="noopener">Fonte: bper.it</a></article><article class="card"><b>Contenuti utili già scritti</b><p>Il BPER Magazine raccoglie articoli, guide, un glossario, podcast e una newsletter. È un archivio di risposte che si può trasformare in video brevi.</p><a href="https://www.bper.it/" target="_blank" rel="noopener">Fonte: bper.it · BPER Magazine</a></article><article class="card"><b>Spazio per crescere</b><p>@bper_banca ha 32.000 follower e circa mille post: una base solida da cui far crescere un pubblico giovane.</p><a href="https://www.instagram.com/bper_banca/" target="_blank" rel="noopener">Fonte: Instagram, 18/11/2026</a></article><article class="card"><b>La cultura porta il pubblico più grande</b><p>La mediana degli ultimi 12 reel è di circa 22.000 visualizzazioni. I due più visti (630.000 e 467.000) raccontano con dei divulgatori il nuovo polo de La Galleria BPER.</p><a href="https://www.instagram.com/reel/DfFXJzljqyt/" target="_blank" rel="noopener">Fonte: Instagram @bper_banca, scheda Reel, 18/11</a></article></div>
+  <div class="cards"><article class="card"><b>Un tono già giocoso</b><p>Le promo del Bank Friday parlano con leggerezza: «Un cashback da prendere al VOLOOOH». È una voce che sui social giovani funziona.</p><a href="https://www.bper.it/" target="_blank" rel="noopener">Fonte: bper.it</a></article><article class="card"><b>Contenuti utili già scritti</b><p>Il BPER Magazine raccoglie articoli, guide, un glossario, podcast e una newsletter. È un archivio di risposte che si può trasformare in video brevi.</p><a href="https://www.bper.it/" target="_blank" rel="noopener">Fonte: bper.it · BPER Magazine</a></article><article class="card"><b>La cultura porta il pubblico più grande</b><p>La mediana degli ultimi 12 reel è di circa 22.000 visualizzazioni. I due più visti (630.000 e 467.000) raccontano con dei divulgatori il nuovo polo de La Galleria BPER.</p><a href="https://www.instagram.com/reel/DfFXJzljqyt/" target="_blank" rel="noopener">Fonte: Instagram @bper_banca, scheda Reel, 18/11</a></article><article class="card"><b>I giovani si sentono impreparati</b><p>Nell&#x27;indagine Money Lab su 735 giovani (età mediana 21 anni) solo il 21% si sente preparato sul piano finanziario e il 48,8% teme l&#x27;instabilità futura.</p><a href="https://group.bper.it/sostenibilita/educazione-finanziaria/teenagers/money-lab" target="_blank" rel="noopener">Fonte: BPER, Money Lab</a></article></div>
+</div></section>
+<section class="alt"><div class="in">
+  <span class="kick">02 · Lo studio del profilo</span>
+  <h2>La cultura (La Galleria) fa centinaia di migliaia, la banca poche migliaia</h2>
+  <p class="lead">Ho guardato i 12 reel più recenti di @bper_banca (32K follower · 1.034 post), uno per uno, e confrontato ognuno con la mediana del profilo. È lo stesso studio che facciamo per i nostri clienti prima di proporre qualcosa.</p>
+  <div class="sstats"><div class="sst"><b>22K</b><span>mediana dei 12 reel</span></div><div class="sst"><b>630K</b><span>il reel più visto</span></div><div class="sst"><b>5 su 12</b><span>oltre il doppio della mediana</span></div><div class="sst"><b>32K follower</b><span>sul profilo</span></div></div>
+<div class="chart"><div class="chead"><b>Ultimi 12 reel, visualizzazioni</b><span><i class="lg"></i>oltre il doppio della mediana</span></div><div class="bars" style="--med:3.5%"><a class="bar hi" href="https://www.instagram.com/reel/Dd9b-5Wtyx4/" target="_blank" rel="noopener" style="--h:27.0%" title="01/10/26 · 170K"><i></i><span class="bv">170K</span><span class="bd">01/10</span></a><a class="bar" href="https://www.instagram.com/reel/DeJkxOjsQYs/" target="_blank" rel="noopener" style="--h:2.5%" title="06/10/26 · 15,5K"><i></i><span class="bv">15,5K</span><span class="bd">06/10</span></a><a class="bar" href="https://www.instagram.com/reel/DeMasdVPVkW/" target="_blank" rel="noopener" style="--h:2.0%" title="07/10/26 · 3.572"><i></i><span class="bv">3.572</span><span class="bd">07/10</span></a><a class="bar" href="https://www.instagram.com/reel/DeOva90NdNU/" target="_blank" rel="noopener" style="--h:2.0%" title="08/10/26 · 5.935"><i></i><span class="bv">5.935</span><span class="bd">08/10</span></a><a class="bar hi" href="https://www.instagram.com/reel/DeegukttOqj/" target="_blank" rel="noopener" style="--h:9.6%" title="14/10/26 · 60,5K"><i></i><span class="bv">60,5K</span><span class="bd">14/10</span></a><a class="bar" href="https://www.instagram.com/reel/De9blRzCzS7/" target="_blank" rel="noopener" style="--h:2.0%" title="26/10/26 · 2.592"><i></i><span class="bv">2.592</span><span class="bd">26/10</span></a><a class="bar hi" href="https://www.instagram.com/reel/DfFXJzljqyt/" target="_blank" rel="noopener" style="--h:100.0%" title="29/10/26 · 630K"><i></i><span class="bv">630K</span><span class="bd">29/10</span></a><a class="bar hi" href="https://www.instagram.com/reel/DfU3n9cIKrW/" target="_blank" rel="noopener" style="--h:29.0%" title="04/11/26 · 183K"><i></i><span class="bv">183K</span><span class="bd">04/11</span></a><a class="bar hi" href="https://www.instagram.com/reel/DfZiZdbN8rM/" target="_blank" rel="noopener" style="--h:74.1%" title="06/11/26 · 467K"><i></i><span class="bv">467K</span><span class="bd">06/11</span></a><a class="bar" href="https://www.instagram.com/reel/DfsFyJ5ALHH/" target="_blank" rel="noopener" style="--h:4.4%" title="13/11/26 · 27,6K"><i></i><span class="bv">27,6K</span><span class="bd">13/11</span></a><a class="bar" href="https://www.instagram.com/reel/Dfz17dbhyYR/" target="_blank" rel="noopener" style="--h:2.7%" title="16/11/26 · 17,1K"><i></i><span class="bv">17,1K</span><span class="bd">16/11</span></a><a class="bar" href="https://www.instagram.com/reel/Df4WH48NJGn/" target="_blank" rel="noopener" style="--h:2.0%" title="18/11/26 · 7.733"><i></i><span class="bv">7.733</span><span class="bd">18/11</span></a><em class="medl">mediana 22,4K</em></div><p class="cnote">Fonte: Instagram @bper_banca, ultimi 12 reel, letti il 18/11/2026. Tocca una barra per aprire il reel.</p></div>
+  <div class="s3"><div><h3>I reel che rendono di più</h3><ol class="top"><li><b>630K</b><span>La Galleria BPER: «un palazzo storico restituito alla città»</span><a href="https://www.instagram.com/reel/DfFXJzljqyt/" target="_blank" rel="noopener">vedi</a></li><li><b>467K</b><span>Due nuovi indirizzi per l&#x27;arte: Ferrara, Palazzo Barbantini-Koch</span><a href="https://www.instagram.com/reel/DfZiZdbN8rM/" target="_blank" rel="noopener">vedi</a></li><li><b>183K</b><span>ADV con Eccellenza Italiana: gli affreschi restaurati a L&#x27;Aquila</span><a href="https://www.instagram.com/reel/DfU3n9cIKrW/" target="_blank" rel="noopener">vedi</a></li></ol></div><div><h3>Cosa funziona</h3><ul class="ok"><li>I contenuti su arte e patrimonio arrivano a 180-630K visualizzazioni.</li><li>Le collaborazioni con pagine di cultura moltiplicano la portata.</li><li>5 reel su 12 oltre il doppio della mediana.</li></ul><h3>Cosa manca</h3><ul class="no"><li>I reel di prodotto (Cashback Lifestyle) restano a 2-4K.</li><li>Nessun contenuto per chi apre il primo conto o riceve il primo stipendio.</li><li>La banca parla di offerte, non di decisioni che le persone devono prendere.</li></ul></div></div>
 </div></section>
 
 <section class="alt"><div class="in">
-  <span class="kick">02 · L'idea</span>
+  <span class="kick">03 · L'idea</span>
   <h2>Il primo stipendio</h2>
   <div class="idea">
     <div><p class="insight"><small style="display:block;font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:6px">La mia lettura</small>Il primo stipendio arriva insieme a domande che nessuno ti ha mai spiegato: cos&#x27;è il netto, come funziona un conto, cosa sono i contributi. Chi risponde per primo, e in modo semplice, si guadagna la fiducia.</p><p>Una serie di pillole video da 30 secondi per chi inizia a lavorare, prese dalle guide e dal glossario del BPER Magazine. Ogni pillola risponde a una domanda vera del primo stipendio, con un consulente di filiale come volto e un tono leggero. L&#x27;ultima frase porta al Conto Online e alla guida completa sul Magazine. Si parte dalle università, con UniTE come pilota.</p><p class="meta"><b>Per chi:</b> Neolaureati e giovani tra i 22 e i 30 anni al primo contratto.</p><div><span class="tag">Instagram Reels</span><span class="tag">TikTok</span><span class="tag">YouTube Shorts</span><span class="tag">BPER Magazine</span></div></div>
@@ -115,24 +205,30 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
 </div></section>
 
 <section><div class="in">
-  <span class="kick">03 · I post</span>
-  <h2>Come si vede</h2>
-  <p class="lead">Tre post nel vostro stile: colori, carattere e tono del marchio. Sono bozze di concept.</p>
-  <p class="feed-hint">Scorri per vedere i tre post →</p><div class="feed"><figure class="ig"><div class="post s-domanda v0" role="img" aria-label="Lordo, netto: perché non coincidono?"><div class="pt">Lordo, netto: perché non coincidono?</div><div class="ps">Il primo stipendio · pillola 1</div><div class="pbrand">BPER Banca</div></div><figcaption><b>BPER Banca</b> È la prima sorpresa di chi inizia a lavorare. In 30 secondi un nostro consulente ti spiega dove va la differenza. La guida completa è sul BPER Magazine.</figcaption></figure><figure class="ig"><div class="post s-frase v1" role="img" aria-label="Il primo stipendio, spiegato semplice."><div class="pt">Il primo stipendio, spiegato semplice.</div><div class="ps">Una serie per chi inizia a lavorare</div><div class="pbrand">BPER Banca</div></div><figcaption><b>BPER Banca</b> Netto, risparmio, conto, prime spese. Ogni settimana una domanda vera e una risposta in 30 secondi, senza paroloni. Salva il post e giralo a chi ha appena firmato il primo contratto.</figcaption></figure><figure class="ig"><div class="post s-numero v2" role="img" aria-label="mese di lavoro: tre cose da sapere"><div class="pnum">1°</div><div class="pt">mese di lavoro: tre cose da sapere</div><div class="ps">Pillola 3 · senza paroloni</div><div class="pbrand">BPER Banca</div></div><figcaption><b>BPER Banca</b> Tre cose da sapere quando arriva il primo stipendio. Te le spieghiamo nel reel; il glossario completo è sul BPER Magazine.</figcaption></figure></div>
+  <span class="kick">04 · Il calendario</span>
+  <h2>Come lo vedreste sul vostro profilo</h2>
+  <p class="lead">Le prime uscite della campagna, impaginate come le prepariamo per i nostri clienti: la griglia del profilo dopo le uscite e ogni post con la sua didascalia. Bozze di concept costruite sulle vostre immagini ufficiali.</p>
+  <div class="calwrap"><div class="prof"><div class="ph"><span class="av"><img src="loghi/bper.svg" alt="BPER Banca" class="logo"></span><div><b>@bper_banca</b><span class="pst">32K follower · 1.034 post</span></div></div><p class="pbio"><b>BPER Banca</b> </p><div class="pgrid"><div class="gc"><div class="g g-domanda v2" role="img" aria-label="Lordo, netto: perché non coincidono?"><div class="gtyp"><span class="gk">BPER Banca</span><b class="gt">Lordo, netto: perché non coincidono?</b><span class="gs">Il primo stipendio · pillola 1</span></div><span class="gm">BPER Banca</span></div><span class="gd">ven 4/12</span></div><div class="gc"><div class="g g-box v1" role="img" aria-label="Il primo stipendio è anche tempo libero."><div class="gph full"><img src="foto/bper-05.jpg" alt="" loading="lazy"></div><div class="gbox"><b class="gt">Il primo stipendio è anche tempo libero.</b><i class="gbar"></i><span class="gs">Un&#x27;idea per il primo sabato</span></div><span class="gm">BPER Banca</span></div><span class="gd">mer 2/12</span></div><div class="gc"><div class="g g-numero v0" role="img" aria-label="mese di lavoro: tre cose da sapere"><div class="gtyp"><span class="gk">BPER Banca</span><span class="gn" style="font-size:30cqw">1°</span><b class="gt">mese di lavoro: tre cose da sapere</b><span class="gs">Pillola 3 · senza paroloni</span></div><span class="gm">BPER Banca</span></div><span class="gd">lun 30/11</span></div><div class="gc"><div class="g g-band v2" role="img" aria-label="Prima spesa, primo conto."><div class="gph"><img src="foto/bper-08.jpg" alt="" loading="lazy"></div><div class="gband"><span class="gk">Pillola 2</span><b class="gt">Prima spesa, primo conto.</b><span class="gs">Cosa scegliere quando arriva lo stipendio</span></div></div><span class="gd">ven 27/11</span></div><div class="gc"><div class="g g-frase v1" role="img" aria-label="Il primo stipendio, spiegato semplice."><div class="gtyp"><span class="gk">BPER Banca</span><b class="gt">Il primo stipendio, spiegato semplice.</b><span class="gs">Una serie per chi inizia a lavorare</span></div><span class="gm">BPER Banca</span></div><span class="gd">mer 25/11</span></div><div class="gc"><div class="g g-reel v0" role="img" aria-label="Lordo, netto: perché non coincidono?"><div class="gph full"><img src="foto/bper-07.jpg" alt="" loading="lazy"></div><div class="greel"><b class="gt">Lordo, netto: perché non coincidono?</b></div><span class="gplay">&#9654;</span><span class="gm">BPER Banca</span></div><span class="gd">lun 23/11</span></div><div class="gc old"><span>post già pubblicato</span></div><div class="gc old"><span>post già pubblicato</span></div><div class="gc old"><span>post già pubblicato</span></div></div></div><div class="cal"><article class="cp"><header><span class="cd">lun 23/11</span><b>Pillola 1 · Lordo, netto</b><span class="cf">reel</span></header><div class="cpb"><div class="cpi"><div class="g g-reel v0" role="img" aria-label="Lordo, netto: perché non coincidono?"><div class="gph full"><img src="foto/bper-07.jpg" alt="" loading="lazy"></div><div class="greel"><b class="gt">Lordo, netto: perché non coincidono?</b></div><span class="gplay">&#9654;</span><span class="gm">BPER Banca</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>È la prima sorpresa di chi inizia a lavorare. In 30 secondi un nostro consulente ti spiega dove va la differenza. La guida completa è sul BPER Magazine.</p><small>Perché</small><p class="why">La prima sorpresa di chi inizia a lavorare, risolta in 30 secondi.</p></div></div></article><article class="cp"><header><span class="cd">mer 25/11</span><b>La serie</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-frase v1" role="img" aria-label="Il primo stipendio, spiegato semplice."><div class="gtyp"><span class="gk">BPER Banca</span><b class="gt">Il primo stipendio, spiegato semplice.</b><span class="gs">Una serie per chi inizia a lavorare</span></div><span class="gm">BPER Banca</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>Netto, risparmio, conto, prime spese. Ogni settimana una domanda vera e una risposta in 30 secondi, senza paroloni. Salva il post e giralo a chi ha appena firmato il primo contratto.</p></div></div></article><article class="cp"><header><span class="cd">ven 27/11</span><b>Il primo conto</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-band v2" role="img" aria-label="Prima spesa, primo conto."><div class="gph"><img src="foto/bper-08.jpg" alt="" loading="lazy"></div><div class="gband"><span class="gk">Pillola 2</span><b class="gt">Prima spesa, primo conto.</b><span class="gs">Cosa scegliere quando arriva lo stipendio</span></div></div></div><div class="cpt"><small>Didascalia Instagram</small><p>Conto, carta, prime spese: le tre scelte da fare quando arriva il primo stipendio, spiegate in 30 secondi. La guida completa è sul BPER Magazine.</p><small>Perché</small><p class="why">Porta in modo naturale al Conto Online, senza vendere.</p></div></div></article><article class="cp"><header><span class="cd">lun 30/11</span><b>Tre cose da sapere</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-numero v0" role="img" aria-label="mese di lavoro: tre cose da sapere"><div class="gtyp"><span class="gk">BPER Banca</span><span class="gn" style="font-size:30cqw">1°</span><b class="gt">mese di lavoro: tre cose da sapere</b><span class="gs">Pillola 3 · senza paroloni</span></div><span class="gm">BPER Banca</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>Tre cose da sapere quando arriva il primo stipendio. Te le spieghiamo nel reel; il glossario completo è sul BPER Magazine.</p></div></div></article><article class="cp"><header><span class="cd">mer 2/12</span><b>Tempo libero</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-box v1" role="img" aria-label="Il primo stipendio è anche tempo libero."><div class="gph full"><img src="foto/bper-05.jpg" alt="" loading="lazy"></div><div class="gbox"><b class="gt">Il primo stipendio è anche tempo libero.</b><i class="gbar"></i><span class="gs">Un&#x27;idea per il primo sabato</span></div><span class="gm">BPER Banca</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>La Galleria BPER è il nostro spazio per l&#x27;arte: un&#x27;idea per il primo sabato da lavoratore. Orari e mostre sul sito.</p><small>Perché</small><p class="why">Collega la serie alla cultura, che sul vostro profilo rende di più.</p></div></div></article><article class="cp"><header><span class="cd">ven 4/12</span><b>La domanda</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-domanda v2" role="img" aria-label="Lordo, netto: perché non coincidono?"><div class="gtyp"><span class="gk">BPER Banca</span><b class="gt">Lordo, netto: perché non coincidono?</b><span class="gs">Il primo stipendio · pillola 1</span></div><span class="gm">BPER Banca</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>È la prima sorpresa di chi inizia a lavorare. In 30 secondi un nostro consulente ti spiega dove va la differenza. La guida completa è sul BPER Magazine.</p></div></div></article></div></div>
 </div></section>
 
 <section class="alt"><div class="in">
-  <span class="kick">04 · Il video</span>
+  <span class="kick">05 · Il video</span>
   <h2>Pillola 1 · «Lordo, netto»</h2>
-  <p class="lead">Reel da 30 s. Si apre sulla faccia di un ragazzo che guarda la sua prima busta paga e non capisce: chi ci è passato si riconosce. Premi play per vedere lo storyboard animato.</p>
+  <p class="lead">Si apre sulla faccia di un ragazzo che guarda la sua prima busta paga e non capisce: chi ci è passato si riconosce.</p>
   <div class="vid">
-    <div><div class="phone"><div class="screen" id="screen"><div class="prog" id="prog"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div><div class="scene" data-i="0"><div class="stx">«Ma non era di più?»</div></div><div class="scene" data-i="1"><div class="stx">Te lo spiego in 30 secondi.</div></div><div class="scene" data-i="2"><div class="stx">Lordo · contributi · tasse · netto</div></div><div class="scene" data-i="3"><div class="stx">Ora lo sai.</div></div><div class="scene" data-i="4"><div class="stx">Il primo stipendio, spiegato semplice.</div></div></div></div><button class="play" id="play" type="button">Guarda lo storyboard</button></div>
-    <div><ol class="shots" id="shots"><li data-i="0"><span class="t">0-2 s</span><div><b>«Ma non era di più?»</b><span>Un ragazzo guarda la busta paga sul telefono, perplesso</span><em>Audio: Notifica</em></div></li><li data-i="1"><span class="t">2-6 s</span><div><b>Te lo spiego in 30 secondi.</b><span>Una consulente BPER in filiale, sorridente, in camera</span><em>Audio: Voce della consulente</em></div></li><li data-i="2"><span class="t">6-20 s</span><div><b>Lordo · contributi · tasse · netto</b><span>Grafica semplice: una barra che si riduce a blocchi, con i nomi</span><em>Audio: Colpi a tempo, musica leggera</em></div></li><li data-i="3"><span class="t">20-26 s</span><div><b>Ora lo sai.</b><span>Il ragazzo sorride e chiude il telefono</span><em>Audio: La musica sale</em></div></li><li data-i="4"><span class="t">26-30 s</span><div><b>Il primo stipendio, spiegato semplice.</b><span>Logo BPER e invito al Magazine</span><em>Audio: Chiusura</em></div></li></ol><div class="why"><b>Perché lo propongo.</b> Parte da un bisogno vero, non dal prodotto, e mette un volto umano davanti alla banca. Il prodotto arriva solo alla fine, quando la fiducia è già nata.</div></div>
+    <div><div class="phone"><div class="screen reel" id="screen"><video class="rvid" id="rvid" src="video/bper.mp4" poster="video/bper.jpg" muted loop playsinline preload="metadata" aria-label="Reel Pillola 1 · «Lordo, netto»"></video>
+      <div class="rui"><span class="rtop">Reels</span>
+        <div class="rside"><span>&#9825;<small>Mi piace</small></span><span>&#9675;<small>Commenta</small></span><span>&#10148;<small>Condividi</small></span></div>
+        <div class="rbot"><div class="ruser"><span class="rav"><img src="loghi/bper.svg" alt="BPER Banca" class="logo"></span><b>@bper_banca</b></div><p>Pillola 1 · «Lordo, netto»</p><small>&#9835; Audio originale</small></div>
+        <div class="rprog"><b id="rprog"></b></div></div>
+      <button class="rpause" id="play" type="button" aria-label="Riprendi">&#9654;</button></div></div>
+      <p class="rcap">Reel da 17 s, montato in motion graphics sulle vostre immagini ufficiali e sui vostri numeri. Tocca il video per fermarlo.</p></div>
+    <div><div class="why"><b>Perché lo propongo.</b> Parte da un bisogno vero, non dal prodotto, e mette un volto umano davanti alla banca. Il prodotto arriva solo alla fine, quando la fiducia è già nata.</div></div>
   </div>
 </div></section>
 
 <section><div class="in">
-  <span class="kick">05 · Il piano</span>
+  <span class="kick">06 · Il piano</span>
   <h2>Quattro settimane per partire</h2>
   <ul class="plan"><li><span class="t">Settimana 1</span><span>Scegliere dieci domande dal glossario e dalle guide del Magazine; far validare i testi alla compliance; girare con due consulenti.</span></li><li><span class="t">Settimana 2</span><span>Lanciare la serie su Instagram e aprire un test su TikTok.</span></li><li><span class="t">Settimana 3</span><span>Due pillole a settimana; una tappa in università con UniTE come pilota.</span></li><li><span class="t">Settimana 4</span><span>Leggere i dati e decidere il ritmo e i canali per il 2027.</span></li></ul>
   <h3 style="font-size:20px;margin:0 0 12px">Cosa misurerei</h3>
@@ -141,7 +237,7 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
 </div></section>
 
 <section class="alt"><div class="in">
-  <span class="kick">06 · Perché io</span>
+  <span class="kick">07 · Perché io</span>
   <h2>Quello che porto da subito</h2>
   <div class="me">
     <div><ul><li>Spiego cose tecniche in 30 secondi: nel portfolio un medico racconta un impianto dentale.</li><li>Sette anni negli eventi con le famiglie, da animatore a coordinatore eventi e commerciale: so spiegare le cose a chi non è del mestiere.</li><li>Sono un giovane che entra nel mondo del lavoro: conosco queste domande da vicino.</li></ul>
@@ -153,15 +249,23 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
 <footer><div class="in">Proposta preparata da Nicolò Cammarata per lo UniTE Talent Day del 19 novembre 2026. Non è stata commissionata da BPER Banca e non rappresenta l'azienda. I marchi appartengono ai rispettivi proprietari. Dati pubblici letti a novembre 2026, con le fonti indicate.</div></footer>
 <script>
 (function(){
-  var sc=[].slice.call(document.querySelectorAll('.scene')),rows=[].slice.call(document.querySelectorAll('#shots li')),bars=[].slice.call(document.querySelectorAll('#prog b')),btn=document.getElementById('play');
-  var RM=matchMedia('(prefers-reduced-motion: reduce)').matches,D=RM?3200:2400,i=-1,t=null,start=0,raf=null;
-  function show(k){sc.forEach(function(s,j){s.classList.toggle('on',j===k);});rows.forEach(function(r,j){r.classList.toggle('on',j===k);});bars.forEach(function(b,j){b.style.width=j<k?'100%':'0';});}
-  function tick(now){if(i<0)return;var p=Math.min(1,(now-start)/D);bars[i].style.width=(p*100)+'%';if(p>=1){i++;if(i>=sc.length){stop(true);return;}show(i);start=now;}raf=requestAnimationFrame(tick);}
-  function play(){i=0;show(0);start=performance.now();btn.textContent='Ferma';raf=requestAnimationFrame(tick);}
-  function stop(end){cancelAnimationFrame(raf);i=-1;btn.textContent=end?'Riguarda':'Guarda lo storyboard';}
-  btn.addEventListener('click',function(){if(i>=0)stop();else play();});
-  rows.forEach(function(r,j){r.style.cursor='pointer';r.addEventListener('click',function(){stop();show(j);});});
+  var rv=document.getElementById('rvid');
+  if(rv){var sc0=document.getElementById('screen'),bar0=document.getElementById('rprog');
+    rv.addEventListener('timeupdate',function(){if(rv.duration)bar0.style.width=(rv.currentTime/rv.duration*100)+'%';});
+    sc0.addEventListener('click',function(){if(rv.paused){rv.play();sc0.classList.remove('paused');sc0.dataset.user='';}else{rv.pause();sc0.classList.add('paused');sc0.dataset.user='1';}});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!sc0.dataset.user){var pr=rv.play();if(pr&&pr.catch)pr.catch(function(){});}else if(!e.isIntersecting)rv.pause();});},{threshold:.45}).observe(sc0);else rv.play();
+    return;}
+  var sc=[].slice.call(document.querySelectorAll('.scene')),scr=document.getElementById('screen'),bar=document.getElementById('rprog'),btn=document.getElementById('play');
+  var RM=matchMedia('(prefers-reduced-motion: reduce)').matches,D=sc.map(function(s){return (+s.dataset.d||2.4)*1000*(RM?1.4:1);}),T=D.reduce(function(a,b){return a+b;},0);
+  var k=-1,t0=0,acc=0,paused=true,raf=null,el=0;
+  function show(n){sc.forEach(function(s,j){if(j===n){s.classList.remove('on');void s.offsetWidth;s.classList.add('on');}else s.classList.remove('on');});k=n;}
+  function tick(now){if(paused)return;el=now-t0;var e=el%T,a=0,n=0;while(n<sc.length-1&&e>=a+D[n]){a+=D[n];n++;}if(n!==k)show(n);bar.style.width=(e/T*100)+'%';raf=requestAnimationFrame(tick);}
+  function play(){if(!paused)return;paused=false;scr.classList.remove('paused');t0=performance.now()-el;raf=requestAnimationFrame(tick);}
+  function pause(){paused=true;scr.classList.add('paused');cancelAnimationFrame(raf);}
+  scr.addEventListener('click',function(){paused?play():pause();});
   show(0);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!scr.dataset.user)play();else if(!e.isIntersecting)pause();});},{threshold:.45}).observe(scr);else play();
+  scr.addEventListener('click',function(){scr.dataset.user=paused?'1':'';});
 })();
 </script>
 </body></html>
