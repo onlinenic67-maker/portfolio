@@ -230,7 +230,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     <p class="tag">Marketing digitale e contenuti. Porto le attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
     <p class="role">24 anni · magistrale LM-59 a UniTE · cerco un ruolo in un team marketing</p>
     <p class="cta-row"><a class="tdbtn" href="#talentday">Sei qui dal Talent Day? Scegli la tua azienda&nbsp;↓</a></p>
-    <p class="hint shapebar"><b id="shape">Anello</b> · tocca o trascina</p>
+    <p class="hint shapebar"><b id="shape">Logo ON-LINE</b> · tocca o trascina</p>
   </div>
 </header>
 <div class="kpis">
@@ -491,7 +491,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       var dd=x.getImageData(0,0,W,H).data,pts=[];for(var yy=0;yy<H;yy+=2)for(var xx=0;xx<W;xx+=2)if(dd[(yy*W+xx)*4+3]>128)pts.push([xx,yy]);
       var sel=[];for(var i=0;i<N;i++)sel.push(pts[Math.floor(Math.random()*pts.length)]||[W/2,H/2]);sel.sort(function(p,q){return p[0]-q[0];});
       var o=new Float32Array(N*3);for(var i=0;i<N;i++){var q=sel[i];o[i*3]=(q[0]/W-.5)*4.2;o[i*3+1]=-(q[1]/H-.5)*4.0;o[i*3+2]=(Math.random()-.5)*.3;}return o;}
-    var SH=[["Anello",ring(),[.55,0]],["Sfera",sphere(),[.2,0]],["Onda",wave(),[.5,0]],["Logo ON-LINE",null,[0,0]]];
+    var SH=[["Logo ON-LINE",word(),[0,0]],["Anello",ring(),[.55,0]],["Sfera",sphere(),[.2,0]],["Onda",wave(),[.5,0]]];
     for(var i=0;i<N;i++){var c=grad(i/N);col[i*3]=c[0];col[i*3+1]=c[1];col[i*3+2]=c[2];cpos[i*3]=(Math.random()-.5)*14;cpos[i*3+1]=(Math.random()-.5)*9;cpos[i*3+2]=(Math.random()-.5)*8;}
     var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
     var m=new THREE.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending});
@@ -499,7 +499,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     var si=0,from=cpos.slice(),target=SH[0][1],t0=performance.now(),dur=RM?1:2400;
     function go(k){si=k%SH.length;if(!SH[si][1])SH[si][1]=word();from=cpos.slice();target=SH[si][1];t0=performance.now();dur=RM?1:1300;lab.textContent=SH[si][0];}
     function size(){var w=hero.clientWidth,h=hero.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
-      var wide=w>760;pts.position.set(wide?1.9:0,wide?.35:1.1,0);pts.scale.setScalar(wide?1:.72);}
+      var wide=w>760;pts.position.set(wide?1.9:0,wide?.35:1.25,0);pts.scale.setScalar(wide?1:.56);}
     size();window.addEventListener('resize',size);
     var mouse=new THREE.Vector2(9,9),ray=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,0,1),0),hit=new THREE.Vector3(),loc=new THREE.Vector3(),active=false;
     var rotX=0,rotY=0,vX=0,vY=0,down=null,moved=0;
@@ -516,8 +516,8 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       var p=Math.min(1,(now-t0)/dur),e=ease(p);
       for(var i=0;i<N*3;i++)cpos[i]=from[i]+(target[i]-from[i])*e;
       if(p>=1&&!hero.classList.contains('focused'))hero.classList.add('focused');
-      if(!down){vX*=.94;vY*=.94;rotX+=vX;rotY+=vY+(RM?0:.0015);}
-      var base=SH[si][2];pts.rotation.x=base[0]+rotX;pts.rotation.y=rotY;
+      var isLogo=si===0;if(!down){vX*=.94;vY*=.94;rotX+=vX;rotY+=vY+(RM||isLogo?0:.0015);if(isLogo){rotX*=.97;rotY*=.97;}}
+      var base=SH[si][2];pts.rotation.x=base[0]+rotX;pts.rotation.y=rotY+(isLogo&&!RM?Math.sin(performance.now()/2400)*.22:0);
       if(si===2&&!RM){for(var i=0;i<N;i++){var x=target[i*3],z=target[i*3+2];cpos[i*3+1]+=(.32*Math.sin(x*1.6+now/600)+.22*Math.cos(z*2.1+now/800))*e;}}
       pts.updateMatrixWorld();var has=false;
       if(active){ray.setFromCamera(mouse,cam);plane.constant=-pts.position.z;if(ray.ray.intersectPlane(plane,hit)){loc.copy(hit);pts.worldToLocal(loc);has=true;}}
