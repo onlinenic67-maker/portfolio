@@ -41,6 +41,57 @@ h2{font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 14px;font-weight:
 @media(max-width:600px){body .phone{width:min(240px,60vw)}body .hero .shape{width:150px;height:150px;right:-75px;top:-75px}.hero .k{position:relative;z-index:1;max-width:calc(100% - 70px)}}
 .post.has-foto{background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.78) 100%),var(--img) center/cover!important;color:#fff!important;justify-content:flex-end;padding-bottom:20%}
 .post.has-foto::after{display:none} .post.has-foto *{color:#fff!important} .post.has-foto .pt{text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.calwrap{display:grid;gap:28px;align-items:start} @media(min-width:980px){.calwrap{grid-template-columns:360px minmax(0,1fr)}.prof{position:sticky;top:76px}}
+.prof{background:#fff;color:#111;border:1px solid var(--line);border-radius:18px;padding:16px 0 0;overflow:hidden;max-width:420px;width:100%;margin:0 auto;box-shadow:0 20px 50px -30px rgba(0,0,0,.35)}
+.ph{display:flex;gap:14px;align-items:center;padding:0 16px} .ph b{display:block;font:700 15px var(--b)} .pst{font-size:12.5px;color:#555}
+.av{width:64px;height:64px;border-radius:50%;border:1px solid #ddd;display:grid;place-items:center;overflow:hidden;background:#fff;flex:none;padding:8px} .av img{max-width:100%;max-height:100%;object-fit:contain} .av .word{font:800 11px var(--h);color:var(--c);text-align:center}
+.pbio{font-size:13px;line-height:1.45;padding:10px 16px 12px;margin:0;color:#222}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.gc{position:relative;aspect-ratio:4/5;overflow:hidden;background:#eee} .gc .g{position:absolute;inset:0}
+.gd{position:absolute;left:4px;bottom:4px;font:600 9.5px var(--b);background:rgba(0,0,0,.65);color:#fff;border-radius:4px;padding:1px 5px;z-index:3}
+.gc.old{display:grid;place-items:center;background:repeating-linear-gradient(45deg,#f1f1f1 0 8px,#e9e9e9 8px 16px)} .gc.old span{font:500 9px var(--mono);color:#999;text-align:center;padding:4px}
+.g{container-type:inline-size;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--c);color:var(--on);font-family:var(--h)}
+.g .gph{position:absolute;left:0;right:0;top:0;height:72%} .g .gph.full{height:100%} .g .gph img{width:100%;height:100%;object-fit:cover;display:block}
+.g .gband{position:absolute;left:0;right:0;bottom:0;height:28%;background:var(--c);color:var(--on);padding:4cqw 6cqw;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+.g .gk{font:700 2.9cqw var(--b);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.g .gt{font-weight:800;font-size:7cqw;line-height:1.08;letter-spacing:-.01em;display:block}
+.g .gs{font:500 3.3cqw/1.35 var(--b);opacity:.9}
+.g .gbox{position:absolute;left:5cqw;top:5cqw;max-width:78%;background:rgba(10,10,12,.78);color:#fff;padding:3.6cqw 4.4cqw;border-radius:2cqw;display:flex;flex-direction:column;gap:1.6cqw}
+.g .gbox .gt{font-size:6.6cqw} .g .gbar{display:block;width:12cqw;height:1cqw;background:var(--c2);border-radius:1cqw}
+.g .greel{position:absolute;inset:auto 0 0 0;padding:28cqw 6cqw 9cqw;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));color:#fff} .g .greel .gt{font-size:8.4cqw}
+.g .gplay{position:absolute;right:5cqw;top:5cqw;width:10cqw;height:10cqw;border-radius:50%;background:rgba(255,255,255,.9);color:#111;display:grid;place-items:center;font-size:4cqw}
+.g .gm{position:absolute;right:5cqw;bottom:4cqw;font:800 2.8cqw var(--h);letter-spacing:.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.g-band .gm{display:none}
+.g .gtyp{position:absolute;inset:0;padding:9cqw 8cqw;display:flex;flex-direction:column;justify-content:center;gap:2.6cqw}
+.g .gtyp .gt{font-size:9cqw} .g .gn{font-weight:800;font-size:30cqw;line-height:.9;color:var(--c2)}
+.g-frase.v1,.g-domanda.v1,.g-numero.v1{background:#fff;color:#111} .g-frase.v2,.g-domanda.v2,.g-numero.v2{background:var(--c2);color:var(--on2)}
+.g-numero.v1 .gn{color:var(--num)} .g-numero.v2 .gn{color:var(--on2);opacity:.4}
+.g-frase .gm,.g-domanda .gm,.g-numero .gm{color:inherit;text-shadow:none;opacity:.7}
+.cal{display:grid;gap:22px;min-width:0}
+.cp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.cp header{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:14px} .cp header b{font:700 16px var(--h)}
+.cd{font:600 13px var(--b);background:var(--c);color:var(--on);border-radius:6px;padding:3px 9px} .cf{font:500 11.5px var(--mono);border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--mut)}
+.cpb{display:grid;gap:16px} @media(min-width:620px){.cpb{grid-template-columns:minmax(0,300px) minmax(0,1fr)}}
+.cpi .g{border-radius:10px;max-width:340px}
+.cpt small{display:block;font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-bottom:6px} .cpt p{margin:0 0 14px;font-size:14.5px;line-height:1.55} .cpt .why{color:var(--mut)}
+.sstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0} @media(min-width:760px){.sstats{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.sst{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px} .sst b{display:block;font:800 26px var(--h);color:var(--c)} .sst span{font-size:13px;color:var(--mut)}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 12px}
+.chead{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:13px;color:var(--mut);margin-bottom:14px} .chead b{color:var(--fg);font:700 15px var(--h)}
+.lg{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--num);margin-right:6px;vertical-align:-1px}
+.bars{position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6px;height:200px;align-items:end;padding-bottom:22px}
+.bar{position:relative;height:100%;display:flex;align-items:flex-end;text-decoration:none} .bar i{display:block;width:100%;height:var(--h);background:var(--c);opacity:.35;border-radius:5px 5px 2px 2px;transition:opacity .2s}
+.bar.hi i{background:var(--num);opacity:1} .bar:hover i{opacity:.8}
+.bv{position:absolute;left:50%;bottom:calc(var(--h) + 4px);transform:translateX(-50%);font:600 10px var(--mono);color:var(--fg);white-space:nowrap;display:none} .bar.hi .bv{display:block}
+.bd{position:absolute;left:50%;bottom:-20px;transform:translateX(-50%);font:500 9.5px var(--mono);color:var(--mut);white-space:nowrap}
+.medl{position:absolute;left:0;right:0;bottom:calc(22px + (100% - 22px) * var(--med) / 100);border-top:1.5px dashed var(--fg);opacity:.55;font:600 10px var(--mono);font-style:normal;color:var(--fg);padding-top:2px;pointer-events:none}
+@media(max-width:600px){.bars{gap:3px;height:170px}.bd{display:none}.bars{padding-bottom:6px}.medl{bottom:calc(6px + (100% - 6px) * var(--med) / 100)}.bv{font-size:8.5px}}
+.cnote{font-size:12px;color:var(--mut);margin:12px 0 0}
+.s3{display:grid;gap:24px;margin-top:26px} @media(min-width:860px){.s3{grid-template-columns:1fr 1fr}}
+.s3 h3{font:700 17px var(--h);margin:0 0 10px}
+.top{list-style:none;margin:0;padding:0;display:grid;gap:10px} .top li{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.top b{font:800 18px var(--h);color:var(--num);min-width:64px} .top span{font-size:14px;line-height:1.45} .top a{font:500 12px var(--mono);color:var(--c)}
+.ok,.no{margin:0 0 18px;padding-left:20px;display:grid;gap:6px;font-size:14.5px;line-height:1.5} .ok li::marker{content:"+  ";color:var(--c);font-weight:800} .no li::marker{content:"–  ";color:var(--num);font-weight:800}
 .feed-hint{display:none;font:500 12px var(--mono);color:var(--mut);margin:0 0 10px}
 @media(max-width:700px){.feed{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));padding-bottom:10px;scrollbar-width:none}.feed::-webkit-scrollbar{display:none}.feed .ig{flex:0 0 78%;scroll-snap-align:center}.feed-hint{display:block}}
 .ig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
@@ -64,12 +115,43 @@ h2{font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 14px;font-weight:
 .vid>div{min-width:0}
 .phone{width:min(300px,80vw);margin:0 auto;aspect-ratio:9/19;border-radius:40px;background:#111;padding:11px;box-shadow:0 30px 60px -28px rgba(0,0,0,.45)}
 .screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--c)}
-.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18%;opacity:0;transition:opacity .45s ease}
-.scene:nth-child(odd){background:var(--c);color:var(--on)} .scene:nth-child(even){background:var(--c2);color:var(--on2)}
-.scene .stx{font:800 26px/1.15 var(--h);text-align:center;transform:translateY(16px) scale(.96);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.scene.on{opacity:1} .scene.on .stx{transform:none}
-.prog{position:absolute;left:12px;right:12px;top:12px;display:flex;gap:4px;z-index:3}
-.prog i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden} .prog i b{display:block;height:100%;width:0;background:#fff}
+.phone:has(.reel){aspect-ratio:auto} .screen.reel{height:auto;aspect-ratio:9/16} .rvid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover} .screen.reel{background:#000;cursor:pointer;container-type:inline-size}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14cqw 12cqw;opacity:0;transition:opacity .25s ease;overflow:hidden;background:var(--c);color:var(--on)}
+.scene:nth-child(3n+2){background:var(--c2);color:var(--on2)} .scene:nth-child(3n){background:#fff;color:#111}
+.scene.ph{color:#fff;background:#000}
+.scene.on{opacity:1;z-index:1}
+.sbg{position:absolute;inset:-4%;background-size:cover;background-position:center} .scene.on .sbg{animation:kb 4.5s ease-out both}
+.scene:nth-child(even).on .sbg{animation-name:kb2}
+@keyframes kb{from{transform:scale(1.18) translate(2%,1%)}to{transform:scale(1.02) translate(0,0)}}
+@keyframes kb2{from{transform:scale(1.02) translate(-2%,0)}to{transform:scale(1.16) translate(2%,-1%)}}
+.sdim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.55) 60%,rgba(0,0,0,.7))}
+.sfill i{position:absolute;border-radius:50%;background:currentColor;opacity:.08} .sfill i:first-child{width:90cqw;height:90cqw;right:-40cqw;top:-25cqw} .sfill i:last-child{width:60cqw;height:60cqw;left:-25cqw;bottom:-10cqw}
+.scene.on .sfill i{animation:blob 3s ease-out both} @keyframes blob{from{transform:scale(.4)}to{transform:scale(1)}}
+.stx{position:relative;font:800 11cqw/1.06 var(--h);text-align:center;letter-spacing:-.01em;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.scene:not(.ph) .stx{text-shadow:none}
+.stx span{display:inline-block;opacity:0}
+.scene.on.a-words .stx span{animation:wpop .5s cubic-bezier(.2,1.4,.4,1) both;animation-delay:calc(var(--i)*.12s + .1s)}
+@keyframes wpop{from{opacity:0;transform:translateY(40%) scale(.6)}to{opacity:1;transform:none}}
+.scene.on.a-slide .stx span{animation:wsl .55s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*.07s + .1s)}
+@keyframes wsl{from{opacity:0;transform:translateX(-60%)}to{opacity:1;transform:none}}
+.scene.on.a-zoom .stx span{animation:wz .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:.1s}
+@keyframes wz{from{opacity:0;transform:scale(2.4);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.scene.on.a-stamp .stx span{animation:wst .35s cubic-bezier(.3,1.6,.5,1) both;animation-delay:calc(var(--i)*.18s + .1s)}
+@keyframes wst{from{opacity:0;transform:scale(1.8) rotate(-6deg)}to{opacity:1;transform:none}}
+.scene.on.a-type .stx span{animation:wty .01s steps(1) both;animation-delay:calc(var(--i)*.16s + .1s)}
+@keyframes wty{to{opacity:1}}
+.a-stamp .stx{background:var(--c2);color:var(--on2);padding:2cqw 4cqw;transform:rotate(-2deg)} .scene:nth-child(3n+2).a-stamp .stx{background:var(--c);color:var(--on)}
+.screen.paused .scene *{animation-play-state:paused!important}
+.rui{position:absolute;inset:0;z-index:4;pointer-events:none;color:#fff;font-family:var(--b)}
+.rtop{position:absolute;left:5cqw;top:6cqw;font:700 5.4cqw var(--b);text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.rside{position:absolute;right:3cqw;bottom:30cqw;display:flex;flex-direction:column;gap:5cqw;align-items:center;font-size:7cqw;text-shadow:0 1px 6px rgba(0,0,0,.5)} .rside span{display:flex;flex-direction:column;align-items:center;line-height:1} .rside small{font-size:2.6cqw;margin-top:1cqw}
+.rbot{position:absolute;left:4cqw;right:16cqw;bottom:6cqw;text-shadow:0 1px 6px rgba(0,0,0,.6)} .rbot p{margin:1.6cqw 0;font-size:3.6cqw;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden} .rbot small{font-size:3.2cqw;opacity:.9}
+.ruser{display:flex;align-items:center;gap:2.4cqw;font-size:3.8cqw} .rav{width:8cqw;height:8cqw;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;padding:1cqw} .rav img{max-width:100%;max-height:100%;object-fit:contain} .rav .word{font-size:1.8cqw;color:var(--c)}
+.rprog{position:absolute;left:0;right:0;bottom:0;height:.9cqw;background:rgba(255,255,255,.3)} .rprog b{display:block;height:100%;width:0;background:#fff}
+.rpause{position:absolute;z-index:5;left:50%;top:50%;transform:translate(-50%,-50%);width:16cqw;height:16cqw;border-radius:50%;border:0;background:rgba(0,0,0,.45);color:#fff;font-size:5cqw;opacity:0;transition:opacity .2s;pointer-events:none} .screen.paused .rpause{opacity:1}
+.screen.paused .rpause::after{content:""}
+.rcap{text-align:center;font-size:12.5px;color:var(--mut);margin:12px auto 0;max-width:300px}
+.why+.why{margin-top:12px}
 .play{margin:16px auto 0;display:block;font:600 14px var(--b);background:var(--fg);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer}
 .shots{list-style:none;margin:0;padding:0}
 .shots li{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:12px 10px;border-top:1px solid var(--line);border-radius:8px;transition:background .3s}
@@ -104,9 +186,17 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
   <p class="lead">Solo dati pubblici, letti il 18 novembre 2026, ognuno con la sua fonte. Da qui parte la proposta.</p>
   <div class="cards"><article class="card"><b>Un formato proprio, di livello</b><p>War Room esce ogni mese, in italiano e in inglese, su Spotify, Apple Podcasts, Amazon Music e YouTube. Il primo episodio ha raggiunto 676 visualizzazioni su YouTube: le idee ci sono, ora possono arrivare a più persone.</p><a href="https://pomilioblumm.eu/it/more/war-room-podcast" target="_blank" rel="noopener">Fonte: pomilioblumm.eu · War Room</a></article><article class="card"><b>Episodi lunghi, nessuna clip</b><p>Sul canale ci sono gli episodi interi e i video istituzionali, ma nessuno short estratto dalle conversazioni. Le frasi migliori restano dentro l&#x27;episodio intero.</p><a href="https://www.youtube.com/@pomilioblumm" target="_blank" rel="noopener">Fonte: Canale YouTube @pomilioblumm</a></article><article class="card"><b>I vostri clienti parlano per immagini</b><p>Il Parlamento europeo racconta dati e decisioni con reel e caroselli quasi ogni giorno, e ha 922.000 follower su Instagram. È il linguaggio dei cittadini a cui si rivolgono le vostre campagne.</p><a href="https://www.instagram.com/europeanparliament/" target="_blank" rel="noopener">Fonte: Instagram @europeanparliament, 18/11/2026</a></article></div>
 </div></section>
+<section class="alt"><div class="in">
+  <span class="kick">02 · Lo studio del profilo</span>
+  <h2>Grandi progetti, un solo appuntamento al mese che li racconta</h2>
+  <p class="lead">Pomilio Blumm non ha un profilo Instagram. Ho guardato il sito, i canali collegati e il podcast War Room, come facciamo per i nostri clienti prima di proporre qualcosa.</p>
+  <div class="sstats"><div class="sst"><b>200+</b><span>partner istituzionali</span></div><div class="sst"><b>7.300+</b><span>professionisti da 39 paesi</span></div><div class="sst"><b>1 al mese</b><span>puntate di War Room</span></div><div class="sst"><b>0</b><span>profili Instagram o TikTok trovati</span></div></div>
+
+  <div class="s3"><div><h3>Cosa funziona</h3><ul class="ok"><li>Casi di grande peso: Ukraine Recovery Conference, DesignEuropa Awards, EU Leaders&#x27; Retreat.</li><li>War Room porta nomi che il pubblico conosce, come Dario Fabbri e Paolo Benanti.</li><li>La classifica FT 1000 è un dato di credibilità forte.</li></ul><h3>Cosa manca</h3><ul class="no"><li>Sul sito i link social sono solo LinkedIn, X e YouTube.</li><li>Tra una puntata di War Room e l&#x27;altra passa un mese senza contenuti.</li><li>Le puntate lunghe non hanno versioni brevi da condividere.</li></ul></div></div>
+</div></section>
 
 <section class="alt"><div class="in">
-  <span class="kick">02 · L'idea</span>
+  <span class="kick">03 · L'idea</span>
   <h2>War Room, in un minuto</h2>
   <div class="idea">
     <div><p class="insight"><small style="display:block;font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:6px">La mia lettura</small>Chi decide nelle istituzioni ha poco tempo. Un minuto ben scelto può portarlo a guardare l&#x27;episodio intero.</p><p>Da ogni episodio di War Room si estraggono quattro o cinque clip verticali da 45-60 secondi, ognuna con una tesi sola: sottotitoli parola per parola, una versione in italiano e una in inglese, e il titolo in copertina come la frase di un editoriale. Le clip escono su LinkedIn e YouTube Shorts nelle settimane tra un episodio e l&#x27;altro, e ognuna rimanda all&#x27;episodio completo. Il podcast smette di essere un appuntamento al mese e diventa una presenza ogni settimana.</p><p class="meta"><b>Per chi:</b> Funzionari di comunicazione delle istituzioni europee e italiane, giornalisti e giovani professionisti della comunicazione pubblica, in Italia e a Bruxelles.</p><div><span class="tag">LinkedIn</span><span class="tag">YouTube Shorts</span><span class="tag">Instagram (nuovo)</span><span class="tag">Newsletter</span></div></div>
@@ -115,24 +205,30 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
 </div></section>
 
 <section><div class="in">
-  <span class="kick">03 · I post</span>
-  <h2>Come si vede</h2>
-  <p class="lead">Tre post nel vostro stile: colori, carattere e tono del marchio. Sono bozze di concept.</p>
-  <p class="feed-hint">Scorri per vedere i tre post →</p><div class="feed"><figure class="ig"><div class="post s-frase v0" role="img" aria-label="La geopolitica, un minuto alla volta."><div class="pt">La geopolitica, un minuto alla volta.</div><div class="ps">War Room · le clip della settimana</div><div class="pbrand">Pomilio Blumm</div></div><figcaption><b>Pomilio Blumm</b> Ogni mese War Room apre una conversazione sulla geopolitica e la comunicazione. Da oggi, tra un episodio e l&#x27;altro, vi portiamo i suoi momenti migliori: un minuto, un&#x27;idea. L&#x27;episodio completo è al link.</figcaption></figure><figure class="ig"><div class="post s-domanda v1" role="img" aria-label="Fede e verità: chi scrive la narrativa?"><div class="pt">Fede e verità: chi scrive la narrativa?</div><div class="ps">War Room #2 · in 60 secondi</div><div class="pbrand">Pomilio Blumm</div></div><figcaption><b>Pomilio Blumm</b> «Narrativa geopolitica: tra fede e verità» è il tema del secondo episodio di War Room. In questa clip, un passaggio in un minuto, sottotitolato. Per l&#x27;analisi completa, l&#x27;episodio è su Spotify, Apple Podcasts e YouTube.</figcaption></figure><figure class="ig"><div class="post s-numero v2" role="img" aria-label="secondi per un&#x27;idea che resta"><div class="pnum">60</div><div class="pt">secondi per un&#x27;idea che resta</div><div class="ps">Clip in italiano e in inglese</div><div class="pbrand">Pomilio Blumm</div></div><figcaption><b>Pomilio Blumm</b> Lo stesso contenuto in due lingue, per il pubblico italiano e per Bruxelles. Ogni clip ha una tesi sola e rimanda all&#x27;episodio completo. Seguiteci per la prossima.</figcaption></figure></div>
+  <span class="kick">04 · Il calendario</span>
+  <h2>Come lo vedreste sul vostro profilo</h2>
+  <p class="lead">Le prime uscite della campagna, impaginate come le prepariamo per i nostri clienti: la griglia del profilo dopo le uscite e ogni post con la sua didascalia. Bozze di concept costruite sulle vostre immagini ufficiali.</p>
+  <div class="calwrap"><div class="prof"><div class="ph"><span class="av"><img src="loghi/pomilio-blumm-scuro.png" alt="Pomilio Blumm" class="logo"></span><div><b>@pomilioblumm</b><span class="pst">profilo proposto: oggi non c&#x27;è</span></div></div><p class="pbio"><b>Pomilio Blumm</b> </p><div class="pgrid"><div class="gc"><div class="g g-numero v2" role="img" aria-label="secondi per un&#x27;idea che resta"><div class="gtyp"><span class="gk">Pomilio Blumm</span><span class="gn" style="font-size:30cqw">60</span><b class="gt">secondi per un&#x27;idea che resta</b><span class="gs">Clip in italiano e in inglese</span></div><span class="gm">Pomilio Blumm</span></div><span class="gd">ven 4/12</span></div><div class="gc"><div class="g g-band v1" role="img" aria-label="DesignEuropa Awards 2025"><div class="gph"><img src="foto/pomilio-blumm-03.jpg" alt="" loading="lazy"></div><div class="gband"><span class="gk">Per EUIPO</span><b class="gt">DesignEuropa Awards 2025</b><span class="gs">Una serata per il design europeo</span></div></div><span class="gd">mer 2/12</span></div><div class="gc"><div class="g g-reel v0" role="img" aria-label="Fede e verità: chi scrive la narrativa?"><div class="gph full"><img src="foto/pomilio-blumm-07.jpg" alt="" loading="lazy"></div><div class="greel"><b class="gt">Fede e verità: chi scrive la narrativa?</b></div><span class="gplay">&#9654;</span><span class="gm">Pomilio Blumm</span></div><span class="gd">lun 30/11</span></div><div class="gc"><div class="g g-box v2" role="img" aria-label="Ukraine Recovery Conference, Roma."><div class="gph full"><img src="foto/pomilio-blumm-01.jpg" alt="" loading="lazy"></div><div class="gbox"><b class="gt">Ukraine Recovery Conference, Roma.</b><i class="gbar"></i><span class="gs">10-11 luglio 2025</span></div><span class="gm">Pomilio Blumm</span></div><span class="gd">ven 27/11</span></div><div class="gc"><div class="g g-frase v1" role="img" aria-label="La geopolitica, un minuto alla volta."><div class="gtyp"><span class="gk">Pomilio Blumm</span><b class="gt">La geopolitica, un minuto alla volta.</b><span class="gs">War Room · le clip della settimana</span></div><span class="gm">Pomilio Blumm</span></div><span class="gd">mer 25/11</span></div><div class="gc"><div class="g g-reel v0" role="img" aria-label="La geopolitica, un minuto alla volta."><div class="gph full"><img src="foto/pomilio-blumm-02.jpg" alt="" loading="lazy"></div><div class="greel"><b class="gt">La geopolitica, un minuto alla volta.</b></div><span class="gplay">&#9654;</span><span class="gm">Pomilio Blumm</span></div><span class="gd">lun 23/11</span></div><div class="gc old"><span>post già pubblicato</span></div><div class="gc old"><span>post già pubblicato</span></div><div class="gc old"><span>post già pubblicato</span></div></div></div><div class="cal"><article class="cp"><header><span class="cd">lun 23/11</span><b>Clip 1 · War Room con Dario Fabbri</b><span class="cf">reel</span></header><div class="cpb"><div class="cpi"><div class="g g-reel v0" role="img" aria-label="La geopolitica, un minuto alla volta."><div class="gph full"><img src="foto/pomilio-blumm-02.jpg" alt="" loading="lazy"></div><div class="greel"><b class="gt">La geopolitica, un minuto alla volta.</b></div><span class="gplay">&#9654;</span><span class="gm">Pomilio Blumm</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>«Human geopolitic»: un passaggio della prima puntata di War Room con Dario Fabbri, in un minuto e sottotitolato. L&#x27;episodio completo è nel link.</p><small>Perché</small><p class="why">La prima clip porta un nome che il pubblico conosce già.</p></div></div></article><article class="cp"><header><span class="cd">mer 25/11</span><b>La serie</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-frase v1" role="img" aria-label="La geopolitica, un minuto alla volta."><div class="gtyp"><span class="gk">Pomilio Blumm</span><b class="gt">La geopolitica, un minuto alla volta.</b><span class="gs">War Room · le clip della settimana</span></div><span class="gm">Pomilio Blumm</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>Ogni mese War Room apre una conversazione sulla geopolitica e la comunicazione. Da oggi, tra un episodio e l&#x27;altro, vi portiamo i suoi momenti migliori: un minuto, un&#x27;idea. L&#x27;episodio completo è al link.</p><small>Perché</small><p class="why">Il post che presenta il nuovo appuntamento settimanale.</p></div></div></article><article class="cp"><header><span class="cd">ven 27/11</span><b>Ukraine Recovery Conference</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-box v2" role="img" aria-label="Ukraine Recovery Conference, Roma."><div class="gph full"><img src="foto/pomilio-blumm-01.jpg" alt="" loading="lazy"></div><div class="gbox"><b class="gt">Ukraine Recovery Conference, Roma.</b><i class="gbar"></i><span class="gs">10-11 luglio 2025</span></div><span class="gm">Pomilio Blumm</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>Due giorni a Roma per la ricostruzione dell&#x27;Ucraina. Cosa vuol dire comunicare un evento così, raccontato da chi l&#x27;ha costruito.</p><small>Perché</small><p class="why">Mostra il lavoro accanto al podcast: le idee e la loro messa in pratica.</p></div></div></article><article class="cp"><header><span class="cd">lun 30/11</span><b>Clip 2 · War Room #2</b><span class="cf">reel</span></header><div class="cpb"><div class="cpi"><div class="g g-reel v0" role="img" aria-label="Fede e verità: chi scrive la narrativa?"><div class="gph full"><img src="foto/pomilio-blumm-07.jpg" alt="" loading="lazy"></div><div class="greel"><b class="gt">Fede e verità: chi scrive la narrativa?</b></div><span class="gplay">&#9654;</span><span class="gm">Pomilio Blumm</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>«Narrativa geopolitica: tra fede e verità» è il tema del secondo episodio di War Room. In questa clip, un passaggio in un minuto, sottotitolato. Per l&#x27;analisi completa, l&#x27;episodio è su Spotify, Apple Podcasts e YouTube.</p></div></div></article><article class="cp"><header><span class="cd">mer 2/12</span><b>DesignEuropa Awards</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-band v1" role="img" aria-label="DesignEuropa Awards 2025"><div class="gph"><img src="foto/pomilio-blumm-03.jpg" alt="" loading="lazy"></div><div class="gband"><span class="gk">Per EUIPO</span><b class="gt">DesignEuropa Awards 2025</b><span class="gs">Una serata per il design europeo</span></div></div></div><div class="cpt"><small>Didascalia Instagram</small><p>La serata dei DesignEuropa Awards 2025 per EUIPO. Luci, palco, regia: il lavoro che non si vede quando tutto funziona.</p><small>Perché</small><p class="why">Le immagini degli eventi istituzionali sono il vostro portfolio migliore.</p></div></div></article><article class="cp"><header><span class="cd">ven 4/12</span><b>In due lingue</b><span class="cf">post</span></header><div class="cpb"><div class="cpi"><div class="g g-numero v2" role="img" aria-label="secondi per un&#x27;idea che resta"><div class="gtyp"><span class="gk">Pomilio Blumm</span><span class="gn" style="font-size:30cqw">60</span><b class="gt">secondi per un&#x27;idea che resta</b><span class="gs">Clip in italiano e in inglese</span></div><span class="gm">Pomilio Blumm</span></div></div><div class="cpt"><small>Didascalia Instagram</small><p>Lo stesso contenuto in due lingue, per il pubblico italiano e per Bruxelles. Ogni clip ha una tesi sola e rimanda all&#x27;episodio completo. Seguiteci per la prossima.</p></div></div></article></div></div>
 </div></section>
 
 <section class="alt"><div class="in">
-  <span class="kick">04 · Il video</span>
+  <span class="kick">05 · Il video</span>
   <h2>Clip 1 · Una tesi in 60 secondi</h2>
-  <p class="lead">Reel da 60 s. Si apre direttamente con la frase più forte dell&#x27;ospite, già sottotitolata: niente sigla, niente presentazione. Premi play per vedere lo storyboard animato.</p>
+  <p class="lead">Si apre direttamente con la frase più forte dell&#x27;ospite, già sottotitolata: niente sigla, niente presentazione.</p>
   <div class="vid">
-    <div><div class="phone"><div class="screen" id="screen"><div class="prog" id="prog"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div><div class="scene" data-i="0"><div class="stx">La frase più forte dell&#x27;episodio</div></div><div class="scene" data-i="1"><div class="stx">War Room #2</div></div><div class="scene" data-i="2"><div class="stx">La tesi, parola per parola</div></div><div class="scene" data-i="3"><div class="stx">La domanda resta aperta</div></div><div class="scene" data-i="4"><div class="stx">Il link all&#x27;episodio completo</div></div></div></div><button class="play" id="play" type="button">Guarda lo storyboard</button></div>
-    <div><ol class="shots" id="shots"><li data-i="0"><span class="t">0-3 s</span><div><b>La frase più forte dell&#x27;episodio</b><span>Primo piano dell&#x27;ospite che la pronuncia; sottotitolo grande, parola per parola</span><em>Audio: La voce dell&#x27;ospite, nessuna musica</em></div></li><li data-i="1"><span class="t">3-8 s</span><div><b>War Room #2</b><span>Titolo dell&#x27;episodio in sovrimpressione, nello stile tipografico di Pomilio Blumm</span><em>Audio: Una nota grave</em></div></li><li data-i="2"><span class="t">8-45 s</span><div><b>La tesi, parola per parola</b><span>Il ragionamento completo, montato senza pause; due inserti grafici con un dato o una mappa</span><em>Audio: La voce, musica di sottofondo molto bassa</em></div></li><li data-i="3"><span class="t">45-55 s</span><div><b>La domanda resta aperta</b><span>Ritorno sul conduttore, che rilancia la domanda</span><em>Audio: La musica sale</em></div></li><li data-i="4"><span class="t">55-60 s</span><div><b>Il link all&#x27;episodio completo</b><span>Logo Pomilio Blumm e copertina del podcast</span><em>Audio: Chiusura</em></div></li></ol><div class="why"><b>Perché lo propongo.</b> Il primo secondo è già contenuto, e chi scorre su LinkedIn decide lì. La clip vive da sola, ma rimanda all&#x27;episodio e lo fa crescere.</div></div>
+    <div><div class="phone"><div class="screen reel" id="screen"><video class="rvid" id="rvid" src="video/pomilio-blumm.mp4" poster="video/pomilio-blumm.jpg" muted loop playsinline preload="metadata" aria-label="Reel Clip 1 · Una tesi in 60 secondi"></video>
+      <div class="rui"><span class="rtop">Reels</span>
+        <div class="rside"><span>&#9825;<small>Mi piace</small></span><span>&#9675;<small>Commenta</small></span><span>&#10148;<small>Condividi</small></span></div>
+        <div class="rbot"><div class="ruser"><span class="rav"><img src="loghi/pomilio-blumm-scuro.png" alt="Pomilio Blumm" class="logo"></span><b>@pomilioblumm</b></div><p>Clip 1 · Una tesi in 60 secondi</p><small>&#9835; Audio originale</small></div>
+        <div class="rprog"><b id="rprog"></b></div></div>
+      <button class="rpause" id="play" type="button" aria-label="Riprendi">&#9654;</button></div></div>
+      <p class="rcap">Reel da 22 s, montato in motion graphics sulle vostre immagini ufficiali e sui vostri numeri. Tocca il video per fermarlo.</p></div>
+    <div><div class="why"><b>Perché lo propongo.</b> Il primo secondo è già contenuto, e chi scorre su LinkedIn decide lì. La clip vive da sola, ma rimanda all&#x27;episodio e lo fa crescere.</div></div>
   </div>
 </div></section>
 
 <section><div class="in">
-  <span class="kick">05 · Il piano</span>
+  <span class="kick">06 · Il piano</span>
   <h2>Quattro settimane per partire</h2>
   <ul class="plan"><li><span class="t">Settimana 1</span><span>Riascoltare i due episodi usciti e scegliere le otto frasi più forti; fissare lo stile grafico delle clip e dei sottotitoli in italiano e in inglese.</span></li><li><span class="t">Settimana 2</span><span>Pubblicare due clip dall&#x27;episodio 1 su LinkedIn e YouTube Shorts, con il rimando all&#x27;episodio.</span></li><li><span class="t">Settimana 3</span><span>Pubblicare due clip dall&#x27;episodio 2 e una versione in carosello della tesi più condivisa.</span></li><li><span class="t">Settimana 4</span><span>Preparare le clip dell&#x27;episodio di dicembre in anticipo, e confrontare le visualizzazioni dell&#x27;episodio completo prima e dopo le clip.</span></li></ul>
   <h3 style="font-size:20px;margin:0 0 12px">Cosa misurerei</h3>
@@ -141,7 +237,7 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
 </div></section>
 
 <section class="alt"><div class="in">
-  <span class="kick">06 · Perché io</span>
+  <span class="kick">07 · Perché io</span>
   <h2>Quello che porto da subito</h2>
   <div class="me">
     <div><ul><li>Monto video brevi con sottotitoli parola per parola e un gancio nel primo secondo: nel portfolio c&#x27;è un medico che spiega un impianto dentale in 30 secondi.</li><li>Ho lanciato una campagna su due mercati, in italiano e in ceco: so adattare lo stesso contenuto a lingue e pubblici diversi.</li><li>Studio alla magistrale LM-59 a UniTE e vivo a Montesilvano, accanto a Pescara.</li></ul>
@@ -153,15 +249,23 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut)
 <footer><div class="in">Proposta preparata da Nicolò Cammarata per lo UniTE Talent Day del 19 novembre 2026. Non è stata commissionata da Pomilio Blumm e non rappresenta l'azienda. I marchi appartengono ai rispettivi proprietari. Dati pubblici letti a novembre 2026, con le fonti indicate.</div></footer>
 <script>
 (function(){
-  var sc=[].slice.call(document.querySelectorAll('.scene')),rows=[].slice.call(document.querySelectorAll('#shots li')),bars=[].slice.call(document.querySelectorAll('#prog b')),btn=document.getElementById('play');
-  var RM=matchMedia('(prefers-reduced-motion: reduce)').matches,D=RM?3200:2400,i=-1,t=null,start=0,raf=null;
-  function show(k){sc.forEach(function(s,j){s.classList.toggle('on',j===k);});rows.forEach(function(r,j){r.classList.toggle('on',j===k);});bars.forEach(function(b,j){b.style.width=j<k?'100%':'0';});}
-  function tick(now){if(i<0)return;var p=Math.min(1,(now-start)/D);bars[i].style.width=(p*100)+'%';if(p>=1){i++;if(i>=sc.length){stop(true);return;}show(i);start=now;}raf=requestAnimationFrame(tick);}
-  function play(){i=0;show(0);start=performance.now();btn.textContent='Ferma';raf=requestAnimationFrame(tick);}
-  function stop(end){cancelAnimationFrame(raf);i=-1;btn.textContent=end?'Riguarda':'Guarda lo storyboard';}
-  btn.addEventListener('click',function(){if(i>=0)stop();else play();});
-  rows.forEach(function(r,j){r.style.cursor='pointer';r.addEventListener('click',function(){stop();show(j);});});
+  var rv=document.getElementById('rvid');
+  if(rv){var sc0=document.getElementById('screen'),bar0=document.getElementById('rprog');
+    rv.addEventListener('timeupdate',function(){if(rv.duration)bar0.style.width=(rv.currentTime/rv.duration*100)+'%';});
+    sc0.addEventListener('click',function(){if(rv.paused){rv.play();sc0.classList.remove('paused');sc0.dataset.user='';}else{rv.pause();sc0.classList.add('paused');sc0.dataset.user='1';}});
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!sc0.dataset.user){var pr=rv.play();if(pr&&pr.catch)pr.catch(function(){});}else if(!e.isIntersecting)rv.pause();});},{threshold:.45}).observe(sc0);else rv.play();
+    return;}
+  var sc=[].slice.call(document.querySelectorAll('.scene')),scr=document.getElementById('screen'),bar=document.getElementById('rprog'),btn=document.getElementById('play');
+  var RM=matchMedia('(prefers-reduced-motion: reduce)').matches,D=sc.map(function(s){return (+s.dataset.d||2.4)*1000*(RM?1.4:1);}),T=D.reduce(function(a,b){return a+b;},0);
+  var k=-1,t0=0,acc=0,paused=true,raf=null,el=0;
+  function show(n){sc.forEach(function(s,j){if(j===n){s.classList.remove('on');void s.offsetWidth;s.classList.add('on');}else s.classList.remove('on');});k=n;}
+  function tick(now){if(paused)return;el=now-t0;var e=el%T,a=0,n=0;while(n<sc.length-1&&e>=a+D[n]){a+=D[n];n++;}if(n!==k)show(n);bar.style.width=(e/T*100)+'%';raf=requestAnimationFrame(tick);}
+  function play(){if(!paused)return;paused=false;scr.classList.remove('paused');t0=performance.now()-el;raf=requestAnimationFrame(tick);}
+  function pause(){paused=true;scr.classList.add('paused');cancelAnimationFrame(raf);}
+  scr.addEventListener('click',function(){paused?play():pause();});
   show(0);
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!scr.dataset.user)play();else if(!e.isIntersecting)pause();});},{threshold:.45}).observe(scr);else play();
+  scr.addEventListener('click',function(){scr.dataset.user=paused?'1':'';});
 })();
 </script>
 </body></html>
