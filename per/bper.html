@@ -39,6 +39,8 @@ h2{font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 14px;font-weight:
 .feed{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .contact a{white-space:nowrap;color:inherit}
 @media(max-width:600px){body .phone{width:min(240px,60vw)}body .hero .shape{width:150px;height:150px;right:-75px;top:-75px}.hero .k{position:relative;z-index:1;max-width:calc(100% - 70px)}}
+.post.has-foto{background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.78) 100%),var(--img) center/cover!important;color:#fff!important;justify-content:flex-end;padding-bottom:20%}
+.post.has-foto::after{display:none} .post.has-foto *{color:#fff!important} .post.has-foto .pt{text-shadow:0 2px 14px rgba(0,0,0,.5)}
 .feed-hint{display:none;font:500 12px var(--mono);color:var(--mut);margin:0 0 10px}
 @media(max-width:700px){.feed{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));padding-bottom:10px;scrollbar-width:none}.feed::-webkit-scrollbar{display:none}.feed .ig{flex:0 0 78%;scroll-snap-align:center}.feed-hint{display:block}}
 .ig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
