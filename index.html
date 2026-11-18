@@ -137,15 +137,6 @@ dialog img{width:100%;border-radius:12px;display:block}
 .cline a.v{color:inherit;text-decoration:none}
 @media(max-width:600px){.dgrid .phone{width:min(260px,66vw)}.avatar{width:64px;height:64px}.ghost{display:none}#lens{opacity:.55}.hero .kick{font-size:11px;letter-spacing:.1em}.tdbtn{font-size:13px;padding:11px 16px;white-space:nowrap;text-shadow:none}.hero .in{text-shadow:0 1px 12px rgba(20,18,19,.9);min-height:0;padding-top:340px}}
 /* SISTEMA */
-.fx3d{position:relative;height:clamp(400px,56vw,540px);border-radius:12px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#2a2340 0%,#16131a 70%);margin:4px 0 6px;touch-action:pan-y}
-.fx3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
-.fxl{position:absolute;inset:0;pointer-events:none}
-.fxl button{position:absolute;transform:translate(-50%,-140%);pointer-events:auto;font:600 12.5px var(--display);color:#f4f1f1;background:rgba(20,18,22,.72);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 11px;white-space:nowrap;cursor:pointer;transition:background .25s,border-color .25s,opacity .25s;backdrop-filter:blur(4px)}
-.fxl button small{display:block;font:400 10.5px var(--body);color:#c9c2c3}
-.fxl button.on{background:#f4f1f1;color:#16131a;border-color:#f4f1f1}.fxl button.on small{color:#4a4448}
-.fxl .el{position:absolute;transform:translate(-50%,-50%);font:500 10.5px var(--mono);color:#a9a2b8;white-space:nowrap;pointer-events:none}
-.fxl .el.back{color:#f0a160}
-.fxhint{position:absolute;right:12px;bottom:10px;font:400 11px var(--mono);color:#8d8697;pointer-events:none}
 @media(max-width:600px){.fxl button{font-size:11px;padding:4px 8px}.fxl button small{display:none}.fxl .el{display:none}}
 
 .fx{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
@@ -162,6 +153,30 @@ dialog img{width:100%;border-radius:12px;display:block}
 .fx .node.on rect{stroke:var(--accent);stroke-width:2.4;fill:var(--surface)}
 .fx .back{stroke:var(--warm);stroke-dasharray:5 4}
 .fx .acc-fill,.fx .acc-text{fill:var(--warm)}
+.pipe{position:relative;margin:6px 0 4px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.st{position:relative;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:14px 14px 14px;min-height:92px;cursor:pointer;transition:border-color .3s,background .3s,transform .3s;outline:none}
+.st:hover,.st:focus-visible{border-color:var(--accent)}
+.st.on{border-color:var(--accent);background:var(--surface);box-shadow:0 0 0 1px var(--accent)}
+.st .sn{display:block;font:600 11px var(--mono);color:var(--accent);letter-spacing:.08em;margin-bottom:6px}
+.st b{display:block;font:600 15px var(--display);color:var(--fg);padding-right:44px}.st small{padding-right:30px}
+.st small{display:block;font-size:12.5px;color:var(--mut);margin-top:2px}
+.steps .st:nth-child(-n+4)::after{content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);color:var(--mut);font-size:12px;z-index:1}
+.steps .st:nth-child(4)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-13px;transform:translateX(-50%)}
+@media(min-width:701px){.steps .st:nth-child(5){grid-column:4;grid-row:2}.steps .st:nth-child(6){grid-column:3;grid-row:2}.steps .st:nth-child(7){grid-column:2;grid-row:2}.steps .st:nth-child(8){grid-column:1;grid-row:2}
+.steps .st:nth-child(n+5):not(:nth-child(8))::after{content:"←";position:absolute;left:-11px;top:50%;transform:translateY(-50%);color:var(--mut);font-size:12px}
+.steps .st:nth-child(8)::after{content:"↑";position:absolute;left:50%;top:-13px;transform:translateX(-50%);color:var(--warm);font-size:12px}}
+@media(max-width:700px){.steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.st{min-height:84px;padding:12px}.st b{font-size:14px}.steps .st::after{display:none!important}}
+.ptok{position:absolute;left:0;top:0;width:32px;height:40px;border-radius:5px;background:#f4f1f1;box-shadow:0 6px 16px -6px rgba(0,0,0,.6);opacity:0;transition:transform .9s cubic-bezier(.65,0,.35,1),opacity .4s,background .3s;pointer-events:none;z-index:2;padding:3px}
+.ptok.show{opacity:1}
+.ptok .pimg{display:block;height:18px;border-radius:2px;background:linear-gradient(135deg,#5a7bd6,#d067a5 55%,#f08a4b)}
+.ptok .pl{display:block;height:2px;background:#bdb6b8;margin-top:3px;border-radius:1px}.ptok .pl.s{width:60%}
+.ptok em{position:absolute;left:50%;top:-18px;transform:translateX(-50%);font:600 10px var(--mono);font-style:normal;white-space:nowrap;color:var(--warm)}
+.ptok.back{background:#f6d2b3}.ptok.back .pimg{filter:grayscale(.6)}
+.ptok.done em{color:var(--accent)}
+.pnote{font-size:12.5px;color:var(--mut);margin:12px 0 0}
+@media(max-width:700px){.pnote{display:none}}
+@media(prefers-reduced-motion:reduce){.ptok{transition:opacity .2s}}
 .fxpanel{border-top:1px solid var(--line);margin-top:10px;padding-top:14px;min-height:110px}
 .fxpanel b{font:600 18px var(--display);display:block;margin-bottom:4px}
 .fxpanel p{margin:0 0 6px;max-width:70ch}
@@ -283,49 +298,14 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 <section class="band" id="sistema"><div class="in">
   <span class="kick">03 · Il metodo</span>
   <h2>Una content factory, non un social media manager da solo</h2>
-  <p class="lead">Un sistema di produzione con l'IA che regge volumi alti senza perdere qualità. Le decisioni restano a una persona. Ogni punto luminoso è un contenuto in viaggio; quelli arancioni tornano indietro per essere migliorati.</p>
+  <p class="lead">Un sistema di produzione con l'IA che regge volumi alti senza perdere qualità. Le decisioni restano a una persona. Segui un post dal brief ai risultati: se non è all'altezza, torna indietro.</p>
   <div class="fx">
     <div class="fxbar"><button type="button" id="fxplay" class="btn">Segui un contenuto</button><span id="fxstep" class="note" aria-live="polite"></span></div>
-    <div class="fx3d" id="fx3d"><canvas id="fxc" aria-label="Scena 3D della content factory: tocca un nodo per leggere cosa succede, trascina per ruotare"></canvas><div class="fxl" id="fxl"></div><div class="fxhint">trascina per ruotare · tocca un nodo</div></div>
-    <div class="fxscroll" id="fxsvg">
-    <svg viewBox="0 0 780 330" role="img" aria-label="Il percorso di un contenuto: brief, produzione, revisore, approvazione, pubblicazione, metriche, registro degli esiti e coordinatore, che riporta le lezioni alla produzione. Il revisore e l'approvazione possono rimandare indietro il lavoro.">
-      <defs>
-        <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
-        <marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="acc-fill"/></marker>
-      </defs>
-      <g fill="none" stroke="currentColor" stroke-width="1.4">
-        <line x1="130" y1="120" x2="168" y2="120" marker-end="url(#ah)"/>
-        <line x1="290" y1="120" x2="328" y2="120" marker-end="url(#ah)"/>
-        <line x1="450" y1="120" x2="488" y2="120" marker-end="url(#ah)"/>
-        <line x1="610" y1="120" x2="648" y2="120" marker-end="url(#ah)"/>
-        <line x1="710" y1="143" x2="710" y2="225" marker-end="url(#ah)"/>
-        <line x1="650" y1="250" x2="532" y2="250" marker-end="url(#ah)"/>
-        <line x1="410" y1="250" x2="292" y2="250" marker-end="url(#ah)"/>
-        <line x1="230" y1="227" x2="230" y2="145" marker-end="url(#ah)"/>
-        <line x1="70" y1="227" x2="185" y2="145" marker-end="url(#ah)"/>
-        <path class="back" d="M390 97 C390 60 250 60 240 95" marker-end="url(#ahc)"/>
-        <path class="back" d="M550 97 C550 22 230 22 222 95" marker-end="url(#ahc)"/>
-      </g>
-      <g font-size="11" fill="currentColor" text-anchor="middle">
-        <text x="149" y="111">brief</text><text x="309" y="111">bozza</text><text x="469" y="111">passa</text><text x="629" y="111">OK</text>
-        <text x="720" y="188" text-anchor="start">dati</text><text x="591" y="242">esito</text><text x="351" y="242">impara</text>
-        <text x="238" y="190" text-anchor="start">regole migliori</text><text x="112" y="182" text-anchor="end">fonti</text>
-        <text x="315" y="58" class="acc-text">rifare</text><text x="386" y="20" class="acc-text">modifiche</text>
-      </g>
-      <g font-size="12.5" text-anchor="middle">
-        <g class="node" data-k="brief" tabindex="0" role="button" aria-label="Brief"><rect x="10" y="97" width="120" height="46" rx="8"/><text x="70" y="117">Brief</text><text x="70" y="133" class="ns">cliente e obiettivo</text></g>
-        <g class="node" data-k="prod" tabindex="0" role="button" aria-label="Produzione"><rect x="170" y="97" width="120" height="46" rx="8"/><text x="230" y="117">Produzione</text><text x="230" y="133" class="ns">testi e video</text></g>
-        <g class="node" data-k="rev" tabindex="0" role="button" aria-label="Revisore"><rect x="330" y="97" width="120" height="46" rx="8"/><text x="390" y="117">Revisione</text><text x="390" y="133" class="ns">passa o rifare</text></g>
-        <g class="node" data-k="ok" tabindex="0" role="button" aria-label="Approvazione"><rect x="490" y="97" width="120" height="46" rx="8"/><text x="550" y="117">Approvazione</text><text x="550" y="133" class="ns">una persona dice sì</text></g>
-        <g class="node" data-k="pub" tabindex="0" role="button" aria-label="Pubblicazione"><rect x="650" y="97" width="120" height="46" rx="8"/><text x="710" y="117">Pubblicazione</text><text x="710" y="133" class="ns">doppio controllo</text></g>
-        <g class="node" data-k="met" tabindex="0" role="button" aria-label="Metriche"><rect x="650" y="227" width="120" height="46" rx="8"/><text x="710" y="247">Metriche</text><text x="710" y="263" class="ns">contatti, non like</text></g>
-        <g class="node" data-k="reg" tabindex="0" role="button" aria-label="Registro degli esiti"><rect x="410" y="227" width="120" height="46" rx="8"/><text x="470" y="247">Esiti</text><text x="470" y="263" class="ns">com'è andata</text></g>
-        <g class="node" data-k="coord" tabindex="0" role="button" aria-label="Miglioramento"><rect x="170" y="227" width="120" height="46" rx="8"/><text x="230" y="247">Miglioramento</text><text x="230" y="263" class="ns">si migliora</text></g>
-        <g class="node" data-k="ric" tabindex="0" role="button" aria-label="Ricerca"><rect x="10" y="227" width="120" height="46" rx="8"/><text x="70" y="247">Ricerca</text><text x="70" y="263" class="ns">con le fonti</text></g>
-      </g>
-      <text x="390" y="318" font-size="11" text-anchor="middle" class="ns">in alto il contenuto va avanti · in basso i risultati tornano a migliorare la produzione</text>
-    </svg>
+    <div class="pipe" id="pipe">
+      <ol class="steps" aria-label="Il percorso di un contenuto, in otto passaggi"><li class="st" data-k="brief" tabindex="0" role="button"><span class="sn">01</span><b>Brief</b><small>l'obiettivo</small></li><li class="st" data-k="prod" tabindex="0" role="button"><span class="sn">02</span><b>Produzione</b><small>testi e video</small></li><li class="st" data-k="rev" tabindex="0" role="button"><span class="sn">03</span><b>Revisione</b><small>passa o rifare</small></li><li class="st" data-k="ok" tabindex="0" role="button"><span class="sn">04</span><b>Approvazione</b><small>una persona dice sì</small></li><li class="st" data-k="pub" tabindex="0" role="button"><span class="sn">05</span><b>Pubblicazione</b><small>doppio controllo</small></li><li class="st" data-k="met" tabindex="0" role="button"><span class="sn">06</span><b>Metriche</b><small>contatti, non like</small></li><li class="st" data-k="reg" tabindex="0" role="button"><span class="sn">07</span><b>Esiti</b><small>com'è andata</small></li><li class="st" data-k="coord" tabindex="0" role="button"><span class="sn">08</span><b>Miglioramento</b><small>si torna più forti</small></li></ol>
+      <div class="ptok" id="ptok" aria-hidden="true"><i class="pimg"></i><i class="pl"></i><i class="pl s"></i><em id="ptag"></em></div>
     </div>
+    <p class="pnote">Nella prima riga il contenuto va avanti; nella seconda i risultati tornano a migliorare la produzione.</p>
     <div class="fxpanel" aria-live="polite"><b id="fxt"></b><p id="fxd"></p><span id="fxx" class="note"></span></div>
   </div>
   <p class="next">Un metodo vale quanto i risultati che porta. Eccoli. →</p>
@@ -573,7 +553,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   tr.addEventListener('scroll',cur,{passive:true});cur();
 
 
-  /* content factory */
+  /* content factory: un post che attraversa i passaggi */
   var FX={
     brief:["Brief","Si parte da un obiettivo chiaro: cosa comunicare, a chi e quando.",""],
     prod:["Produzione","Testi e video nascono dal girato vero dei clienti, con l'aiuto dell'IA.",""],
@@ -582,91 +562,27 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     pub:["Pubblicazione","Si programma solo dopo un doppio controllo.",""],
     met:["Metriche","Si misura quello che porta contatti, non solo visualizzazioni.",""],
     reg:["Esiti","Ogni lavoro lascia traccia di com'è andato.",""],
-    coord:["Miglioramento","Gli esiti tornano indietro e migliorano la produzione successiva.",""],
-    ric:["Ricerca","Fatti verificati, con la fonte.",""]
+    coord:["Miglioramento","Gli esiti tornano indietro e migliorano il contenuto successivo.",""]
   };
-  var FXO=["brief","prod","rev","ok","pub","met","reg","coord"],fxNodes=[].slice.call(document.querySelectorAll('.fx .node')),fxFocus=null;
-  function pick(k){fxNodes.forEach(function(n){n.classList.toggle('on',n.dataset.k===k);});[].forEach.call(document.querySelectorAll('#fxl button'),function(b){b.classList.toggle('on',b.dataset.k===k);});$('fxt').textContent=FX[k][0];$('fxd').textContent=FX[k][1];$('fxx').textContent=FX[k][2];if(fxFocus)fxFocus(k);}
-  var fxTimer=null,fxI=0,fxBtn=$('fxplay'),fxSt=$('fxstep');
-  function fxStop(){if(fxTimer){clearInterval(fxTimer);fxTimer=null;}fxBtn.textContent='Segui un contenuto';fxSt.textContent='';if(window.__fxRide)window.__fxRide(null);}
-  fxNodes.forEach(function(n){n.addEventListener('click',function(){fxStop();pick(n.dataset.k);});n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();fxStop();pick(n.dataset.k);}});});
-  function fxStep(){var k=FXO[fxI];pick(k);if(window.__fxRide)window.__fxRide(fxI);fxSt.textContent='Passaggio '+(fxI+1)+' di '+FXO.length;fxI++;if(fxI>=FXO.length){clearInterval(fxTimer);fxTimer=null;fxBtn.textContent='Ricomincia';}}
-  fxBtn.addEventListener('click',function(){if(fxTimer){fxStop();return;}fxI=0;fxBtn.textContent='Ferma';fxStep();fxTimer=setInterval(fxStep,RM?4200:3000);});
-
-  /* content factory in 3D */
   (function(){
-    var box=$('fx3d');
-    try{ if(!window.THREE) throw 0;
-      var cv=$('fxc'),lay=$('fxl');
-      var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
-      var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(42,1,.1,100);cam.position.set(0,1.2,11);
-      var world=new THREE.Group();scene.add(world);
-      var P={brief:[-5,1.6,.6],prod:[-2.4,1.2,0],rev:[0,1.9,-.6],ok:[2.4,1.2,0],pub:[4.4,0,.5],met:[2.4,-1.2,0],reg:[0,-1.9,.6],coord:[-2.4,-1.2,0],ric:[-5,-1.6,-.6]};
-      var SUB={brief:'obiettivo',prod:'testi e video',rev:'passa o rifare',ok:'una persona dice sì',pub:'doppio controllo',met:'contatti, non like',reg:'com\'è andata',coord:'si migliora',ric:'con le fonti'};
-      var NAME={brief:'Brief',prod:'Produzione',rev:'Revisione',ok:'Approvazione',pub:'Pubblicazione',met:'Metriche',reg:'Esiti',coord:'Miglioramento',ric:'Ricerca'};
-      var COL={brief:0x527ab8,prod:0x6a6ab0,rev:0x7562a4,ok:0xa868a6,pub:0xdf72a5,met:0xe5807a,reg:0xe78e41,coord:0xc58a5a,ric:0x527ab8};
-      function V(a){return new THREE.Vector3(a[0],a[1],a[2]);}
-      // glow texture
-      var gc=document.createElement('canvas');gc.width=gc.height=128;var gx=gc.getContext('2d'),gr=gx.createRadialGradient(64,64,0,64,64,64);gr.addColorStop(0,'rgba(255,255,255,1)');gr.addColorStop(.25,'rgba(255,255,255,.55)');gr.addColorStop(1,'rgba(255,255,255,0)');gx.fillStyle=gr;gx.fillRect(0,0,128,128);var glowT=new THREE.CanvasTexture(gc);
-      var meshes=[],sprites={},btns={};
-      Object.keys(P).forEach(function(k){
-        var m=new THREE.Mesh(new THREE.SphereGeometry(.26,32,32),new THREE.MeshBasicMaterial({color:COL[k]}));m.position.copy(V(P[k]));m.userData.k=k;world.add(m);meshes.push(m);
-        var sp=new THREE.Sprite(new THREE.SpriteMaterial({map:glowT,color:COL[k],transparent:true,opacity:.75,depthWrite:false,blending:THREE.AdditiveBlending}));sp.scale.set(1.6,1.6,1);sp.position.copy(m.position);world.add(sp);sprites[k]=sp;
-        var b=document.createElement('button');b.type='button';b.dataset.k=k;b.innerHTML=NAME[k]+'<small>'+SUB[k]+'</small>';b.addEventListener('click',function(){fxStop();pick(k);});lay.appendChild(b);btns[k]=b;
-      });
-      // edges
-      var E=[['brief','prod','brief',0],['prod','rev','bozza',0],['rev','ok','passa',0],['ok','pub','OK',0],['pub','met','dati',0],['met','reg','esito',0],['reg','coord','impara',0],['coord','prod','regole migliori',0],['ric','prod','fonti',0],['rev','prod','rifare',1],['ok','prod','modifiche',1]];
-      var curves=[],labels=[];
-      E.forEach(function(e){
-        var a=V(P[e[0]]),b=V(P[e[1]]),mid=a.clone().add(b).multiplyScalar(.5);
-        if(e[3]){mid.y+= (e[2]==='modifiche'?2.4:1.4);mid.z+=1.6;} else {mid.z+=.35;}
-        var c=new THREE.QuadraticBezierCurve3(a,mid,b);curves.push({c:c,back:e[3]});
-        var g=new THREE.BufferGeometry().setFromPoints(c.getPoints(60));
-        var mat=e[3]?new THREE.LineDashedMaterial({color:0xf0a160,dashSize:.18,gapSize:.12,transparent:true,opacity:.9}):new THREE.LineBasicMaterial({color:0x8e86b0,transparent:true,opacity:.55});
-        var l=new THREE.Line(g,mat);if(e[3])l.computeLineDistances();world.add(l);
-        var el=document.createElement('span');el.className='el'+(e[3]?' back':'');el.textContent=e[2];lay.appendChild(el);labels.push({el:el,p:c.getPoint(.5)});
-      });
-      // flowing content particles
-      var NP=170,pp=new Float32Array(NP*3),pc=new Float32Array(NP*3),pd=[];
-      for(var i=0;i<NP;i++){var ci=Math.floor(Math.random()*curves.length);if(curves[ci].back&&Math.random()<.6)ci=Math.floor(Math.random()*9);pd.push({c:ci,t:Math.random(),v:(.0025+Math.random()*.004)*(curves[ci].back?.7:1)});var col=curves[ci].back?[.94,.63,.38]:[.85,.82,1];pc[i*3]=col[0];pc[i*3+1]=col[1];pc[i*3+2]=col[2];}
-      var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pp,3));pg.setAttribute('color',new THREE.BufferAttribute(pc,3));
-      var pts=new THREE.Points(pg,new THREE.PointsMaterial({size:.09,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending,map:glowT}));world.add(pts);
-      // the "content" comet for the guided tour
-      var comet=new THREE.Sprite(new THREE.SpriteMaterial({map:glowT,color:0xffffff,transparent:true,opacity:0,depthWrite:false,blending:THREE.AdditiveBlending}));comet.scale.set(1.1,1.1,1);world.add(comet);
-      var ride=null; // {from,to,t0}
-      window.__fxRide=function(i){if(i===null){ride=null;comet.material.opacity=0;return;}var from=i===0?'brief':FXO[i-1],to=FXO[i];ride={a:V(P[from]),b:V(P[to]),t0:performance.now()};comet.material.opacity=1;};
-      // camera focus
-      var target=new THREE.Vector3(0,0,0),look=new THREE.Vector3(0,0,0),dist=11,dTarget=11,active='prod';
-      fxFocus=function(k){active=k;target.copy(V(P[k])).multiplyScalar(.55);dTarget=8.2;};
-      function size(){var w=box.clientWidth,h=box.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();dist=dTarget=(w<600?15:11);world.scale.setScalar(w<600?.85:1);}
-      size();window.addEventListener('resize',size);
-      // drag rotate + click pick
-      var rx=-.08,ry=0,vx=0,vy=0,down=null,moved=0,ray=new THREE.Raycaster(),ms=new THREE.Vector2();
-      cv.addEventListener('pointerdown',function(e){down={x:e.clientX,y:e.clientY};moved=0;cv.style.cursor='grabbing';});
-      window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-down.x,dy=e.clientY-down.y;moved+=Math.abs(dx)+Math.abs(dy);vy=dx*.005;vx=dy*.003;ry+=vy;rx=Math.max(-.6,Math.min(.6,rx+vx));down={x:e.clientX,y:e.clientY};});
-      window.addEventListener('pointerup',function(e){if(!down)return;cv.style.cursor='grab';if(moved<6){var r=cv.getBoundingClientRect();ms.x=(e.clientX-r.left)/r.width*2-1;ms.y=-(e.clientY-r.top)/r.height*2+1;ray.setFromCamera(ms,cam);var h=ray.intersectObjects(meshes);if(h[0]){fxStop();pick(h[0].object.userData.k);}}down=null;});
-      var vis=true;new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(box);
-      var tmp=new THREE.Vector3();
-      $('fxsvg').hidden=true;
-      function frame(now){
-        requestAnimationFrame(frame);if(!vis)return;
-        if(!down){vy*=.94;vx*=.9;ry+=vy+(RM?0:.0009)*Math.sin(now/7000);rx=Math.max(-.6,Math.min(.6,rx+vx));}
-        world.rotation.set(rx,ry+Math.sin(now/9000)*(RM?0:.18),0);
-        dist+=(dTarget-dist)*.04;look.lerp(target,.05);
-        cam.position.set(look.x*.4,1.2+look.y*.3,dist);cam.lookAt(look);
-        for(var i=0;i<NP;i++){var d=pd[i];d.t+=RM?d.v*.4:d.v;if(d.t>1)d.t-=1;curves[d.c].c.getPoint(d.t,tmp);pp[i*3]=tmp.x;pp[i*3+1]=tmp.y;pp[i*3+2]=tmp.z;}
-        pg.attributes.position.needsUpdate=true;
-        Object.keys(sprites).forEach(function(k){var on=k===active,s=on?2.3+Math.sin(now/260)*.25:1.5;sprites[k].scale.set(s,s,1);sprites[k].material.opacity=on?1:.6;});
-        if(ride){var p=Math.min(1,(now-ride.t0)/1400),e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;comet.position.copy(ride.a).lerp(ride.b,e);comet.position.z+=Math.sin(e*Math.PI)*.8;}
-        world.updateMatrixWorld();R.render(scene,cam);
-        var w=box.clientWidth,h=box.clientHeight;
-        Object.keys(btns).forEach(function(k){tmp.copy(V(P[k])).applyMatrix4(world.matrixWorld).project(cam);btns[k].style.left=((tmp.x+1)/2*w)+'px';btns[k].style.top=((1-tmp.y)/2*h)+'px';btns[k].style.zIndex=Math.round((1-tmp.z)*1000);});
-        labels.forEach(function(L){tmp.copy(L.p).applyMatrix4(world.matrixWorld).project(cam);L.el.style.left=((tmp.x+1)/2*w)+'px';L.el.style.top=((1-tmp.y)/2*h)+'px';});
-      }
-      requestAnimationFrame(frame);
-    }catch(err){ if(box)box.hidden=true; }
+    var pipe=$('pipe'),tok=$('ptok'),tag=$('ptag'),sts=[].slice.call(pipe.querySelectorAll('.st')),btn=$('fxplay'),info=$('fxstep');
+    function el(k){return pipe.querySelector('.st[data-k="'+k+'"]');}
+    function pick(k){sts.forEach(function(n){n.classList.toggle('on',n.dataset.k===k);});$('fxt').textContent=FX[k][0];$('fxd').textContent=FX[k][1];}
+    function move(k,mode){var n=el(k),pr=pipe.getBoundingClientRect(),r=n.getBoundingClientRect();
+      var x=r.left-pr.left+r.width-40,y=r.top-pr.top+8;tok.style.transform='translate('+x+'px,'+y+'px)';
+      tok.classList.toggle('back',mode==='back');tok.classList.toggle('done',mode==='done');tag.textContent=mode==='back'?'rifare':(mode==='done'?'più forte':'');}
+    var SEQ=[['brief'],['prod'],['rev'],['prod','back'],['rev'],['ok'],['pub'],['met'],['reg'],['coord','done']];
+    var i=0,timer=null,vis=false,user=false;
+    function step(){var s=SEQ[i];pick(s[0]);move(s[0],s[1]);info.textContent=s[1]==='back'?'La revisione rimanda indietro: si migliora e si riprova':'Passaggio '+(sts.indexOf(el(s[0]))+1)+' di 8';i=(i+1)%SEQ.length;}
+    function play(){if(timer)return;btn.textContent='Ferma';tok.classList.add('show');step();timer=setInterval(step,RM?3800:1900);}
+    function stop(){clearInterval(timer);timer=null;btn.textContent='Segui un contenuto';}
+    btn.addEventListener('click',function(){user=true;if(timer)stop();else{i=0;play();}});
+    sts.forEach(function(n){function go(){user=true;stop();pick(n.dataset.k);tok.classList.add('show');move(n.dataset.k);info.textContent='';}
+      n.addEventListener('click',go);n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
+    new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!user&&!RM)play();else if(!vis&&!user)stop();},{threshold:.4}).observe(pipe);
+    window.addEventListener('resize',function(){var on=pipe.querySelector('.st.on');if(on)move(on.dataset.k,tok.classList.contains('back')?'back':(tok.classList.contains('done')?'done':''));});
+    pick('brief');requestAnimationFrame(function(){move('brief');});
   })();
-  pick('prod');
 
   /* calcolatore */
   var bud=$('bud'),out=$('simout');if(bud&&out){
