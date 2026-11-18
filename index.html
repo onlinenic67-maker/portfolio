@@ -34,7 +34,8 @@ button{font-family:var(--body)}
 
 /* APERTURA */
 .hero{position:relative;overflow:hidden;background:#141213;color:#f4f1f1}
-#lens{position:absolute;inset:0;width:100%;height:100%;display:block}
+#lens{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:pointer}
+.hint b{color:#f4f1f1;font-weight:600}
 .hero .in{position:relative;padding-block:64px 40px;min-height:min(78vh,620px);display:flex;flex-direction:column;justify-content:flex-end;pointer-events:none}
 .ghost{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);font:700 clamp(60px,15vw,190px)/1 var(--display);letter-spacing:-.04em;color:rgba(255,255,255,.08);filter:blur(7px);white-space:nowrap;user-select:none;transition:filter 2.2s ease,color 2.2s ease}
 .hero.focused .ghost{filter:blur(14px);color:rgba(255,255,255,.04)}
@@ -60,7 +61,9 @@ button{font-family:var(--body)}
 .seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
 .feat h3{font:600 24px/1.25 var(--display);margin:0 0 8px}
 .feat p{color:var(--mut)}
-.reel{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px;margin-top:44px}
+.reel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:44px}
+@media(min-width:600px){.reel{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:960px){.reel{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}}
 .reel figure{margin:0;min-width:0}
 .reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000;display:block}
 .reel figcaption{margin-top:10px;font-size:13px;color:var(--mut);line-height:1.45}
@@ -94,6 +97,17 @@ dialog{border:0;padding:0;background:transparent;max-width:min(92vw,520px)}
 dialog::backdrop{background:rgba(0,0,0,.75)}
 dialog img{width:100%;border-radius:12px;display:block}
 
+.sub{font:600 22px/1.3 var(--display);margin:48px 0 6px}
+.gal{display:grid;gap:10px}
+.gal.posts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gal.photos{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(min-width:700px){.gal.posts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:860px){.gal.photos{grid-template-columns:repeat(6,minmax(0,1fr))}}
+.gal button{border:0;padding:0;margin:0;background:none;cursor:zoom-in;position:relative;border-radius:10px;overflow:hidden;display:block}
+.gal img{width:100%;display:block;object-fit:cover;transition:transform .35s}
+.gal.posts img{aspect-ratio:4/5}.gal.photos img{aspect-ratio:2/3}
+.gal button:hover img{transform:scale(1.04)}
+.gal span{position:absolute;left:8px;bottom:8px;font:500 11px var(--mono);background:rgba(0,0,0,.6);color:#fff;padding:2px 6px;border-radius:4px}
 /* SISTEMA */
 .fx{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}
 .fxbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
@@ -163,14 +177,14 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 </style>
 </head><body>
 
-<header class="hero" id="top">
+<header class="hero" id="top" tabindex="0" aria-label="Apertura interattiva: tocca per cambiare la forma dei punti">
   <canvas id="lens" aria-hidden="true"></canvas>
   <div class="ghost" aria-hidden="true">INVISIBILE</div>
   <div class="in">
     <span class="kick" style="color:#9fbbe9">Portfolio · Marketing digitale e contenuti con l'IA</span>
     <h1>Nicolò Cammarata</h1>
     <p class="tag">Porto le attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
-    <p class="hint">Muovi il dito o il mouse sull'anello.</p>
+    <p class="hint shapebar"><b id="shape">Anello</b> · tocca per cambiare forma · trascina per ruotarla · passaci sopra per spostare i punti</p>
   </div>
 </header>
 <div class="kpis">
@@ -206,21 +220,19 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       <figcaption><span class="chip">Caso studio</span><b>I Love Nail Art · Da invisibile a scelta</b>Il caso del centro estetico raccontato in 23 secondi.</figcaption></figure>
     <figure><video controls playsinline preload="none" poster="media/filodentale.jpg" src="media/filodentale.mp4"></video>
       <figcaption><span class="chip">Caso studio</span><b>Studio dentistico Filodentale</b>Girato nello studio durante il content day.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="media/bts-filodentale.jpg" src="media/bts-filodentale.mp4"></video>
-      <figcaption><span class="chip">Dietro le quinte</span><b>Un content day dall'inizio alla fine</b>Strategia, shot list sul telefono, riprese: da una giornata escono i contenuti di settimane.</figcaption></figure>
+    <figure><video controls playsinline preload="none" poster="media/filodentale-impianto.jpg" src="media/filodentale-impianto.mp4"></video>
+      <figcaption><span class="chip">Reel</span><b>Filodentale · Che cos'è un impianto</b>Il medico spiega in 30 secondi, con grafica 3D dell'impianto e sottotitoli parola per parola.</figcaption></figure>
     <figure><video controls playsinline preload="none" poster="media/studiorum-case.jpg" src="media/studiorum-case.mp4"></video>
       <figcaption><span class="chip">Caso studio</span><b>Doposcuola · Come si racconta</b>Identità, luoghi e dettagli che rassicurano i genitori, senza mostrare i ragazzi.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="media/stesso-girato.jpg" src="media/stesso-girato.mp4"></video>
-      <figcaption><span class="chip">Reel ON-LINE</span><b>Stesso girato, due reel</b>Le stesse riprese montate in due modi: è il montaggio che tiene chi guarda.</figcaption></figure>
-    <figure><video controls playsinline preload="none" poster="media/tre-errori.jpg" src="media/tre-errori.mp4"></video>
-      <figcaption><span class="chip">Reel ON-LINE</span><b>3 errori che fanno scorrere via</b>Grafica animata e una domanda finale per far commentare.</figcaption></figure>
+      <figure><video controls playsinline preload="none" poster="media/online-tre-righe.jpg" src="media/online-tre-righe.mp4"></video>
+      <figcaption><span class="chip">Reel ON-LINE</span><b>Tre righe</b>Il nostro reel con il punteggio più alto al predittore di viralità: 61 su 100.</figcaption></figure>
   </div>
 </div></section>
 
 <section class="band alt" id="design"><div class="in">
   <span class="kick">02 · Design</span>
   <h2>Un profilo si progetta come una pagina</h2>
-  <p class="lead">Per il lancio di GordiaCut abbiamo disegnato i primi 9 post come un unico mosaico: ogni post funziona da solo, insieme formano la G tagliata del marchio. Tocca un post per vederlo grande.</p>
+  <p class="lead">Post, caroselli e foto scelti tra i migliori. Per il lancio di GordiaCut abbiamo disegnato i primi 9 post come un unico mosaico: ogni post funziona da solo, insieme formano la G tagliata del marchio. Tocca un post per vederlo grande.</p>
   <div class="dgrid">
     <div class="phone"><div class="screen ig">
       <div class="top"><span>gordiacut · anteprima</span><span aria-hidden="true">···</span></div>
@@ -242,14 +254,13 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     </div>
   </div>
 
-  <div class="focus-demo">
-    <span class="kick" style="color:#9fbbe9">Sistema visivo di ON-LINE · Il fuoco</span>
-    <div class="big" id="fword" style="filter:blur(10px)">INVISIBILE</div>
-    <p class="msg">Dietro, sfocato, c'è il problema. Davanti, nitido, <span>quello che diciamo noi</span>.</p>
-    <label for="fslider">Metti a fuoco il problema</label>
-    <input id="fslider" type="range" min="0" max="10" step="0.5" value="10">
-    <p class="note" style="color:#a59fa0;margin-top:10px">È la regola grafica dei post di ON-LINE: la parola sfocata è il luogo comune da smontare, il messaggio sta davanti con una sola riga a gradiente.</p>
-  </div>
+  <h3 class="sub">Post pubblicati</h3>
+  <p class="note" style="margin:0 0 14px">Una selezione di post usciti sui profili dei clienti. Ogni cliente ha la sua identità: niente modello unico. Tocca per ingrandire.</p>
+  <div class="gal posts"><button type="button" class="zoomable" data-src="media/post-1.jpg" data-cap="I Love Nail Art · Il viola non è un colore estivo"><img src="media/post-1.jpg" alt="I Love Nail Art: Il viola non è un colore estivo" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-2.jpg" data-cap="I Love Nail Art · Settembre in cinque set"><img src="media/post-2.jpg" alt="I Love Nail Art: Settembre in cinque set" loading="lazy"><span>I Love Nail Art</span></button><button type="button" class="zoomable" data-src="media/post-3.jpg" data-cap="Studiorum Loci · Sottolineare tutto = non sottolineare niente"><img src="media/post-3.jpg" alt="Studiorum Loci: Sottolineare tutto = non sottolineare niente" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-4.jpg" data-cap="Studiorum Loci · Il pomeriggio che non basta mai"><img src="media/post-4.jpg" alt="Studiorum Loci: Il pomeriggio che non basta mai" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-5.jpg" data-cap="Studiorum Loci · Il primo voto non è una sentenza"><img src="media/post-5.jpg" alt="Studiorum Loci: Il primo voto non è una sentenza" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-6.jpg" data-cap="Studiorum Loci · Il PDP dice quali strumenti usare"><img src="media/post-6.jpg" alt="Studiorum Loci: Il PDP dice quali strumenti usare" loading="lazy"><span>Studiorum Loci</span></button><button type="button" class="zoomable" data-src="media/post-7.jpg" data-cap="Filodentale · Chi ti segue: Angela"><img src="media/post-7.jpg" alt="Filodentale: Chi ti segue: Angela" loading="lazy"><span>Filodentale</span></button><button type="button" class="zoomable" data-src="media/post-8.jpg" data-cap="Filodentale · Tra un dente e l'altro"><img src="media/post-8.jpg" alt="Filodentale: Tra un dente e l'altro" loading="lazy"><span>Filodentale</span></button></div>
+  <h3 class="sub">Foto dal content day</h3>
+  <p class="note" style="margin:0 0 14px">Studio Filodentale, Montesilvano. Una giornata organizzata da noi con il fotografo: da qui escono post, schede Google e sito.</p>
+  <div class="gal photos"><button type="button" class="zoomable" data-src="media/foto-1.jpg" data-cap="La sala d'attesa"><img src="media/foto-1.jpg" alt="La sala d'attesa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-2.jpg" data-cap="Una sala operativa"><img src="media/foto-2.jpg" alt="Una sala operativa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-3.jpg" data-cap="La sala di sterilizzazione"><img src="media/foto-3.jpg" alt="La sala di sterilizzazione" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-4.jpg" data-cap="Strumenti pronti all'uso"><img src="media/foto-4.jpg" alt="Strumenti pronti all'uso" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-5.jpg" data-cap="L'accoglienza"><img src="media/foto-5.jpg" alt="L'accoglienza" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-6.jpg" data-cap="La sala radiologica"><img src="media/foto-6.jpg" alt="La sala radiologica" loading="lazy"></button></div>
+</div>
 </div></section>
 
 <section class="band" id="sistema"><div class="in">
@@ -387,7 +398,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 </div></section>
 <footer><div class="in">Numeri reali, aggiornati al 18 novembre 2026.</div></footer>
 
-<dialog id="zoom"><img id="zoomimg" alt=""><p style="margin:10px 0 0"><button type="button" class="btn" id="zoomclose">Chiudi</button></p></dialog>
+<dialog id="zoom"><img id="zoomimg" alt=""><p id="zoomcap" class="note" style="color:#ddd;margin:8px 0 0"></p><p style="margin:10px 0 0"><button type="button" class="btn" id="zoomclose">Chiudi</button></p></dialog>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
@@ -395,45 +406,61 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function $(id){return document.getElementById(id);}
 
-  /* APERTURA 3D: 2.400 punti sparsi che si raccolgono in un anello con il gradiente di ON-LINE */
+  /* APERTURA 3D interattiva: 2.400 punti che cambiano forma (anello, sfera, onda, scritta), si spostano sotto il dito e ruotano trascinando */
   try{
     if(!window.THREE) throw 0;
-    var cv=$('lens'),hero=$('top');
+    var cv=$('lens'),hero=$('top'),lab=$('shape');
     var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
     R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
     var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.z=7.2;
-    var N=2400,pos=new Float32Array(N*3),col=new Float32Array(N*3),from=new Float32Array(N*3),to=new Float32Array(N*3);
+    var N=2400,pos=new Float32Array(N*3),col=new Float32Array(N*3),cpos=new Float32Array(N*3),off=new Float32Array(N*3);
     var stops=[[.32,.48,.72],[.46,.38,.64],[.87,.45,.65],[.91,.56,.25]];
-    for(var i=0;i<N;i++){
-      var a=Math.random()*Math.PI*2,b=Math.random()*Math.PI*2,rr=1.75+.38*Math.cos(b);
-      to[i*3]=rr*Math.cos(a);to[i*3+1]=rr*Math.sin(a);to[i*3+2]=.38*Math.sin(b);
-      from[i*3]=(Math.random()-.5)*14;from[i*3+1]=(Math.random()-.5)*9;from[i*3+2]=(Math.random()-.5)*8;
-      var t=a/(Math.PI*2)*3,k=Math.min(2,Math.floor(t)),f=t-k,c0=stops[k],c1=stops[k+1];
-      col[i*3]=c0[0]+(c1[0]-c0[0])*f;col[i*3+1]=c0[1]+(c1[1]-c0[1])*f;col[i*3+2]=c0[2]+(c1[2]-c0[2])*f;
-    }
+    function grad(t){t=Math.max(0,Math.min(.999,t))*3;var k=Math.floor(t),f=t-k,c0=stops[k],c1=stops[k+1];return[c0[0]+(c1[0]-c0[0])*f,c0[1]+(c1[1]-c0[1])*f,c0[2]+(c1[2]-c0[2])*f];}
+    function ring(){var o=new Float32Array(N*3);for(var i=0;i<N;i++){var a=i/N*Math.PI*2*1+Math.random()*.002,b=Math.random()*Math.PI*2,r=1.75+.38*Math.cos(b);o[i*3]=r*Math.cos(a);o[i*3+1]=r*Math.sin(a);o[i*3+2]=.38*Math.sin(b);}return o;}
+    function sphere(){var o=new Float32Array(N*3),g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=g*i;o[i*3]=2.1*r*Math.cos(t);o[i*3+1]=2.1*y;o[i*3+2]=2.1*r*Math.sin(t);}return o;}
+    function wave(){var o=new Float32Array(N*3),c=60,rr=N/c;for(var i=0;i<N;i++){var x=(i%c)/(c-1)*5.6-2.8,z=Math.floor(i/c)/(rr-1)*3.2-1.6;o[i*3]=x;o[i*3+1]=.9;o[i*3+2]=z;}return o;}
+    function word(){var c=document.createElement('canvas'),W=400,H=110;c.width=W;c.height=H;var x=c.getContext('2d');x.fillStyle='#fff';x.font='700 92px Poppins, Arial, sans-serif';x.textAlign='center';x.textBaseline='middle';x.fillText('ON-LINE',W/2,H/2+4);
+      var d=x.getImageData(0,0,W,H).data,pts=[];for(var yy=0;yy<H;yy+=2)for(var xx=0;xx<W;xx+=2)if(d[(yy*W+xx)*4+3]>128)pts.push([xx,yy]);
+      var o=new Float32Array(N*3);for(var i=0;i<N;i++){var q=pts[Math.floor(Math.random()*pts.length)]||[W/2,H/2];o[i*3]=(q[0]/W-.5)*5.4;o[i*3+1]=.6-(q[1]/H-.5)*1.5;o[i*3+2]=(Math.random()-.5)*.25;}return o;}
+    var SH=[["Anello",ring(),[.55,0]],["Sfera",sphere(),[.2,0]],["Onda",wave(),[.5,0]],["ON-LINE",null,[0,0]]];
+    for(var i=0;i<N;i++){var c=grad(i/N);col[i*3]=c[0];col[i*3+1]=c[1];col[i*3+2]=c[2];cpos[i*3]=(Math.random()-.5)*14;cpos[i*3+1]=(Math.random()-.5)*9;cpos[i*3+2]=(Math.random()-.5)*8;}
     var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
     var m=new THREE.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending});
     var pts=new THREE.Points(g,m);scene.add(pts);
+    var si=0,from=cpos.slice(),target=SH[0][1],t0=performance.now(),dur=RM?1:2400;
+    function go(k){si=k%SH.length;if(!SH[si][1])SH[si][1]=word();from=cpos.slice();target=SH[si][1];t0=performance.now();dur=RM?1:1300;lab.textContent=SH[si][0];}
     function size(){var w=hero.clientWidth,h=hero.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
-      pts.position.set(w>760?1.9:0,w>760?.35:1.1,0);}
+      var wide=w>760;pts.position.set(wide?1.9:0,wide?.35:1.1,0);pts.scale.setScalar(wide?1:.72);}
     size();window.addEventListener('resize',size);
-    var tx=0,ty=0,rx=0,ry=0,t0=performance.now(),dur=RM?0:2600;
-    function onMove(x,y){var r=hero.getBoundingClientRect();tx=((x-r.left)/r.width-.5)*.9;ty=((y-r.top)/r.height-.5)*.6;}
-    hero.addEventListener('pointermove',function(e){onMove(e.clientX,e.clientY);});
-    hero.addEventListener('touchmove',function(e){if(e.touches[0])onMove(e.touches[0].clientX,e.touches[0].clientY);},{passive:true});
+    var mouse=new THREE.Vector2(9,9),ray=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,0,1),0),hit=new THREE.Vector3(),loc=new THREE.Vector3(),active=false;
+    var rotX=0,rotY=0,vX=0,vY=0,down=null,moved=0;
+    function setMouse(e){var r=hero.getBoundingClientRect();mouse.x=(e.clientX-r.left)/r.width*2-1;mouse.y=-(e.clientY-r.top)/r.height*2+1;active=true;}
+    hero.addEventListener('pointermove',function(e){setMouse(e);if(down){var dx=e.clientX-down.x,dy=e.clientY-down.y;moved+=Math.abs(dx)+Math.abs(dy);vY=dx*.006;vX=dy*.006;rotY+=vY;rotX+=vX;down={x:e.clientX,y:e.clientY};}});
+    hero.addEventListener('pointerdown',function(e){down={x:e.clientX,y:e.clientY};moved=0;setMouse(e);});
+    window.addEventListener('pointerup',function(){if(down&&moved<8)go(si+1);down=null;});
+    hero.addEventListener('pointerleave',function(){active=false;});
+    hero.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go(si+1);}});
     var visible=true;new IntersectionObserver(function(es){visible=es[0].isIntersecting;}).observe(hero);
-    function ease(p){return 1-Math.pow(1-p,3);}
+    function ease(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;}
     function frame(now){
       requestAnimationFrame(frame); if(!visible)return;
-      var p=dur?Math.min(1,(now-t0)/dur):1,e=ease(p),wob=RM?0:Math.sin(now/900)*.02;
-      if(p<1||!pts.userData.done){for(var i=0;i<N*3;i++){pos[i]=from[i]+(to[i]-from[i])*e;}g.attributes.position.needsUpdate=true;if(p>=1)pts.userData.done=true;}
+      var p=Math.min(1,(now-t0)/dur),e=ease(p);
+      for(var i=0;i<N*3;i++)cpos[i]=from[i]+(target[i]-from[i])*e;
       if(p>=1&&!hero.classList.contains('focused'))hero.classList.add('focused');
-      rx+=(ty-rx)*.05;ry+=(tx-ry)*.05;
-      pts.rotation.x=.55+rx+wob;pts.rotation.y=ry+(RM?0:now/9000);pts.rotation.z=RM?0:now/14000;
+      if(!down){vX*=.94;vY*=.94;rotX+=vX;rotY+=vY+(RM?0:.0015);}
+      var base=SH[si][2];pts.rotation.x=base[0]+rotX;pts.rotation.y=rotY;
+      if(si===2&&!RM){for(var i=0;i<N;i++){var x=target[i*3],z=target[i*3+2];cpos[i*3+1]+=(.32*Math.sin(x*1.6+now/600)+.22*Math.cos(z*2.1+now/800))*e;}}
+      pts.updateMatrixWorld();var has=false;
+      if(active){ray.setFromCamera(mouse,cam);plane.constant=-pts.position.z;if(ray.ray.intersectPlane(plane,hit)){loc.copy(hit);pts.worldToLocal(loc);has=true;}}
+      for(var i=0;i<N;i++){var j=i*3,ox=off[j],oy=off[j+1],oz=off[j+2];
+        if(has){var dx=cpos[j]+ox-loc.x,dy=cpos[j+1]+oy-loc.y,d2=dx*dx+dy*dy;if(d2<.8){var f=(.8-d2)*.09/Math.sqrt(d2+.01);ox+=dx*f;oy+=dy*f;oz+=f*.6;}}
+        ox*=.92;oy*=.92;oz*=.92;off[j]=ox;off[j+1]=oy;off[j+2]=oz;
+        pos[j]=cpos[j]+ox;pos[j+1]=cpos[j+1]+oy;pos[j+2]=cpos[j+2]+oz;}
+      g.attributes.position.needsUpdate=true;
       R.render(scene,cam);
     }
     requestAnimationFrame(frame);
-  }catch(e){ $('lens').style.background='radial-gradient(circle at 70% 40%,rgba(117,98,164,.35),transparent 55%)'; }
+  }catch(e){ $('lens').style.background='radial-gradient(circle at 70% 40%,rgba(117,98,164,.35),transparent 55%)';var sh=document.querySelector('.shapebar');if(sh)sh.hidden=true; }
 
   /* numeri che contano */
   if(!RM&&window.IntersectionObserver){[].forEach.call(document.querySelectorAll('[data-count]'),function(el){
@@ -457,8 +484,9 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   var tiles=$('tiles'),dlg=$('zoom');
   for(var i=1;i<=9;i++){var bt=document.createElement('button');bt.type='button';bt.setAttribute('aria-label','Apri il post '+i);
     bt.innerHTML='<img src="media/grid-'+i+'.jpg" alt="Post '+i+' del mosaico GordiaCut" loading="lazy">';
-    (function(n){bt.addEventListener('click',function(){$('zoomimg').src='media/grid-'+n+'.jpg';$('zoomimg').alt='Post '+n+' del mosaico GordiaCut';if(dlg.showModal)dlg.showModal();});})(i);
+    (function(n){bt.addEventListener('click',function(){$('zoomimg').src='media/grid-'+n+'.jpg';$('zoomimg').alt='Post '+n+' del mosaico GordiaCut';$('zoomcap').textContent='GordiaCut · post '+n+' di 9';if(dlg.showModal)dlg.showModal();});})(i);
     tiles.appendChild(bt);}
+  [].forEach.call(document.querySelectorAll('.zoomable'),function(b){b.addEventListener('click',function(){$('zoomimg').src=b.dataset.src;$('zoomimg').alt=b.dataset.cap;$('zoomcap').textContent=b.dataset.cap;if(dlg.showModal)dlg.showModal();});});
   $('zoomclose').addEventListener('click',function(){dlg.close();});
   dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
 
@@ -470,8 +498,6 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     [].forEach.call(dots.children,function(d,i){d.setAttribute('aria-current',i===best);});}
   tr.addEventListener('scroll',cur,{passive:true});cur();
 
-  /* il fuoco */
-  var fs=$('fslider'),fw=$('fword');fs.addEventListener('input',function(){fw.style.filter='blur('+fs.value+'px)';fw.style.color='rgba(255,255,255,'+(0.18+(10-fs.value)*0.06)+')';});
 
   /* content factory */
   var FX={
