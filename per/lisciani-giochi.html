@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="robots" content="noindex">
+<title>Un'idea per Lisciani Giochi · Nicolò Cammarata</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--c:#0484BF;--c2:#F8D61B;--on:#ffffff;--on2:#111111;--num:#F8D61B;--bg:#fbfaf9;--bg2:#f2f0ee;--fg:#16151a;--mut:#5d5a60;--line:#e3dfdc;--card:#fff;--h:"Nunito",system-ui,sans-serif;--b:"Nunito",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:light}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--b)}
+img{max-width:100%} [hidden]{display:none!important}
+.in{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+a{color:var(--c)} h1,h2,h3{font-family:var(--h);text-wrap:balance;letter-spacing:-.015em}
+.bar{position:sticky;top:0;z-index:5;background:rgba(251,250,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .in{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-block:10px}
+.logo{height:34px;width:auto;max-width:150px;object-fit:contain;display:block}
+.word{font:800 22px/1 var(--h);color:var(--c)}
+.bar .who{font:500 12px var(--mono);color:var(--mut);text-align:right}
+.hero{background:var(--c);color:var(--on);position:relative;overflow:hidden}
+.hero .in{padding-block:72px 64px;position:relative}
+.hero .k{font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.hero h1{font-size:clamp(40px,8vw,88px);line-height:1;margin:14px 0 18px;font-weight:800}
+.hero p{font-size:clamp(18px,2.4vw,23px);max-width:40ch;margin:0;opacity:.95}
+.hero .disc{display:inline-block;margin-top:26px;font:500 12px var(--mono);border:1px solid currentColor;border-radius:999px;padding:5px 12px;opacity:.85}
+.hero .shape{position:absolute;right:-80px;top:-80px;width:380px;height:380px;border-radius:50%;background:var(--c2);opacity:.9;mix-blend-mode:normal}
+.hero .shape2{position:absolute;right:120px;bottom:-140px;width:260px;height:260px;border-radius:50%;border:28px solid var(--on);opacity:.12}
+@media(max-width:700px){.hero .shape{width:220px;height:220px;right:-90px;top:-90px}.hero .shape2{display:none}}
+section{padding-block:64px} section.alt{background:var(--bg2)}
+.kick{display:block;font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
+h2{font-size:clamp(28px,4.4vw,42px);line-height:1.1;margin:0 0 14px;font-weight:800}
+.lead{color:var(--mut);max-width:62ch;font-size:17px;margin:0 0 28px}
+.cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card b{font:700 17px/1.3 var(--h)} .card p{margin:0;color:var(--mut);font-size:15px;flex:1} .card a{font:500 12px var(--mono);word-break:break-word}
+.idea{display:grid;gap:28px} @media(min-width:860px){.idea{grid-template-columns:1fr 1fr}}
+.idea>div{min-width:0}
+.insight{font:600 clamp(20px,2.6vw,26px)/1.4 var(--h);border-left:5px solid var(--c);padding-left:18px;margin:0 0 18px}
+.msg{background:var(--c);color:var(--on);border-radius:18px;padding:30px 26px;font:800 clamp(28px,4.6vw,46px)/1.08 var(--h);letter-spacing:-.02em}
+.msg small{display:block;font:500 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:12px}
+.meta{margin-top:16px;color:var(--mut);font-size:15px} .meta b{color:var(--fg)}
+.tag{display:inline-block;font:500 12px var(--mono);border:1px solid var(--line);background:var(--card);border-radius:999px;padding:4px 10px;margin:6px 6px 0 0}
+.feed{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.ig{margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+.ig figcaption{padding:12px 14px 16px;font-size:14px;color:var(--mut);line-height:1.5} .ig figcaption b{color:var(--fg)}
+.post,.slide{aspect-ratio:4/5;position:relative;padding:9% 8%;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.post .pt,.slide .st{font:800 clamp(22px,2.6vw,30px)/1.12 var(--h);letter-spacing:-.015em}
+.post .ps{margin-top:12px;font-size:14px;opacity:.85}
+.pbrand{position:absolute;left:8%;bottom:6%;font:700 12px var(--h);letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.post.v0{background:var(--c);color:var(--on)} .post.v1{background:#fff;color:var(--fg);border-bottom:10px solid var(--c)} .post.v2{background:var(--c2);color:var(--on2)}
+.post.v1 .pbrand{color:var(--c)}
+.post.s-numero .pnum{font:800 120px/0.9 var(--h);color:var(--num);margin-bottom:8px} .post.v0.s-numero .pnum{color:var(--on);opacity:.35} .post.v2.s-numero .pnum{color:var(--on2);opacity:.35}
+.post.s-domanda .pt{font-size:clamp(24px,3vw,34px)}
+.post::after{content:"";position:absolute;right:-30%;top:-30%;width:70%;aspect-ratio:1;border-radius:50%;background:currentColor;opacity:.06}
+.car{margin-top:34px} .car h3{font-size:22px;margin:0 0 4px}
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 14px}
+.slide{flex:0 0 min(72%,300px);scroll-snap-align:start;border-radius:12px;background:#fff;border:1px solid var(--line);color:var(--fg)}
+.slide.cover{background:var(--c);color:var(--on);border:0} .slide.cta{background:var(--c2);color:var(--on2);border:0}
+.slide .sn{position:absolute;right:8%;top:6%;font:600 12px var(--mono);opacity:.7}
+.slide:not(.cover):not(.cta) .st{font-size:clamp(19px,2.2vw,24px);font-weight:700}
+.vid{display:grid;gap:32px;align-items:start} @media(min-width:860px){.vid{grid-template-columns:320px 1fr}}
+.vid>div{min-width:0}
+.phone{width:min(300px,80vw);margin:0 auto;aspect-ratio:9/19;border-radius:40px;background:#111;padding:11px;box-shadow:0 30px 60px -28px rgba(0,0,0,.45)}
+.screen{position:relative;width:100%;height:100%;border-radius:30px;overflow:hidden;background:var(--c)}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18%;opacity:0;transition:opacity .45s ease}
+.scene:nth-child(odd){background:var(--c);color:var(--on)} .scene:nth-child(even){background:var(--c2);color:var(--on2)}
+.scene .stx{font:800 26px/1.15 var(--h);text-align:center;transform:translateY(16px) scale(.96);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.scene.on{opacity:1} .scene.on .stx{transform:none}
+.prog{position:absolute;left:12px;right:12px;top:12px;display:flex;gap:4px;z-index:3}
+.prog i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden} .prog i b{display:block;height:100%;width:0;background:#fff}
+.play{margin:16px auto 0;display:block;font:600 14px var(--b);background:var(--fg);color:#fff;border:0;border-radius:999px;padding:10px 20px;cursor:pointer}
+.shots{list-style:none;margin:0;padding:0}
+.shots li{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:12px 10px;border-top:1px solid var(--line);border-radius:8px;transition:background .3s}
+.shots li.on{background:var(--card);box-shadow:inset 4px 0 0 var(--c)}
+.shots .t{font:600 13px var(--mono);color:var(--c);padding-top:2px} .shots b{display:block;font:700 16px var(--h)} .shots span{display:block;color:var(--mut);font-size:14px} .shots em{display:block;font-style:normal;font-size:13px;color:var(--mut);margin-top:2px}
+.why{margin-top:18px;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:15px}
+.plan{list-style:none;margin:0 0 26px;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.plan li{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;padding:14px 16px;font-size:15px} .plan .t{display:block;font:600 12px var(--mono);color:var(--c);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.kpis{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.kpi{border-left:4px solid var(--c2);padding:4px 0 4px 14px} .kpi b{display:block;font:700 17px var(--h)} .kpi span{color:var(--mut);font-size:14px}
+.test{margin-top:22px;font-size:15px;color:var(--mut);max-width:70ch} .test b{color:var(--fg)}
+.me{display:grid;gap:28px} @media(min-width:860px){.me{grid-template-columns:1.2fr 1fr}}
+.me ul{margin:0;padding-left:20px} .me li{margin-bottom:8px}
+.first{background:var(--c);color:var(--on);border-radius:16px;padding:22px} .first b{display:block;font:700 18px var(--h);margin-bottom:6px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-block;text-decoration:none;font:600 15px var(--b);border-radius:999px;padding:11px 20px;background:var(--fg);color:#fff} .btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.contact{margin-top:16px;font:500 15px var(--mono);user-select:all}
+footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--mut);font-size:13px}
+@media(prefers-reduced-motion:reduce){.scene,.scene .stx{transition:none}}
+</style></head><body>
+<div class="bar"><div class="in"><span class="word">Lisciani</span><div class="who">Un'idea di Nicolò Cammarata<br>per Lisciani Giochi</div></div></div>
+<header class="hero"><div class="shape" aria-hidden="true"></div><div class="shape2" aria-hidden="true"></div><div class="in">
+  <span class="k">Proposta per Lisciani Giochi · Unite Talent Day 2026</span>
+  <h1>Ogni domanda ha un gioco</h1>
+  <p>Il vostro blog rispondeva ai dubbi dei genitori, poi si è fermato. Questa campagna riporta quelle risposte dove i genitori stanno oggi, in reel brevi, e le chiude con il gioco giusto per l&#x27;età.</p>
+  <span class="disc">Idea non commissionata · i marchi appartengono ai rispettivi proprietari</span>
+</div></header>
+
+<section><div class="in">
+  <span class="kick">01 · Cosa ho visto</span>
+  <h2>Prima di proporre, ho guardato</h2>
+  <p class="lead">Quello che ho trovato sui vostri canali pubblici, con le fonti. Da qui parte l'idea.</p>
+  <div class="cards"><article class="card"><b>Un tono da esperti, non solo da negozio</b><p>Gli articoli del 2025 parlano di linguaggio da 0 a 3 anni, sonno, attaccamento e cogenitorialità. È la voce di chi accompagna la crescita, e su questo un genitore si fida.</p><a href="https://www.liscianigiochi.com/le-principali-tappe-di-sviluppo-del-linguaggio-nei-bambini-0-3-anni/" target="_blank" rel="noopener">Fonte: Blog Lisciani Giochi</a></article><article class="card"><b>Quella voce si è fermata prima di Natale</b><p>L&#x27;ultimo articolo è del 29/09/2025: il blog si è fermato prima della stagione più forte per i giocattoli. Le domande dei genitori, però, ci sono ancora.</p><a href="https://www.liscianigiochi.com/feed/" target="_blank" rel="noopener">Fonte: Feed del blog</a></article><article class="card"><b>Un catalogo già diviso per età</b><p>Lo shop è organizzato per fasce d&#x27;età, da 0-2 a 9+, e ha la lista dei desideri. Ogni domanda di un genitore si può collegare a una fascia e a un gioco.</p><a href="https://www.liscianigiochi.com/" target="_blank" rel="noopener">Fonte: liscianigiochi.com</a></article></div>
+</div></section>
+
+<section class="alt"><div class="in">
+  <span class="kick">02 · L'idea</span>
+  <h2>Ogni domanda ha un gioco</h2>
+  <div class="idea">
+    <div><p class="insight">Un genitore non cerca «un gioco educativo»: cerca una risposta a un dubbio che ha stasera. Se la risposta arriva con un gioco che può fare domani, il gioco diventa un aiuto, non un acquisto.</p><p>Una rubrica video settimanale: una domanda vera da genitore, una risposta semplice presa dai temi del vostro blog e controllata dai vostri esperti, e il gioco Lisciani adatto a quell&#x27;età. Niente volti di bambini: mani che giocano, Carotina e grafiche animate. A dicembre la stessa rubrica diventa la guida ai regali per età, collegata alla lista dei desideri.</p><p class="meta"><b>Per chi:</b> Mamme e papà di bambini da 0 a 8 anni, tra i 25 e i 40 anni, e i nonni che a Natale chiedono «cosa gli regalo?».</p><div><span class="tag">Instagram Reels</span><span class="tag">TikTok (test)</span><span class="tag">YouTube Shorts · Lisciani TV</span><span class="tag">Lista dei desideri sul sito</span></div></div>
+    <div><div class="msg"><small>La frase della campagna</small>Ogni domanda ha un gioco.</div></div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <span class="kick">03 · I post</span>
+  <h2>Come si vede</h2>
+  <p class="lead">Tre post nel vostro stile: colori, carattere e tono del marchio. Sono bozze di concept.</p>
+  <div class="feed"><figure class="ig"><div class="post s-domanda v0" role="img" aria-label="A due anni dice poche parole. È normale?"><div class="pt">A due anni dice poche parole. È normale?</div><div class="ps">Ogni domanda ha un gioco · episodio 1</div><div class="pbrand">Lisciani Giochi</div></div><figcaption><b>Lisciani Giochi</b> Una delle domande che ci fate più spesso. Nel reel vi diciamo cosa osservare, in parole semplici, e il gioco che aiuta a dare un nome alle cose. Avete un dubbio? Scrivetelo nei commenti: rispondiamo nei prossimi episodi.</figcaption></figure><figure class="ig"><div class="post s-frase v1" role="img" aria-label="Ogni domanda ha un gioco."><div class="pt">Ogni domanda ha un gioco.</div><div class="ps">La nuova rubrica per mamme e papà</div><div class="pbrand">Lisciani Giochi</div></div><figcaption><b>Lisciani Giochi</b> Il sonno, le prime parole, i capricci, il tempo davanti agli schermi. Ogni settimana una domanda vera, una risposta chiara e un gioco da fare insieme. Salva il post: torna utile.</figcaption></figure><figure class="ig"><div class="post s-numero v2" role="img" aria-label="anni: il regalo che lo fa ragionare"><div class="pnum">3-4</div><div class="pt">anni: il regalo che lo fa ragionare</div><div class="ps">Guida ai regali per età</div><div class="pbrand">Lisciani Giochi</div></div><figcaption><b>Lisciani Giochi</b> A Natale tutti chiedono cosa regalare. Abbiamo diviso i nostri giochi per età e per quello che allenano: memoria, parole, mani, logica. Questa settimana tocca ai 3-4 anni. Trovi tutto nella lista dei desideri, al link in bio.</figcaption></figure></div>
+</div></section>
+
+<section class="alt"><div class="in">
+  <span class="kick">04 · Il video</span>
+  <h2>Episodio 1 · «Dice poche parole»</h2>
+  <p class="lead">Reel da 25 s. La domanda compare scritta come un messaggio in una chat di genitori: chi l&#x27;ha pensata almeno una volta si ferma. Premi play per vedere lo storyboard animato.</p>
+  <div class="vid">
+    <div><div class="phone"><div class="screen" id="screen"><div class="prog" id="prog"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div><div class="scene" data-i="0"><div class="stx">«A 2 anni dice poche parole…»</div></div><div class="scene" data-i="1"><div class="stx">Prima, una cosa da sapere</div></div><div class="scene" data-i="2"><div class="stx">Si allena giocando</div></div><div class="scene" data-i="3"><div class="stx">Il gioco: età 2-3 anni</div></div><div class="scene" data-i="4"><div class="stx">Ogni domanda ha un gioco.</div></div></div></div><button class="play" id="play" type="button">Guarda lo storyboard</button></div>
+    <div><ol class="shots" id="shots"><li data-i="0"><span class="t">0-2 s</span><div><b>«A 2 anni dice poche parole…»</b><span>Una notifica in una chat di genitori si apre a tutto schermo</span><em>Audio: Il suono di un messaggio</em></div></li><li data-i="1"><span class="t">2-7 s</span><div><b>Prima, una cosa da sapere</b><span>Carotina animata indica tre punti semplici, ripresi dall&#x27;articolo sulle tappe del linguaggio</span><em>Audio: Voce calda di una mamma, fuori campo</em></div></li><li data-i="2"><span class="t">7-14 s</span><div><b>Si allena giocando</b><span>Mani di un adulto e di un bambino, senza volti, giocano con le carte delle parole</span><em>Audio: Risate leggere, suono del gioco</em></div></li><li data-i="3"><span class="t">14-20 s</span><div><b>Il gioco: età 2-3 anni</b><span>La scatola del gioco ruota; badge dell&#x27;età e del momento d&#x27;uso</span><em>Audio: Musica allegra</em></div></li><li data-i="4"><span class="t">20-25 s</span><div><b>Ogni domanda ha un gioco.</b><span>Logo Lisciani; «scrivi il tuo dubbio nei commenti»</span><em>Audio: Jingle breve</em></div></li></ol><div class="why"><b>Perché funziona.</b> Mette prima l&#x27;aiuto e poi il prodotto, come facevate nel blog. Senza volti di bambini resta rispettoso per le famiglie e si può produrre ogni settimana.</div></div>
+  </div>
+</div></section>
+
+<section><div class="in">
+  <span class="kick">05 · Il piano</span>
+  <h2>Quattro settimane per partire</h2>
+  <ul class="plan"><li><span class="t">Settimana 1</span><span>Raccogliere dieci domande vere dai commenti e dai messaggi; collegare ognuna a una fascia d&#x27;età e a un gioco; far approvare le risposte agli esperti interni.</span></li><li><span class="t">Settimana 2</span><span>Lanciare la rubrica con il post manifesto e l&#x27;episodio 1; aprire un account TikTok di prova con lo stesso episodio.</span></li><li><span class="t">Settimana 3</span><span>Pubblicare l&#x27;episodio 2 e la prima guida ai regali per età, collegata alla lista dei desideri.</span></li><li><span class="t">Settimana 4</span><span>Rispondere nel video alla domanda più votata nei commenti; confrontare Instagram e TikTok e decidere dove investire.</span></li></ul>
+  <h3 style="font-size:20px;margin:0 0 12px">Cosa misurerei</h3>
+  <div class="kpis"><div class="kpi"><b>Salvataggi e condivisioni</b><span>un genitore salva quello che gli serve e lo manda al partner</span></div><div class="kpi"><b>Domande nei commenti</b><span>misura la fiducia e dà il materiale per gli episodi successivi</span></div><div class="kpi"><b>Clic verso la lista dei desideri</b><span>collega la rubrica alle vendite di Natale</span></div></div>
+  <p class="test"><b>Test con poco budget.</b> A dicembre si sponsorizzano le guide ai regali per età verso genitori e nonni in Italia, una fascia d&#x27;età per volta, e si misura il costo per clic sulla lista dei desideri.</p>
+</div></section>
+
+<section class="alt"><div class="in">
+  <span class="kick">06 · Perché io</span>
+  <h2>Quello che porto da subito</h2>
+  <div class="me">
+    <div><ul><li>Ho lavorato sette anni con bambini e famiglie, come animatore e poi come coordinatore di eventi: conosco le domande dei genitori perché me le hanno fatte di persona.</li><li>Per un&#x27;attività di feste per bambini ho già fatto reel animati, senza riprendere nessun bambino: li trovate nel portfolio.</li><li>Vivo in Abruzzo e studio a UniTE, a Teramo: conosco il territorio in cui lavorate.</li></ul>
+      <div class="cta"><a class="btn" href="../" >Vedi il mio portfolio</a><a class="btn ghost" href="../media/CV-Nicolo-Cammarata.pdf" target="_blank" rel="noopener">Apri il CV</a></div>
+      <div class="contact">+39 393 227 3666 · nic@on-line-agency.com</div></div>
+    <div class="first"><b>Il primo passo</b>Nella prima settimana scelgo con voi le prime dieci domande e vi porto l&#x27;episodio 1 montato, pronto per gli esperti.</div>
+  </div>
+</div></section>
+<footer><div class="in">Proposta preparata da Nicolò Cammarata per lo Unite Talent Day del 19 novembre 2026. Non è stata commissionata da Lisciani Giochi e non rappresenta l'azienda. I marchi appartengono ai rispettivi proprietari. Dati pubblici letti a novembre 2026, con le fonti indicate.</div></footer>
+<script>
+(function(){
+  var sc=[].slice.call(document.querySelectorAll('.scene')),rows=[].slice.call(document.querySelectorAll('#shots li')),bars=[].slice.call(document.querySelectorAll('#prog b')),btn=document.getElementById('play');
+  var RM=matchMedia('(prefers-reduced-motion: reduce)').matches,D=RM?3200:2400,i=-1,t=null,start=0,raf=null;
+  function show(k){sc.forEach(function(s,j){s.classList.toggle('on',j===k);});rows.forEach(function(r,j){r.classList.toggle('on',j===k);});bars.forEach(function(b,j){b.style.width=j<k?'100%':'0';});}
+  function tick(now){if(i<0)return;var p=Math.min(1,(now-start)/D);bars[i].style.width=(p*100)+'%';if(p>=1){i++;if(i>=sc.length){stop(true);return;}show(i);start=now;}raf=requestAnimationFrame(tick);}
+  function play(){i=0;show(0);start=performance.now();btn.textContent='Ferma';raf=requestAnimationFrame(tick);}
+  function stop(end){cancelAnimationFrame(raf);i=-1;btn.textContent=end?'Riguarda':'Guarda lo storyboard';}
+  btn.addEventListener('click',function(){if(i>=0)stop();else play();});
+  rows.forEach(function(r,j){r.style.cursor='pointer';r.addEventListener('click',function(){stop();show(j);});});
+  show(0);
+})();
+</script>
+</body></html>
