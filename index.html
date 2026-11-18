@@ -34,7 +34,7 @@ button{font-family:var(--body)}
 
 /* APERTURA */
 .hero{position:relative;overflow:hidden;background:#141213;color:#f4f1f1}
-#lens{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:pointer}
+.logov{display:none}#lens{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:pointer}
 .hint b{color:#f4f1f1;font-weight:600}
 .hero .in{position:relative;padding-block:64px 40px;min-height:min(78vh,620px);display:flex;flex-direction:column;justify-content:flex-end;pointer-events:none}
 .ghost{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);font:700 clamp(60px,15vw,190px)/1 var(--display);letter-spacing:-.04em;color:rgba(255,255,255,.08);filter:blur(7px);white-space:nowrap;user-select:none;transition:filter 2.2s ease,color 2.2s ease}
@@ -135,7 +135,7 @@ dialog img{width:100%;border-radius:12px;display:block}
 .role{font:500 14px var(--mono);color:#c9c2c3;margin:10px 0 0;letter-spacing:.02em}
 .cta-row{margin:18px 0 0}.tdbtn{display:inline-block;font:600 14px var(--display);color:#16131a;background:#f4f1f1;border-radius:999px;padding:10px 18px;text-decoration:none}
 .cline a.v{color:inherit;text-decoration:none}
-@media(max-width:600px){.dgrid .phone{width:min(260px,66vw)}.avatar{width:64px;height:64px}.ghost{display:none}#lens{opacity:.55}.hero .kick{font-size:11px;letter-spacing:.1em}.tdbtn{font-size:13px;padding:11px 16px;white-space:nowrap;text-shadow:none}.hero .in{text-shadow:0 1px 12px rgba(20,18,19,.9);min-height:0;padding-top:340px}}
+@media(max-width:600px){.dgrid .phone{width:min(260px,66vw)}.avatar{width:64px;height:64px}.ghost{display:none}#lens{display:none}.logov{display:block;position:absolute;left:50%;top:10px;transform:translateX(-50%);width:min(330px,88vw);height:auto;pointer-events:none}.hero .kick{font-size:11px;letter-spacing:.1em}.tdbtn{font-size:13px;padding:11px 16px;white-space:nowrap;text-shadow:none}.hero .in{text-shadow:0 1px 12px rgba(20,18,19,.9);min-height:0;padding-top:340px}}
 /* SISTEMA */
 @media(max-width:600px){.fxl button{font-size:11px;padding:4px 8px}.fxl button small{display:none}.fxl .el{display:none}}
 
@@ -222,6 +222,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 
 <header class="hero" id="top" tabindex="0" aria-label="Apertura interattiva: tocca per cambiare la forma dei punti">
   <canvas id="lens" aria-hidden="true"></canvas>
+  <video class="logov" id="logov" src="media/logo-loop.mp4" poster="media/logo-loop.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
   <div class="ghost" aria-hidden="true">INVISIBILE</div>
   <div class="in">
     <span class="kick" style="color:#9fbbe9">Portfolio · Marketing digitale e contenuti con l'IA</span>
@@ -479,6 +480,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   /* APERTURA 3D interattiva: 2.400 punti che cambiano forma (anello, sfera, onda, logo ON-LINE), si spostano sotto il dito e ruotano trascinando */
   try{
     if(!window.THREE) throw 0;
+    if(matchMedia('(max-width:600px)').matches){var lv=$('logov');if(lv){var pr=lv.play();if(pr&&pr.catch)pr.catch(function(){});}throw 'mobile';}
     var cv=$('lens'),hero=$('top'),lab=$('shape');
     var R=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
     R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
