@@ -134,7 +134,8 @@ dialog img{width:100%;border-radius:12px;display:block}
 .avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.25);flex:none}
 .role{font:500 14px var(--mono);color:#c9c2c3;margin:10px 0 0;letter-spacing:.02em}
 .cta-row{margin:18px 0 0}.tdbtn{display:inline-block;font:600 14px var(--display);color:#16131a;background:#f4f1f1;border-radius:999px;padding:10px 18px;text-decoration:none}
-@media(max-width:600px){.avatar{width:64px;height:64px}.ghost{display:none}#lens{opacity:.55}.hero .kick{font-size:11px;letter-spacing:.1em}.tdbtn{font-size:13px;padding:11px 16px;white-space:nowrap;text-shadow:none}.hero .in{text-shadow:0 1px 12px rgba(20,18,19,.9);min-height:0;padding-top:340px}}
+.cline a.v{color:inherit;text-decoration:none}
+@media(max-width:600px){.dgrid .phone{width:min(260px,66vw)}.avatar{width:64px;height:64px}.ghost{display:none}#lens{opacity:.55}.hero .kick{font-size:11px;letter-spacing:.1em}.tdbtn{font-size:13px;padding:11px 16px;white-space:nowrap;text-shadow:none}.hero .in{text-shadow:0 1px 12px rgba(20,18,19,.9);min-height:0;padding-top:340px}}
 /* SISTEMA */
 .fx3d{position:relative;height:clamp(400px,56vw,540px);border-radius:12px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#2a2340 0%,#16131a 70%);margin:4px 0 6px;touch-action:pan-y}
 .fx3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:grab}
@@ -228,7 +229,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     <div class="idrow"><img src="media/nicolo.jpg" alt="Nicolò Cammarata" class="avatar" width="84" height="84"><h1>Nicolò Cammarata</h1></div>
     <p class="tag">Marketing digitale e contenuti. Porto le attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
     <p class="role">24 anni · magistrale LM-59 a UniTE · cerco un ruolo in un team marketing</p>
-    <p class="cta-row"><a class="tdbtn" href="#talentday">Sei qui dal Talent Day? Scegli la tua azienda ↓</a></p>
+    <p class="cta-row"><a class="tdbtn" href="#talentday">Sei qui dal Talent Day? Scegli la tua azienda&nbsp;↓</a></p>
     <p class="hint shapebar"><b id="shape">Anello</b> · tocca o trascina</p>
   </div>
 </header>
@@ -437,7 +438,6 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   <h3 class="sub">Foto dal content day</h3>
   <p class="note" style="margin:0 0 14px">Studio Filodentale, Montesilvano. Giornata organizzata da me, con shot list e scelta degli scatti; foto di Eric. Da qui escono post, schede Google e sito.</p>
   <div class="gal photos"><button type="button" class="zoomable" data-src="media/foto-1.jpg" data-cap="La sala d'attesa"><img src="media/foto-1.jpg" alt="La sala d'attesa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-2.jpg" data-cap="Una sala operativa"><img src="media/foto-2.jpg" alt="Una sala operativa" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-3.jpg" data-cap="La sala di sterilizzazione"><img src="media/foto-3.jpg" alt="La sala di sterilizzazione" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-4.jpg" data-cap="Strumenti pronti all'uso"><img src="media/foto-4.jpg" alt="Strumenti pronti all'uso" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-5.jpg" data-cap="L'accoglienza"><img src="media/foto-5.jpg" alt="L'accoglienza" loading="lazy"></button><button type="button" class="zoomable" data-src="media/foto-6.jpg" data-cap="La sala radiologica"><img src="media/foto-6.jpg" alt="La sala radiologica" loading="lazy"></button></div>
-</div>
   <p class="next">Questo è quello che so fare oggi. Il prossimo passo è farlo crescere in un team. →</p>
 </div></section>
 
@@ -449,8 +449,8 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   <p class="lead">Ho portato questo metodo ad attività locali con budget piccoli. Voglio portarlo in un'azienda dove possa crescere con un team. Se ti interessa, ti mostro tutto: i file, le campagne, il sistema.</p>
   <div class="me"><img src="media/nicolo.jpg" alt="Nicolò Cammarata" width="96" height="96"><div><b>Nicolò Cammarata</b><span>24 anni · Montesilvano (PE) · magistrale LM-59 a UniTE</span><a class="btn" href="media/CV-Nicolo-Cammarata.pdf" target="_blank" rel="noopener">Apri il CV in PDF</a></div></div>
   <div class="contact">
-    <div class="cline"><span class="v" id="tel">+39 393 227 3666</span><button class="btn ghostb copy" data-copy="tel" type="button">Copia numero</button></div>
-    <div class="cline"><span class="v" id="mail">nic@on-line-agency.com</span><button class="btn ghostb copy" data-copy="mail" type="button">Copia email</button></div>
+    <div class="cline"><a class="v" id="tel" href="tel:+393932273666">+39 393 227 3666</a><button class="btn ghostb copy" data-copy="tel" type="button">Copia numero</button></div>
+    <div class="cline"><a class="v" id="mail" href="mailto:nic@on-line-agency.com">nic@on-line-agency.com</a><button class="btn ghostb copy" data-copy="mail" type="button">Copia email</button></div>
     <p class="note">Il progetto: <a href="https://on-line-agency.com" target="_blank" rel="noopener">on-line-agency.com</a></p>
   </div>
 </div></section>
