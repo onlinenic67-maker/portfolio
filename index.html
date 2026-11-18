@@ -7,14 +7,14 @@
 <style>
 /* Layout: portfolio a fasce, scuro di base. Apertura 3D (anello di punti che mette a fuoco), poi video, design, sistema, dati, casi, percorso, contatti. Colonna 1040px, una colonna sul telefono. */
 :root{
-  --bg:#1b1819; --bg2:#221F20; --surface:#2a2627; --line:#3b3637; --fg:#f4f1f1; --mut:#b2abac;
-  --accent:#8fb0e6; --warm:#f0a160;
-  --grad:linear-gradient(90deg,#527ab8,#7562a4 34%,#df72a5 67%,#e78e41);
+  --bg:#141213; --bg2:#1c1a1a; --surface:#252222; --line:#383433; --fg:#EDE8E3; --mut:#b0a9a2;
+  --accent:#E0A43B; --warm:#E0A43B;
+  --grad:linear-gradient(90deg,#E0A43B,#F1CB80);
   --display:"Poppins",ui-sans-serif,system-ui,sans-serif; --body:"Poppins",ui-sans-serif,system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
   color-scheme:dark;
 }
-@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f7f5f5;--bg2:#efecec;--surface:#ffffff;--line:#e2dddd;--fg:#221F20;--mut:#5f595a;--accent:#3e64a3;--warm:#b8601d;color-scheme:light}}
-:root[data-theme="light"]{--bg:#f7f5f5;--bg2:#efecec;--surface:#ffffff;--line:#e2dddd;--fg:#221F20;--mut:#5f595a;--accent:#3e64a3;--warm:#b8601d;color-scheme:light}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#f7f5f5;--bg2:#efecec;--surface:#ffffff;--line:#e2dddd;--fg:#221F20;--mut:#5f595a;--accent:#8a5a0e;--warm:#8a5a0e;color-scheme:light}}
+:root[data-theme="light"]{--bg:#f7f5f5;--bg2:#efecec;--surface:#ffffff;--line:#e2dddd;--fg:#221F20;--mut:#5f595a;--accent:#8a5a0e;--warm:#8a5a0e;color-scheme:light}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -95,7 +95,7 @@ button{font-family:var(--body)}
 .focus-demo .msg{font:500 clamp(18px,2.6vw,24px)/1.35 var(--display);margin-top:-18px;position:relative}
 .focus-demo .msg span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .focus-demo label{display:block;font:400 12px var(--mono);color:#a59fa0;margin-top:18px}
-.focus-demo input{width:100%;max-width:360px;accent-color:#df72a5}
+.focus-demo input{width:100%;max-width:360px;accent-color:#E0A43B}
 dialog{border:0;padding:0;background:transparent;max-width:min(92vw,520px)}
 dialog::backdrop{background:rgba(0,0,0,.75)}
 dialog img{width:100%;border-radius:12px;display:block}
@@ -122,14 +122,14 @@ dialog img{width:100%;border-radius:12px;display:block}
 .about>div{min-width:0}
 .portrait{width:240px;height:240px;max-width:100%;border-radius:24px;object-fit:cover;display:block;box-shadow:0 20px 50px -24px rgba(0,0,0,.6)}
 .about h2{margin-bottom:16px}
-.belief{font:500 18px/1.5 var(--display);border-left:4px solid #df72a5;padding-left:14px;margin:18px 0}
+.belief{font:500 18px/1.5 var(--display);border-left:4px solid #E0A43B;padding-left:14px;margin:18px 0}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{font:500 12px var(--mono);border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--fg)}
-.tday{padding-block:34px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(117,98,164,.10),transparent)}
+.tday{padding-block:34px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,rgba(224,164,59,.10),transparent)}
 .tdh{max-width:720px}.tdh h2{font-size:clamp(22px,3.2vw,30px);margin:6px 0 8px}.tdh p{margin:0 0 18px;color:var(--mut)}
 .tdgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
 .tdgrid a{display:flex;justify-content:space-between;align-items:center;gap:8px;text-decoration:none;color:var(--fg);border:1px solid var(--line);border-radius:12px;padding:13px 14px;font:600 15px var(--display);transition:border-color .2s,transform .2s}
-.tdgrid a:hover{border-color:#df72a5;transform:translateY(-2px)}.tdgrid a span{color:#df72a5}
+.tdgrid a:hover{border-color:#E0A43B;transform:translateY(-2px)}.tdgrid a span{color:#E0A43B}
 .idrow{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.idrow h1{margin:0}
 .avatar{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.25);flex:none}
 .role{font:500 14px var(--mono);color:#c9c2c3;margin:10px 0 0;letter-spacing:.02em}
@@ -171,7 +171,7 @@ dialog img{width:100%;border-radius:12px;display:block}
 @media(min-width:820px){.sim{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
 .simbox{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;min-width:0}
 .budget{font:600 52px/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.simbox input[type=range]{width:100%;accent-color:#7562a4;margin:16px 0 6px}
+.simbox input[type=range]{width:100%;accent-color:#E0A43B;margin:16px 0 6px}
 .scale{display:flex;justify-content:space-between;font:400 12px var(--mono);color:var(--mut)}
 .out{display:grid;gap:16px}
 .orow .lbl{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-bottom:6px}
@@ -222,14 +222,14 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
 
 <header class="hero" id="top" tabindex="0" aria-label="Apertura interattiva: tocca per cambiare la forma dei punti">
   <canvas id="lens" aria-hidden="true"></canvas>
-  <video class="logov" id="logov" src="media/logo-loop.mp4" poster="media/logo-loop.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
+  <video class="logov" id="logov" src="media/sfera-loop.mp4" poster="media/sfera-loop.jpg" muted loop playsinline autoplay preload="auto" aria-hidden="true"></video>
   <div class="ghost" aria-hidden="true">INVISIBILE</div>
   <div class="in">
-    <span class="kick" style="color:#9fbbe9">Portfolio · Marketing digitale e contenuti con l'IA</span>
+    <span class="kick" style="color:#F1CB80">Portfolio · Marketing digitale e contenuti con l'IA</span>
     <div class="idrow"><img src="media/nicolo.jpg" alt="Nicolò Cammarata" class="avatar" width="84" height="84"><h1>Nicolò Cammarata</h1></div>
-    <p class="tag">Marketing digitale e contenuti. Porto le attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
+    <p class="tag">Marketing digitale e contenuti. Ho portato attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
     <p class="role">24 anni · magistrale LM-59 a UniTE · cerco un ruolo in un team marketing</p>
-    <b id="shape" hidden>Logo ON-LINE</b>
+    <b id="shape" hidden>Sfera</b>
   </div>
 </header>
 <section class="tday" id="talentday"><div class="in">
@@ -251,9 +251,8 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     <div>
       <h2>Ho imparato a comunicare prima con le persone, poi con gli schermi</h2>
       <p class="big-p">Sono Nicolò, ho 24 anni e vengo da Montesilvano. Dal 2018 al 2025 ho lavorato negli eventi per famiglie: prima animatore, poi responsabile dell'animazione, poi coordinatore eventi e attività commerciali. Lì si vende, si organizza un team e si risolvono i problemi sul momento.</p>
-      <p>Nel frattempo, la laurea in Scienze della Comunicazione a Bologna, un tirocinio da social media manager e un brand streetwear costruito con un team. Nel 2026 ho messo tutto insieme in <b>ON-LINE</b>: il mio progetto per dare alle attività locali una cura dei social professionale a un prezzo che possono sostenere, grazie a un sistema di produzione che ho costruito con l'IA.</p>
+      <p>Nel frattempo, la laurea in Scienze della Comunicazione a Bologna, un tirocinio da social media manager e un brand streetwear costruito con un team. Nel 2026 ho messo tutto insieme in <b>ON-LINE</b>, un progetto che ho avviato per mettere alla prova sul campo, con attività locali vere, un sistema di produzione che ho costruito con l'IA.</p>
       <p class="belief">Credo in una cosa: <b>persona × IA</b>. L'IA moltiplica il giudizio di chi la usa, non lo sostituisce.</p>
-      <div class="chips"><span>Velocità</span><span>Studio delle metriche</span><span>Innovazione</span><span>Continuità</span><span>Dimostrare il valore</span></div>
     </div>
   </div>
   <ol class="time">
@@ -286,7 +285,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   <div class="fx">
     <div class="fxbar"><button type="button" id="fxplay" class="btn">Segui un contenuto</button><span id="fxstep" class="note" aria-live="polite"></span></div>
     <div class="fxscroll fxd"><svg viewBox="0 0 780 330" role="img" aria-label="Il percorso di un contenuto: brief, produzione, revisore, approvazione, pubblicazione, metriche, registro degli esiti e coordinatore, che riporta le lezioni alla produzione. Il revisore e l'approvazione possono rimandare indietro il lavoro.">
-      <defs><linearGradient id="tkg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a7bd6"/><stop offset=".55" stop-color="#d067a5"/><stop offset="1" stop-color="#f08a4b"/></linearGradient>
+      <defs><linearGradient id="tkg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0A43B"/><stop offset=".55" stop-color="#EBBE6A"/><stop offset="1" stop-color="#F1CB80"/></linearGradient>
         <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker>
         <marker id="ahc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="acc-fill"/></marker>
       </defs>
@@ -323,7 +322,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       <text x="390" y="318" font-size="11" text-anchor="middle" class="ns">in alto il contenuto va avanti · in basso i risultati tornano a migliorare la produzione</text>
     <g class="tok" id="tokD" aria-hidden="true"><rect x="-13" y="-17" width="26" height="34" rx="4" class="tk"/><rect x="-10" y="-14" width="20" height="14" rx="2" fill="url(#tkg)"/><rect x="-10" y="3" width="20" height="2.5" rx="1" class="tl"/><rect x="-10" y="8" width="12" height="2.5" rx="1" class="tl"/><text y="-24" text-anchor="middle" class="tt"></text></g></svg></div>
     <div class="fxm"><svg viewBox="0 0 360 622" role="img" aria-label="Il percorso di un contenuto in otto passaggi, dall'obiettivo al miglioramento. La revisione può rimandare indietro il lavoro; i risultati tornano a migliorare la produzione.">
-<defs><linearGradient id="tkgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a7bd6"/><stop offset=".55" stop-color="#d067a5"/><stop offset="1" stop-color="#f08a4b"/></linearGradient><marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ahcm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="acc-fill"/></marker></defs>
+<defs><linearGradient id="tkgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0A43B"/><stop offset=".55" stop-color="#EBBE6A"/><stop offset="1" stop-color="#F1CB80"/></linearGradient><marker id="ahm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker><marker id="ahcm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="acc-fill"/></marker></defs>
 <g fill="none" stroke="currentColor" stroke-width="1.4"><line x1="180.0" y1="64" x2="180.0" y2="89" marker-end="url(#ahm)"/><line x1="180.0" y1="142" x2="180.0" y2="167" marker-end="url(#ahm)"/><line x1="180.0" y1="220" x2="180.0" y2="245" marker-end="url(#ahm)"/><line x1="180.0" y1="298" x2="180.0" y2="323" marker-end="url(#ahm)"/><line x1="180.0" y1="376" x2="180.0" y2="401" marker-end="url(#ahm)"/><line x1="180.0" y1="454" x2="180.0" y2="479" marker-end="url(#ahm)"/><line x1="180.0" y1="532" x2="180.0" y2="557" marker-end="url(#ahm)"/><path class="back" d="M80 194.0 C40 194.0 40 116.0 80 116.0" marker-end="url(#ahcm)"/><path class="back" d="M280 584.0 C340 584.0 340 116.0 280 116.0" marker-end="url(#ahcm)"/></g>
 <g fill="currentColor"><text x="36" y="159.0" text-anchor="end" class="acc-text" font-size="11">rifare</text></g>
 <g font-size="13" text-anchor="middle"><g class="node" data-k="brief" tabindex="0" role="button" aria-label="Brief"><rect x="80" y="14" width="200" height="48" rx="8"/><text x="180.0" y="34">Brief</text><text x="180.0" y="51" class="ns">l'obiettivo</text></g><g class="node" data-k="prod" tabindex="0" role="button" aria-label="Produzione"><rect x="80" y="92" width="200" height="48" rx="8"/><text x="180.0" y="112">Produzione</text><text x="180.0" y="129" class="ns">testi e video</text></g><g class="node" data-k="rev" tabindex="0" role="button" aria-label="Revisione"><rect x="80" y="170" width="200" height="48" rx="8"/><text x="180.0" y="190">Revisione</text><text x="180.0" y="207" class="ns">passa o rifare</text></g><g class="node" data-k="ok" tabindex="0" role="button" aria-label="Approvazione"><rect x="80" y="248" width="200" height="48" rx="8"/><text x="180.0" y="268">Approvazione</text><text x="180.0" y="285" class="ns">una persona dice sì</text></g><g class="node" data-k="pub" tabindex="0" role="button" aria-label="Pubblicazione"><rect x="80" y="326" width="200" height="48" rx="8"/><text x="180.0" y="346">Pubblicazione</text><text x="180.0" y="363" class="ns">doppio controllo</text></g><g class="node" data-k="met" tabindex="0" role="button" aria-label="Metriche"><rect x="80" y="404" width="200" height="48" rx="8"/><text x="180.0" y="424">Metriche</text><text x="180.0" y="441" class="ns">contatti, non like</text></g><g class="node" data-k="reg" tabindex="0" role="button" aria-label="Esiti"><rect x="80" y="482" width="200" height="48" rx="8"/><text x="180.0" y="502">Esiti</text><text x="180.0" y="519" class="ns">com'è andata</text></g><g class="node" data-k="coord" tabindex="0" role="button" aria-label="Miglioramento"><rect x="80" y="560" width="200" height="48" rx="8"/><text x="180.0" y="580">Miglioramento</text><text x="180.0" y="597" class="ns">si migliora</text></g></g>
@@ -407,7 +406,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     <figure><video controls playsinline preload="none" poster="media/angeli-cera-una-volta.jpg" src="media/angeli-cera-una-volta.mp4"></video>
       <figcaption><span class="chip">Reel animato</span><b>Angeli Sorridenti · C'era una volta</b>Le feste a tema raccontate come una fiaba, per i genitori che scelgono.</figcaption></figure>
     <figure><video controls playsinline preload="none" poster="media/online-tre-righe.jpg" src="media/online-tre-righe.mp4"></video>
-      <figcaption><span class="chip">Reel ON-LINE</span><b>Tre righe</b>Il reel di presentazione di ON-LINE: tre righe per dire cosa facciamo.</figcaption></figure>
+      <figcaption><span class="chip">Reel ON-LINE</span><b>Tre righe</b>Il reel di presentazione del mio progetto ON-LINE, in tre righe.</figcaption></figure>
   </div>
 </div></section>
 
@@ -476,7 +475,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
   var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function $(id){return document.getElementById(id);}
 
-  /* APERTURA 3D interattiva: 2.400 punti che cambiano forma (anello, sfera, onda, logo ON-LINE), si spostano sotto il dito e ruotano trascinando */
+  /* APERTURA 3D interattiva: 2.400 punti che cambiano forma (sfera di punti), si spostano sotto il dito e ruotano trascinando */
   try{
     if(!window.THREE) throw 0;
     if(matchMedia('(max-width:600px)').matches){var lv=$('logov');if(lv){var pr=lv.play();if(pr&&pr.catch)pr.catch(function(){});}throw 'mobile';}
@@ -485,7 +484,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     R.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
     var scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,100);cam.position.z=7.2;
     var N=2400,pos=new Float32Array(N*3),col=new Float32Array(N*3),cpos=new Float32Array(N*3),off=new Float32Array(N*3);
-    var stops=[[.32,.48,.72],[.46,.38,.64],[.87,.45,.65],[.91,.56,.25]];
+    var stops=[[.88,.64,.23],[.93,.79,.50],[.93,.91,.89],[.88,.64,.23]];
     function grad(t){t=Math.max(0,Math.min(.999,t))*3;var k=Math.floor(t),f=t-k,c0=stops[k],c1=stops[k+1];return[c0[0]+(c1[0]-c0[0])*f,c0[1]+(c1[1]-c0[1])*f,c0[2]+(c1[2]-c0[2])*f];}
     function ring(){var o=new Float32Array(N*3);for(var i=0;i<N;i++){var a=i/N*Math.PI*2*1+Math.random()*.002,b=Math.random()*Math.PI*2,r=1.75+.38*Math.cos(b);o[i*3]=r*Math.cos(a);o[i*3+1]=r*Math.sin(a);o[i*3+2]=.38*Math.sin(b);}return o;}
     function sphere(){var o=new Float32Array(N*3),g=Math.PI*(3-Math.sqrt(5));for(var i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),t=g*i;o[i*3]=2.1*r*Math.cos(t);o[i*3+1]=2.1*y;o[i*3+2]=2.1*r*Math.sin(t);}return o;}
@@ -496,7 +495,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       var dd=x.getImageData(0,0,W,H).data,pts=[];for(var yy=0;yy<H;yy+=2)for(var xx=0;xx<W;xx+=2)if(dd[(yy*W+xx)*4+3]>128)pts.push([xx,yy]);
       var sel=[];for(var i=0;i<N;i++)sel.push(pts[Math.floor(Math.random()*pts.length)]||[W/2,H/2]);sel.sort(function(p,q){return p[0]-q[0];});
       var o=new Float32Array(N*3);for(var i=0;i<N;i++){var q=sel[i];o[i*3]=(q[0]/W-.5)*4.2;o[i*3+1]=-(q[1]/H-.5)*4.0;o[i*3+2]=(Math.random()-.5)*.3;}return o;}
-    var SH=[["Logo ON-LINE",word(),[0,0]]];
+    var SH=[["Sfera",sphere(),[0,0]]];
     for(var i=0;i<N;i++){var c=grad(i/N);col[i*3]=c[0];col[i*3+1]=c[1];col[i*3+2]=c[2];cpos[i*3]=(Math.random()-.5)*14;cpos[i*3+1]=(Math.random()-.5)*9;cpos[i*3+2]=(Math.random()-.5)*8;}
     var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
     var m=new THREE.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending});
@@ -504,7 +503,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     var si=0,from=cpos.slice(),target=SH[0][1],t0=performance.now(),dur=RM?1:2400;
     function go(k){si=k%SH.length;if(!SH[si][1])SH[si][1]=word();from=cpos.slice();target=SH[si][1];t0=performance.now();dur=RM?1:1300;lab.textContent=SH[si][0];}
     function size(){var w=hero.clientWidth,h=hero.clientHeight;R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();
-      var wide=w>760;pts.position.set(wide?1.9:0,wide?.35:1.25,0);pts.scale.setScalar(wide?1:.56);}
+      var wide=w>760;pts.position.set(wide?Math.min(2.7,w/600):0,wide?.55:1.25,0);pts.scale.setScalar(wide?.62:.5);}
     size();window.addEventListener('resize',size);
     var mouse=new THREE.Vector2(9,9),ray=new THREE.Raycaster(),plane=new THREE.Plane(new THREE.Vector3(0,0,1),0),hit=new THREE.Vector3(),loc=new THREE.Vector3(),active=false;
     var rotX=0,rotY=0,vX=0,vY=0,down=null,moved=0;
@@ -534,7 +533,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       R.render(scene,cam);
     }
     requestAnimationFrame(frame);
-  }catch(e){ $('lens').style.background='radial-gradient(circle at 70% 40%,rgba(117,98,164,.35),transparent 55%)';var sh=document.querySelector('.shapebar');if(sh)sh.hidden=true; }
+  }catch(e){ $('lens').style.background='radial-gradient(circle at 70% 40%,rgba(224,164,59,.35),transparent 55%)';var sh=document.querySelector('.shapebar');if(sh)sh.hidden=true; }
 
 
   /* il problema: la parola si mette a fuoco mentre scorri */
