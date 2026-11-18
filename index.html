@@ -245,7 +245,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
     <p class="tag">Marketing digitale e contenuti. Porto le attività locali da invisibili a scelte, con <b>contenuti che si misurano in contatti</b>.</p>
     <p class="role">24 anni · magistrale LM-59 a UniTE · cerco un ruolo in un team marketing</p>
     <p class="cta-row"><a class="tdbtn" href="#talentday">Sei qui dal Talent Day? Scegli la tua azienda&nbsp;↓</a></p>
-    <p class="hint shapebar"><b id="shape">Logo ON-LINE</b> · tocca o trascina</p>
+    <b id="shape" hidden>Logo ON-LINE</b>
   </div>
 </header>
 <div class="kpis">
@@ -471,7 +471,7 @@ footer{color:var(--mut);font-size:13px;padding-block:28px 40px;border-top:1px so
       var dd=x.getImageData(0,0,W,H).data,pts=[];for(var yy=0;yy<H;yy+=2)for(var xx=0;xx<W;xx+=2)if(dd[(yy*W+xx)*4+3]>128)pts.push([xx,yy]);
       var sel=[];for(var i=0;i<N;i++)sel.push(pts[Math.floor(Math.random()*pts.length)]||[W/2,H/2]);sel.sort(function(p,q){return p[0]-q[0];});
       var o=new Float32Array(N*3);for(var i=0;i<N;i++){var q=sel[i];o[i*3]=(q[0]/W-.5)*4.2;o[i*3+1]=-(q[1]/H-.5)*4.0;o[i*3+2]=(Math.random()-.5)*.3;}return o;}
-    var SH=[["Logo ON-LINE",word(),[0,0]],["Anello",ring(),[.55,0]],["Sfera",sphere(),[.2,0]],["Onda",wave(),[.5,0]]];
+    var SH=[["Logo ON-LINE",word(),[0,0]]];
     for(var i=0;i<N;i++){var c=grad(i/N);col[i*3]=c[0];col[i*3+1]=c[1];col[i*3+2]=c[2];cpos[i*3]=(Math.random()-.5)*14;cpos[i*3+1]=(Math.random()-.5)*9;cpos[i*3+2]=(Math.random()-.5)*8;}
     var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));g.setAttribute('color',new THREE.BufferAttribute(col,3));
     var m=new THREE.PointsMaterial({size:.045,vertexColors:true,transparent:true,opacity:.95,depthWrite:false,blending:THREE.AdditiveBlending});
